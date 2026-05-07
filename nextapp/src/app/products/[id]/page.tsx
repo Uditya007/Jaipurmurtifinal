@@ -162,10 +162,6 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
                 <ShieldCheck className="text-gold" size={20} />
                 <span>100% Authentic Handcrafted Artwork</span>
               </div>
-              <div className="flex items-center gap-4 text-muted text-sm">
-                <Truck className="text-gold" size={20} />
-                <span>Free Fully Insured Worldwide Shipping</span>
-              </div>
             </div>
 
           </motion.div>

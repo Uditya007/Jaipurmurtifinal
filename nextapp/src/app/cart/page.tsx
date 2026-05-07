@@ -22,9 +22,10 @@ export default function CartPage() {
 
   const stepIndex = STEPS.indexOf(step);
 
-  const shipping = totalPrice > 5000 ? 0 : 299;
+  const shipping = 0; // Shipping removed
   const gst = Math.round(totalPrice * 0.05);
-  const total = totalPrice + shipping + gst;
+  const total = totalPrice + gst;
+
 
   const handleOrderPlace = async () => {
     setIsProcessing(true);
@@ -226,21 +227,7 @@ export default function CartPage() {
                       <span className="text-muted">Subtotal ({totalItems} items)</span>
                       <span className="text-divine">₹{totalPrice.toLocaleString('en-IN')}</span>
                     </div>
-                    <div className="flex justify-between text-sm">
-                      <span className="text-muted">Shipping</span>
-                      <span className={shipping === 0 ? 'text-emerald-400' : 'text-divine'}>
-                        {shipping === 0 ? 'FREE' : `₹${shipping}`}
-                      </span>
-                    </div>
-                    <div className="flex justify-between text-sm">
-                      <span className="text-muted">GST (5%)</span>
-                      <span className="text-divine">₹{gst.toLocaleString('en-IN')}</span>
-                    </div>
-                    {totalPrice < 5000 && totalPrice > 0 && (
-                      <p className="text-[10px] text-muted">
-                        Add ₹{(5000 - totalPrice).toLocaleString('en-IN')} more for FREE shipping
-                      </p>
-                    )}
+
                   </div>
 
                   <div className="divine-divider mb-4" />
@@ -408,12 +395,6 @@ export default function CartPage() {
                     <div className="flex justify-between">
                       <span className="text-muted">Subtotal</span>
                       <span className="text-divine">₹{totalPrice.toLocaleString('en-IN')}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-muted">Shipping</span>
-                      <span className={shipping === 0 ? 'text-emerald-400' : 'text-divine'}>
-                        {shipping === 0 ? 'FREE' : `₹${shipping}`}
-                      </span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-muted">GST</span>
