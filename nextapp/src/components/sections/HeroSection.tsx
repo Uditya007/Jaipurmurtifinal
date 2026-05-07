@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import Link from 'next/link';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, Sparkles } from 'lucide-react';
@@ -11,8 +11,26 @@ const HeroScene = dynamic(
   { ssr: false, loading: () => null }
 );
 
+// Lightweight CSS fallback for mobile — no Three.js loaded
+function MobileHeroBg() {
+  return (
+    <div className="absolute inset-0 z-0 overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-[#1a1008] via-[#0a0800] to-[#050505]" />
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full bg-gold/8 blur-[80px] animate-pulse" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] rounded-full bg-gold/12 blur-[50px]" style={{ animation: 'pulse 4s ease-in-out infinite 1s' }} />
+    </div>
+  );
+}
+
 export default function HeroSection() {
   const sectionRef = useRef<HTMLElement>(null);
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    // Only load Three.js on desktop (>= 768px) to protect mobile performance
+    setIsDesktop(window.innerWidth >= 768);
+  }, []);
+
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ['start start', 'end start'],
@@ -41,10 +59,15 @@ export default function HeroSection() {
       className="relative min-h-screen flex items-center overflow-hidden"
       style={{ background: 'radial-gradient(ellipse at top, #1a1008 0%, #050505 60%)' }}
     >
-      {/* 3D Scene — full viewport */}
-      <div className="absolute inset-0 z-0">
-        <HeroScene />
-      </div>
+      {/* 3D Scene on desktop only, CSS fallback on mobile */}
+      {isDesktop ? (
+        <div className="absolute inset-0 z-0">
+          <HeroScene />
+        </div>
+      ) : (
+        <MobileHeroBg />
+      )}
+
 
       {/* Radial glow at center */}
       <div className="absolute inset-0 z-0 pointer-events-none">
