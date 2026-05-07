@@ -156,28 +156,21 @@ function CraftSection() {
 }
 
 function ShippingMarquee() {
-  const items = Array(6).fill(
-    <>
-      <span>Worldwide Shipping</span>
-      <span className="text-black/40">✦</span>
-      <span>Domestic Delivery: 20 Days</span>
-      <span className="text-black/40">✦</span>
-      <span>International Delivery: 20-30 Days</span>
-      <span className="text-black/40">✦</span>
-    </>
-  );
+  const content = [
+    'Worldwide Shipping', '✦', 'Domestic Delivery: 20 Days', '✦', 'International Delivery: 20-30 Days', '✦',
+    'Worldwide Shipping', '✦', 'Domestic Delivery: 20 Days', '✦', 'International Delivery: 20-30 Days', '✦',
+    'Worldwide Shipping', '✦', 'Domestic Delivery: 20 Days', '✦', 'International Delivery: 20-30 Days', '✦',
+  ];
 
   return (
     <div className="bg-gold text-black py-2.5 overflow-hidden flex whitespace-nowrap relative z-20 border-y border-gold/40">
       <motion.div
-        animate={{ x: ["0%", "-50%"] }}
-        transition={{ repeat: Infinity, ease: "linear", duration: 30 }}
+        animate={{ x: ['0%', '-50%'] }}
+        transition={{ repeat: Infinity, ease: 'linear', duration: 30 }}
         className="flex items-center gap-8 md:gap-12 font-medium tracking-[0.2em] text-[10px] md:text-[11px] uppercase w-max"
       >
-        {items.map((item, i) => (
-          <div key={i} className="flex items-center gap-8 md:gap-12">
-            {item}
-          </div>
+        {content.map((item, i) => (
+          <span key={i} className={item === '✦' ? 'text-black/40' : ''}>{item}</span>
         ))}
       </motion.div>
     </div>
