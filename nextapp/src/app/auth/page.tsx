@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -19,6 +19,13 @@ export default function AuthPage() {
   const [forgotLoading, setForgotLoading] = useState(false);
   const router = useRouter();
   const supabase = createClient();
+
+  // Redirect already-logged-in users away from the auth page
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      if (session) router.replace('/account');
+    });
+  }, [router, supabase]);
 
   const handleUpdate = (key: string, val: string) => setForm(f => ({ ...f, [key]: val }));
 
@@ -61,7 +68,7 @@ export default function AuthPage() {
       if (activeTab === 'login') {
         const { error } = await supabase.auth.signInWithPassword({ email: form.email, password: form.password });
         if (error) throw error;
-        router.push('/');
+        router.push('/account');
       } else if (activeTab === 'register') {
         const { error } = await supabase.auth.signUp({
           email: form.email,
