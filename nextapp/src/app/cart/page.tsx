@@ -3,7 +3,9 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Sparkles, Star } from 'lucide-react';
 import { ShoppingCart, Trash2, Plus, Minus, ArrowLeft, ArrowRight, ChevronRight, Check, Shield, Lock, Loader2 } from 'lucide-react';
+
 import { useCart } from '@/context/CartContext';
 
 type Step = 'cart' | 'shipping' | 'payment' | 'success';
@@ -410,44 +412,119 @@ export default function CartPage() {
             </motion.div>
           )}
 
-          {/* ─── SUCCESS STEP ─── */}
-          {step === 'success' && (
-            <motion.div
-              key="success"
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              className="text-center py-20"
-            >
+          {/* ─── SUCCESS POPUP ─── */}
+          <AnimatePresence>
+            {step === 'success' && (
               <motion.div
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                transition={{ type: 'spring', delay: 0.2 }}
-                className="w-20 h-20 rounded-full bg-gold/20 border border-gold/40 flex items-center justify-center mx-auto mb-8"
+                key="thank-you-popup"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="fixed inset-0 z-[200] flex items-center justify-center p-4"
+                style={{ background: 'rgba(5,5,5,0.92)', backdropFilter: 'blur(12px)' }}
               >
-                <Check size={32} className="text-gold" />
+                {/* Floating sparkles */}
+                {[...Array(12)].map((_, i) => (
+                  <motion.div
+                    key={i}
+                    className="absolute text-gold"
+                    initial={{ opacity: 0, scale: 0, x: 0, y: 0 }}
+                    animate={{
+                      opacity: [0, 1, 0],
+                      scale: [0, 1.2, 0],
+                      x: (Math.random() - 0.5) * 600,
+                      y: (Math.random() - 0.5) * 600,
+                    }}
+                    transition={{ delay: i * 0.1, duration: 2, repeat: Infinity, repeatDelay: 3 }}
+                    style={{ left: '50%', top: '50%' }}
+                  >
+                    {i % 3 === 0 ? '✦' : i % 3 === 1 ? '🌟' : '✨'}
+                  </motion.div>
+                ))}
+
+                {/* Modal card */}
+                <motion.div
+                  initial={{ scale: 0.7, opacity: 0, y: 60 }}
+                  animate={{ scale: 1, opacity: 1, y: 0 }}
+                  transition={{ type: 'spring', damping: 20, stiffness: 200, delay: 0.1 }}
+                  className="relative glass rounded-3xl border border-gold/30 p-10 max-w-md w-full text-center shadow-2xl overflow-hidden"
+                >
+                  {/* Background glow */}
+                  <div className="absolute inset-0 bg-divine-radial opacity-20 pointer-events-none" />
+
+                  {/* Checkmark */}
+                  <motion.div
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ type: 'spring', delay: 0.3, stiffness: 300 }}
+                    className="w-20 h-20 rounded-full bg-gold/20 border-2 border-gold/50 flex items-center justify-center mx-auto mb-6"
+                  >
+                    <Check size={36} className="text-gold" />
+                  </motion.div>
+
+                  {/* Om */}
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.4 }}
+                    className="text-5xl mb-4 float"
+                  >
+                    🕉️
+                  </motion.div>
+
+                  {/* Thank you text */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.5 }}
+                  >
+                    <h2 className="font-display text-4xl text-divine mb-2">Thank You!</h2>
+                    <p className="text-gold font-serif italic text-lg mb-4">For Shopping with Jaipur Murti</p>
+                    <div className="divine-divider max-w-xs mx-auto mb-6" />
+                    <p className="text-muted leading-relaxed text-sm mb-6">
+                      Your order has been placed successfully. 🙏<br />
+                      We'll carefully pack your sacred murti and send
+                      you a confirmation shortly.
+                    </p>
+                  </motion.div>
+
+                  {/* Order info box */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.6 }}
+                    className="bg-black/30 rounded-2xl p-4 mb-8 border border-gold/10"
+                  >
+                    <div className="flex items-center justify-center gap-2 text-xs tracking-widest text-muted uppercase mb-2">
+                      <Sparkles size={12} className="text-gold" />
+                      <span>Order Confirmed</span>
+                      <Sparkles size={12} className="text-gold" />
+                    </div>
+                    <p className="font-display text-gold text-xl">May the Divine Bless Your Home</p>
+                    <div className="flex justify-center gap-1 mt-3">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} size={14} className="text-gold fill-gold" />
+                      ))}
+                    </div>
+                  </motion.div>
+
+                  {/* CTA */}
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.8 }}
+                  >
+                    <Link
+                      href="/products"
+                      className="inline-flex items-center gap-2 px-8 py-4 bg-gold text-black text-xs tracking-widest rounded-full font-medium hover:bg-gold-light transition-all shadow-gold"
+                    >
+                      CONTINUE SHOPPING <ArrowRight size={14} />
+                    </Link>
+                  </motion.div>
+                </motion.div>
               </motion.div>
-
-              <div className="text-6xl mb-6 float">🕉️</div>
-              <h2 className="font-display text-5xl text-divine mb-4">May Your Puja Begin</h2>
-              <p className="text-muted max-w-md mx-auto mb-8 leading-relaxed">
-                Your order has been placed and will be carefully packed and shipped with white-glove care.
-                You'll receive a tracking notification soon.
-              </p>
-
-              <div className="glass rounded-2xl p-6 max-w-sm mx-auto mb-10">
-                <p className="text-xs tracking-widest text-muted mb-3">ESTIMATED DELIVERY</p>
-                <p className="font-display text-xl text-gold">5–7 Business Days</p>
-                <p className="text-xs text-muted mt-1">Insured & climate-controlled shipping</p>
-              </div>
-
-              <Link
-                href="/products"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-gold text-black text-sm tracking-widest rounded-full font-medium hover:bg-gold-light transition-all shadow-gold"
-              >
-                CONTINUE EXPLORING <ArrowRight size={14} />
-              </Link>
-            </motion.div>
-          )}
+            )}
+          </AnimatePresence>
         </AnimatePresence>
       </div>
     </div>
