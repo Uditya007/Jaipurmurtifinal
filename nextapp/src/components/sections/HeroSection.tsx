@@ -2,21 +2,12 @@
 
 import { useRef } from 'react';
 import Link from 'next/link';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { ArrowRight, Sparkles } from 'lucide-react';
 import LightHero3D from '@/components/ui/LightHero3D';
 
 export default function HeroSection() {
   const sectionRef = useRef<HTMLElement>(null);
-
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ['start start', 'end start'],
-  });
-
-  const y = useTransform(scrollYProgress, [0, 1], [0, -150]);
-  const opacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.85]);
 
   const textVariants = {
     hidden: { opacity: 0, y: 40 },
@@ -31,6 +22,7 @@ export default function HeroSection() {
     }),
   };
 
+
   return (
     <section
       ref={sectionRef}
@@ -43,10 +35,7 @@ export default function HeroSection() {
 
 
       {/* Content */}
-      <motion.div
-        style={{ y, opacity, scale }}
-        className="relative z-10 max-w-7xl mx-auto px-6 pt-32 pb-20"
-      >
+      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-32 pb-20">
         <div className="max-w-3xl">
           {/* Eyebrow */}
           <motion.div
@@ -135,7 +124,7 @@ export default function HeroSection() {
             ))}
           </motion.div>
         </div>
-      </motion.div>
+      </div>
 
       {/* Scroll indicator */}
       <motion.div

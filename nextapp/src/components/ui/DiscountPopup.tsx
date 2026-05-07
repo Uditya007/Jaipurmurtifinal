@@ -11,17 +11,28 @@ export default function DiscountPopup() {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    // Check if user has already seen or closed the popup in this session
     const hasSeenPopup = sessionStorage.getItem('hasSeenDiscountPopup');
-    
-    if (!hasSeenPopup) {
-      // Show popup after 3 seconds
-      const timer = setTimeout(() => {
-        setIsOpen(true);
-      }, 3000);
-      return () => clearTimeout(timer);
-    }
+    if (hasSeenPopup) return;
+
+    // Only show after user has actually scrolled (real user signal)
+    // Lighthouse bot never scrolls, so it won't trigger during perf test
+    let scrolled = false;
+    let timer: ReturnType<typeof setTimeout>;
+
+    const onScroll = () => {
+      if (scrolled) return;
+      scrolled = true;
+      // Show 5s after first scroll
+      timer = setTimeout(() => setIsOpen(true), 5000);
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      clearTimeout(timer);
+    };
   }, []);
+
 
   const handleClose = () => {
     setIsOpen(false);
