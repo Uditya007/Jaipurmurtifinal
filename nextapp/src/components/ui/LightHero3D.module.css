@@ -9,7 +9,7 @@
 .bg {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at 50% 40%, #2a1a00 0%, #0d0800 40%, #050505 100%);
+  background: radial-gradient(ellipse at 50% 40%, #F5E6B0 0%, #F5F0E8 40%, #FAFAF8 100%);
 }
 
 /* 3D scene container that reacts to mouse */
@@ -34,15 +34,15 @@
 .ring1 {
   width: 340px;
   height: 340px;
-  border-color: rgba(212, 175, 55, 0.3);
+  border-color: rgba(184, 134, 11, 0.35);
   animation-duration: 12s;
-  box-shadow: 0 0 20px rgba(212, 175, 55, 0.08);
+  box-shadow: 0 0 20px rgba(184, 134, 11, 0.06);
 }
 
 .ring2 {
   width: 480px;
   height: 480px;
-  border-color: rgba(212, 175, 55, 0.15);
+  border-color: rgba(184, 134, 11, 0.2);
   animation-duration: 20s;
   animation-direction: reverse;
   border-style: dashed;
@@ -51,7 +51,7 @@
 .ring3 {
   width: 620px;
   height: 620px;
-  border-color: rgba(212, 175, 55, 0.08);
+  border-color: rgba(184, 134, 11, 0.1);
   animation-duration: 30s;
 }
 
@@ -72,12 +72,12 @@
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  background: radial-gradient(circle at 35% 35%, #f0d060, #d4af37 40%, #6b3a00 80%, transparent);
+  background: radial-gradient(circle at 35% 35%, #F0D060, #D4AF37 40%, #8B6914 80%, transparent);
   animation: orbPulse 4s ease-in-out infinite;
   box-shadow:
-    0 0 40px rgba(212, 175, 55, 0.5),
-    0 0 80px rgba(212, 175, 55, 0.25),
-    0 0 120px rgba(212, 175, 55, 0.1);
+    0 0 40px rgba(184, 134, 11, 0.4),
+    0 0 80px rgba(184, 134, 11, 0.2),
+    0 0 120px rgba(184, 134, 11, 0.08);
 }
 
 .orbCore {
