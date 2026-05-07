@@ -1,11 +1,38 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Cormorant_Garamond, Inter, Cinzel } from "next/font/google";
 import { CartProvider } from "@/context/CartContext";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import ParticleBackground from "@/components/ui/ParticleBackground";
-import CustomCursor from "@/components/ui/CustomCursor";
-import DiscountPopup from "@/components/ui/DiscountPopup";
+import dynamic from "next/dynamic";
+
+// Load heavy components client-side only to avoid blocking first paint
+const ParticleBackground = dynamic(() => import("@/components/ui/ParticleBackground"), { ssr: false });
+const CustomCursor = dynamic(() => import("@/components/ui/CustomCursor"), { ssr: false });
+const DiscountPopup = dynamic(() => import("@/components/ui/DiscountPopup"), { ssr: false });
+
+// next/font: zero render-blocking, self-hosted, automatic font-display:swap
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  style: ["normal", "italic"],
+  variable: "--font-cormorant",
+  display: "swap",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const cinzel = Cinzel({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-cinzel",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Jaipur Murti | Premium Hindu Idols & Statues Online",
@@ -36,10 +63,8 @@ export const metadata: Metadata = {
 };
 
 export const viewport = {
-  width: 'device-width',
+  width: "device-width",
   initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
 };
 
 export default function RootLayout({
@@ -48,15 +73,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Inter:wght@300;400;500;600&family=Cinzel:wght@400;500;600;700&display=swap"
-          rel="stylesheet"
-        />
-      </head>
+    <html
+      lang="en"
+      className={`scroll-smooth ${cormorant.variable} ${inter.variable} ${cinzel.variable}`}
+    >
       <body className="noise">
         <CartProvider>
           <CustomCursor />

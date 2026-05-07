@@ -25,9 +25,9 @@ const config: Config = {
         muted: "#9a8f7a",
       },
       fontFamily: {
-        serif: ["Cormorant Garamond", "serif"],
-        display: ["Cinzel", "serif"],
-        sans: ["Inter", "sans-serif"],
+        serif: ["var(--font-cormorant)", "serif"],
+        display: ["var(--font-cinzel)", "serif"],
+        sans: ["var(--font-inter)", "sans-serif"],
       },
       backgroundImage: {
         "gold-gradient": "linear-gradient(135deg, #D4AF37 0%, #F0D060 40%, #D4AF37 60%, #B8941F 100%)",
