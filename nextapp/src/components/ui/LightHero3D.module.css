@@ -1,0 +1,172 @@
+.wrapper {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  perspective: 800px;
+  perspective-origin: 50% 40%;
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 40%, #2a1a00 0%, #0d0800 40%, #050505 100%);
+}
+
+/* 3D scene container that reacts to mouse */
+.scene {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  transition: transform 0.1s ease-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Rotating rings ── */
+.ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  animation: ringRotate linear infinite;
+}
+
+.ring1 {
+  width: 340px;
+  height: 340px;
+  border-color: rgba(212, 175, 55, 0.3);
+  animation-duration: 12s;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.08);
+}
+
+.ring2 {
+  width: 480px;
+  height: 480px;
+  border-color: rgba(212, 175, 55, 0.15);
+  animation-duration: 20s;
+  animation-direction: reverse;
+  border-style: dashed;
+}
+
+.ring3 {
+  width: 620px;
+  height: 620px;
+  border-color: rgba(212, 175, 55, 0.08);
+  animation-duration: 30s;
+}
+
+@keyframes ringRotate {
+  from { transform: rotateZ(0deg) rotateX(70deg); }
+  to   { transform: rotateZ(360deg) rotateX(70deg); }
+}
+
+/* ── Central orb ── */
+.orb {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  flex-shrink: 0;
+}
+
+.orbInner {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #f0d060, #d4af37 40%, #6b3a00 80%, transparent);
+  animation: orbPulse 4s ease-in-out infinite;
+  box-shadow:
+    0 0 40px rgba(212, 175, 55, 0.5),
+    0 0 80px rgba(212, 175, 55, 0.25),
+    0 0 120px rgba(212, 175, 55, 0.1);
+}
+
+.orbCore {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.omSymbol {
+  font-size: 52px;
+  background: linear-gradient(135deg, #fff8e1, #d4af37, #f0d060);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: omFloat 6s ease-in-out infinite;
+  filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.8));
+  line-height: 1;
+}
+
+.orbGlow {
+  position: absolute;
+  inset: -40px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.2) 0%, transparent 70%);
+  animation: glowPulse 4s ease-in-out infinite;
+}
+
+@keyframes orbPulse {
+  0%, 100% { transform: scale(1); opacity: 0.9; }
+  50%       { transform: scale(1.05); opacity: 1; }
+}
+
+@keyframes omFloat {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50%       { transform: translateY(-6px) scale(1.05); }
+}
+
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50%       { opacity: 1; transform: scale(1.15); }
+}
+
+/* ── Orbiting dots ── */
+.orbitDot {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #f0d060, #d4af37);
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.8);
+  animation: orbit calc(8s + var(--i, 0) * 2s) linear infinite;
+  animation-delay: calc(var(--i, 0) * -1.5s);
+}
+
+@keyframes orbit {
+  from {
+    transform: rotateZ(0deg) translateX(170px) rotateX(70deg);
+  }
+  to {
+    transform: rotateZ(360deg) translateX(170px) rotateX(70deg);
+  }
+}
+
+/* ── Floating particles ── */
+.particle {
+  position: absolute;
+  left: var(--px, 50%);
+  top: var(--py, 50%);
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: rgba(212, 175, 55, 0.7);
+  box-shadow: 0 0 6px rgba(212, 175, 55, 0.5);
+  animation: particleFloat var(--dur, 5s) ease-in-out var(--delay, 0s) infinite;
+}
+
+@keyframes particleFloat {
+  0%, 100% { transform: translateY(0) scale(1); opacity: 0.3; }
+  50%       { transform: translateY(-30px) scale(1.5); opacity: 0.8; }
+}
+
+/* Mobile optimisation — keep the rings, reduce complexity */
+@media (max-width: 767px) {
+  .ring1 { width: 220px; height: 220px; }
+  .ring2 { width: 320px; height: 320px; }
+  .ring3 { width: 420px; height: 420px; }
+  .orb   { width: 110px; height: 110px; }
+  .omSymbol { font-size: 42px; }
+}
