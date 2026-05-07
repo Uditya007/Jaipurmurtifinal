@@ -31,10 +31,14 @@ export default function AuthPage() {
         if (error) throw error;
         router.push('/'); // Redirect on success
       } else if (activeTab === 'register') {
+        const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || window.location.origin;
         const { error } = await supabase.auth.signUp({
           email: form.email,
           password: form.password,
-          options: { data: { full_name: form.name } },
+          options: {
+            data: { full_name: form.name },
+            emailRedirectTo: `${siteUrl}/auth`,
+          },
         });
         if (error) throw error;
         alert('Registration successful! You are now logged in.');
