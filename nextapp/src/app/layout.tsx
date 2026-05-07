@@ -35,20 +35,29 @@ const cinzel = Cinzel({
 });
 
 export const metadata: Metadata = {
-  title: "Jaipur Murti | Premium Hindu Idols & Statues Online",
+  title: "Jaipur Murti | Buy Hindu Murtis Online | Ganesh, Lakshmi, Hanuman Idols",
   description:
-    "Buy authentic handcrafted Hindu murtis online. Museum-grade Ganesha, Lakshmi, Durga & more in Bronze, Marble & Crystal — consecrated by master artisans in Jaipur. Worldwide shipping.",
+    "Buy authentic handcrafted Hindu murtis online from Jaipur. Ganesh murti, marble Lakshmi, Hanuman idol, murtis for mandir & office. Best price, free shipping across India.",
   keywords: [
-    "buy hindu murti online", "handcrafted ganesha statue", "marble lakshmi murti", "bronze idol jaipur",
-    "religious statues india", "temple art online", "buy durga idol", "sacred sculpture", "jaipur murti",
-    "hindu god idols", "pooja murti", "authentic hindu statues", "buy murti online india"
+    // From autocomplete research
+    "ganesh murti jaipur", "marble ganesh murti jaipur", "ganesh statue jaipur",
+    "ganesh murti art jaipur", "buy murti online", "buy murti for mandir",
+    "buy ganesh murti", "buy ganpati murti online", "buy hanuman murti",
+    "buy marble murti online", "buy ganesh murti near me",
+    "which ganesh murti is best for business", "which ganesh murti is best for office",
+    "jaipur ganesh murti 2025", "ganesh idol for ganesh chaturthi",
+    // Core keywords
+    "buy hindu murti online", "handcrafted ganesha statue", "marble lakshmi murti",
+    "bronze idol jaipur", "religious statues india", "temple art online",
+    "buy durga idol", "sacred sculpture", "jaipur murti",
+    "hindu god idols", "pooja murti", "authentic hindu statues"
   ],
   metadataBase: new URL("https://jaipurmurti.me"),
   alternates: { canonical: "https://jaipurmurti.me" },
   robots: { index: true, follow: true },
   openGraph: {
-    title: "Jaipur Murti | Premium Hindu Idols & Statues",
-    description: "Where the Divine meets your home — premium handcrafted Hindu murtis. Worldwide shipping.",
+    title: "Jaipur Murti | Buy Ganesh, Lakshmi & Hanuman Murtis Online",
+    description: "Authentic handcrafted Hindu murtis from Jaipur. Ganesh, Lakshmi, Hanuman idols for home & mandir. Worldwide shipping.",
     type: "website",
     url: "https://jaipurmurti.me",
     siteName: "Jaipur Murti",
@@ -56,7 +65,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Jaipur Murti | Premium Hindu Idols & Statues",
+    title: "Jaipur Murti | Buy Hindu Idols & Statues Online",
     description: "Buy authentic handcrafted Hindu murtis online. Worldwide shipping.",
     images: ["/og-image.jpg"],
   },
