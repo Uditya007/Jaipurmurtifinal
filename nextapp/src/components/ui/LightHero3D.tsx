@@ -10,9 +10,10 @@ export default function LightHero3D() {
     const scene = sceneRef.current;
     if (!scene) return;
 
+    // Subtle mouse parallax — very lightweight
     const handleMouseMove = (e: MouseEvent) => {
       const { innerWidth, innerHeight } = window;
-      const x = (e.clientX / innerWidth - 0.5) * 18;
+      const x = (e.clientX / innerWidth - 0.5) * 20;
       const y = (e.clientY / innerHeight - 0.5) * 10;
       scene.style.transform = `rotateY(${x}deg) rotateX(${-y}deg)`;
     };
@@ -23,47 +24,43 @@ export default function LightHero3D() {
 
   return (
     <div className={styles.wrapper}>
-      {/* Warm beige background */}
+      {/* Deep space background */}
       <div className={styles.bg} />
 
       {/* 3D perspective scene */}
       <div className={styles.scene} ref={sceneRef}>
 
-        {/* All centered elements inside .center */}
-        <div className={styles.center}>
+        {/* Outer ring */}
+        <div className={`${styles.ring} ${styles.ring1}`} />
+        <div className={`${styles.ring} ${styles.ring2}`} />
+        <div className={`${styles.ring} ${styles.ring3}`} />
 
-          {/* Rotating rings — properly offset so they center around origin */}
-          <div className={`${styles.ring} ${styles.ring1}`} />
-          <div className={`${styles.ring} ${styles.ring2}`} />
-          <div className={`${styles.ring} ${styles.ring3}`} />
-
-          {/* Central glowing orb */}
-          <div className={styles.orb}>
-            <div className={styles.orbInner} />
-            <div className={styles.orbCore}>
-              <span className={styles.omSymbol}>ॐ</span>
-            </div>
-            <div className={styles.orbGlow} />
+        {/* Central glowing orb */}
+        <div className={styles.orb}>
+          <div className={styles.orbInner} />
+          <div className={styles.orbCore}>
+            <span className={styles.omSymbol}>ॐ</span>
           </div>
-
-          {/* Orbiting dots */}
-          {[0, 1, 2, 3, 4, 5].map((i) => (
-            <div
-              key={i}
-              className={styles.orbitDot}
-              style={{ '--i': i } as React.CSSProperties}
-            />
-          ))}
+          <div className={styles.orbGlow} />
         </div>
 
-        {/* Floating particles — scattered across full area */}
-        {Array.from({ length: 14 }).map((_, i) => (
+        {/* Orbiting dots */}
+        {[0, 1, 2, 3, 4, 5].map((i) => (
+          <div
+            key={i}
+            className={styles.orbitDot}
+            style={{ '--i': i } as React.CSSProperties}
+          />
+        ))}
+
+        {/* Floating particles */}
+        {Array.from({ length: 16 }).map((_, i) => (
           <div
             key={i}
             className={styles.particle}
             style={{
-              '--px': `${10 + Math.random() * 80}%`,
-              '--py': `${10 + Math.random() * 80}%`,
+              '--px': `${Math.random() * 100}%`,
+              '--py': `${Math.random() * 100}%`,
               '--delay': `${Math.random() * 6}s`,
               '--dur': `${4 + Math.random() * 4}s`,
             } as React.CSSProperties}

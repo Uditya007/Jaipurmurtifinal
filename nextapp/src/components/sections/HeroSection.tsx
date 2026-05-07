@@ -27,7 +27,7 @@ export default function HeroSection() {
     <section
       ref={sectionRef}
       className="relative min-h-screen flex items-center overflow-hidden"
-      style={{ background: 'radial-gradient(ellipse at top, #E8D8A0 0%, #EDE5D8 60%)' }}
+      style={{ background: 'radial-gradient(ellipse at top, #1a1008 0%, #050505 60%)' }}
     >
       {/* Lightweight CSS 3D animation — works on all devices */}
       <LightHero3D />
