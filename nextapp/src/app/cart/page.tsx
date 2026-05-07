@@ -1,12 +1,13 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Sparkles, Star } from 'lucide-react';
 import { ShoppingCart, Trash2, Plus, Minus, ArrowLeft, ArrowRight, ChevronRight, Check, Shield, Lock, Loader2 } from 'lucide-react';
-
 import { useCart } from '@/context/CartContext';
+import { createClient } from '@/lib/client';
 
 type Step = 'cart' | 'shipping' | 'payment' | 'success';
 
@@ -21,19 +22,52 @@ export default function CartPage() {
     cardName: '', cardNumber: '', expiry: '', cvv: '',
   });
   const [isProcessing, setIsProcessing] = useState(false);
+  const [user, setUser] = useState<any>(null);
+  const [authChecked, setAuthChecked] = useState(false);
+  const supabase = createClient();
+  const router = useRouter();
 
   const stepIndex = STEPS.indexOf(step);
 
-  const shipping = 0; // Shipping removed
+  const shipping = 0;
   const gst = Math.round(totalPrice * 0.05);
   const total = totalPrice + gst;
 
+  // Check auth on load; prefill form if logged in
+  useEffect(() => {
+    const checkAuth = async () => {
+      const { data: { session } } = await supabase.auth.getSession();
+      if (session?.user) {
+        setUser(session.user);
+        setForm(prev => ({
+          ...prev,
+          email: session.user.email || '',
+          name: session.user.user_metadata?.full_name || '',
+        }));
+      }
+      setAuthChecked(true);
+    };
+    checkAuth();
+  }, []);
 
+  // Guard: redirect to login if not logged in and tries to go to shipping
+  const proceedToShipping = () => {
+    if (!user) {
+      router.push('/auth?redirect=/cart');
+      return;
+    }
+    if (items.length > 0) setStep('shipping');
+  };
+
+  // Save order to Supabase + handle Razorpay
   const handleOrderPlace = async () => {
+    if (!user) {
+      router.push('/auth?redirect=/cart');
+      return;
+    }
     setIsProcessing(true);
 
     try {
-      // 1. Create order on server
       const res = await fetch('/api/razorpay', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -49,43 +83,60 @@ export default function CartPage() {
         throw new Error(order.error || 'Failed to initialize payment');
       }
 
-      // 2. Load Razorpay script
       const script = document.createElement('script');
       script.src = 'https://checkout.razorpay.com/v1/checkout.js';
       script.async = true;
       document.body.appendChild(script);
 
-      await new Promise((resolve) => {
-        script.onload = resolve;
-      });
+      await new Promise((resolve) => { script.onload = resolve; });
 
-      // 3. Initialize Razorpay Checkout
       const options = {
-        key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID || 'rzp_test_placeholder', 
+        key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID || '',
         amount: order.amount,
         currency: order.currency,
         name: 'Jaipur Murti',
         description: 'Premium Hindu Idols & Statues',
         order_id: order.id,
         prefill: {
-          name: form.name || form.cardName,
-          email: form.email,
+          name: form.name,
+          email: form.email || user?.email,
           contact: form.phone,
         },
-        theme: {
-          color: '#D4AF37', // Brand gold color
-        },
-        handler: function (response: any) {
-          // Payment successful
-          console.log('Payment success:', response);
+        theme: { color: '#D4AF37' },
+        handler: async function (response: any) {
+          try {
+            // Save order to Supabase
+            const shippingAddr = [form.address, form.city, form.state, form.pin]
+              .filter(Boolean).join(', ');
+
+            const { error: orderError } = await supabase.from('orders').insert({
+              user_id: user.id,
+              status: 'processing',
+              total_amount: total,
+              items: items.map(i => ({
+                id: i.id,
+                name: i.name,
+                price: i.price,
+                quantity: i.quantity,
+                image: i.images?.[0] || '',
+              })),
+              shipping_address: shippingAddr || 'Address not provided',
+              razorpay_order_id: response.razorpay_order_id,
+              razorpay_payment_id: response.razorpay_payment_id,
+            });
+
+            if (orderError) {
+              console.error('Order save error:', orderError);
+            }
+          } catch (err) {
+            console.error('Failed to save order:', err);
+          }
           clearCart();
           setStep('success');
           setIsProcessing(false);
         },
         modal: {
-          ondismiss: function () {
-            setIsProcessing(false);
-          }
+          ondismiss: function () { setIsProcessing(false); }
         }
       };
 
@@ -94,10 +145,11 @@ export default function CartPage() {
 
     } catch (error) {
       console.error('Payment Error:', error);
-      alert('Could not initiate payment. Please check your configuration or try again.');
+      alert('Could not initiate payment. Please try again.');
       setIsProcessing(false);
     }
   };
+
 
   const updateForm = (key: string, val: string) => setForm(f => ({ ...f, [key]: val }));
 
@@ -239,8 +291,16 @@ export default function CartPage() {
                     <span className="font-display text-xl text-gold">₹{total.toLocaleString('en-IN')}</span>
                   </div>
 
+                  {/* Login prompt if not logged in */}
+                  {authChecked && !user && items.length > 0 && (
+                    <div className="flex items-center gap-2 text-xs text-amber-400 bg-amber-400/10 border border-amber-400/20 rounded-xl px-4 py-3 mb-4">
+                      <Lock size={12} />
+                      <span>Please <Link href="/auth?redirect=/cart" className="underline font-medium">sign in</Link> to checkout</span>
+                    </div>
+                  )}
+
                   <button
-                    onClick={() => items.length > 0 && setStep('shipping')}
+                    onClick={proceedToShipping}
                     disabled={items.length === 0}
                     className={`w-full flex items-center justify-center gap-2 py-4 rounded-full text-sm tracking-widest font-medium transition-all duration-300 ${
                       items.length === 0
@@ -248,7 +308,11 @@ export default function CartPage() {
                         : 'bg-gold text-black hover:bg-gold-light shadow-gold'
                     }`}
                   >
-                    PROCEED TO SHIPPING <ChevronRight size={14} />
+                    {user ? (
+                      <>{`PROCEED TO CHECKOUT`} <ChevronRight size={14} /></>
+                    ) : (
+                      <><Lock size={14} /> SIGN IN TO CHECKOUT</>
+                    )}
                   </button>
 
                   <div className="flex items-center justify-center gap-2 mt-4 text-[10px] text-muted">
