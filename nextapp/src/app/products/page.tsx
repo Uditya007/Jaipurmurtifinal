@@ -6,6 +6,7 @@ import { products, categories } from '@/lib/products';
 import ProductCard from '@/components/ui/ProductCard';
 import { useSearchParams } from 'next/navigation';
 
+
 function ProductsContent() {
   const searchParams = useSearchParams();
   const categoryParam = searchParams.get('category');
@@ -30,10 +31,13 @@ function ProductsContent() {
           transition={{ duration: 0.7 }}
           className="text-center mb-16"
         >
-          <span className="text-xs tracking-[0.5em] text-gold uppercase">The Divine Collection</span>
+          <span className="text-xs tracking-[0.5em] text-gold uppercase">Handcrafted in Jaipur, India</span>
           <h1 className="font-display text-4xl md:text-5xl text-divine mt-4 mb-4">
-            Sacred Murtis
+            Buy Hindu Murtis Online
           </h1>
+          <p className="text-muted text-sm max-w-xl mx-auto">
+            Authentic handcrafted Ganesha, Lakshmi, Durga &amp; more — Bronze, Marble &amp; Crystal idols shipped across India
+          </p>
           <div className="divine-divider max-w-sm mx-auto mt-8" />
         </motion.div>
 
