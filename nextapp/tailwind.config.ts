@@ -16,13 +16,13 @@ const config: Config = {
           muted: "rgba(212, 175, 55, 0.3)",
         },
         bg: {
-          DEFAULT: "#FAFAF8",
-          2: "#F5F0E8",
-          3: "#EDE8DC",
-          4: "#E5DFCF",
+          DEFAULT: "#EDE5D8",
+          2: "#E5DACB",
+          3: "#D8CBBA",
+          4: "#CABFA8",
         },
         divine: "#1A1208",
-        muted: "#6B5E4A",
+        muted: "#5A4E3A",
       },
       fontFamily: {
         serif: ["var(--font-cormorant)", "serif"],

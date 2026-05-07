@@ -5,16 +5,16 @@
 @tailwind utilities;
 
 :root {
-  --gold: #B8860B;
-  --gold-light: #D4AF37;
-  --gold-dark: #8B6914;
-  --bg: #FAFAF8;
-  --bg-2: #F5F0E8;
-  --bg-3: #EDE8DC;
+  --gold: #A0720A;
+  --gold-light: #C8A020;
+  --gold-dark: #7A5510;
+  --bg: #EDE5D8;
+  --bg-2: #E5DACB;
+  --bg-3: #D8CBBA;
   --text: #1A1208;
-  --text-muted: #6B5E4A;
-  --border: rgba(184, 134, 11, 0.2);
-  --glow: rgba(184, 134, 11, 0.2);
+  --text-muted: #5A4E3A;
+  --border: rgba(160, 114, 10, 0.25);
+  --glow: rgba(160, 114, 10, 0.2);
 }
 
 * {
