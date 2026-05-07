@@ -8,14 +8,30 @@ import CustomCursor from "@/components/ui/CustomCursor";
 import DiscountPopup from "@/components/ui/DiscountPopup";
 
 export const metadata: Metadata = {
-  title: "Jaipur Murti | Premium Hindu Idols & Statues",
+  title: "Jaipur Murti | Premium Hindu Idols & Statues Online",
   description:
-    "Discover museum-grade Hindu murtis handcrafted by master artisans. Bronze, Marble, Crystal & Wood sacred sculptures — consecrated and certified authentic.",
-  keywords: ["hindu murtis", "sacred statues", "bronze ganesha", "marble lakshmi", "religious idols", "temple art"],
+    "Buy authentic handcrafted Hindu murtis online. Museum-grade Ganesha, Lakshmi, Durga & more in Bronze, Marble & Crystal — consecrated by master artisans in Jaipur. Worldwide shipping.",
+  keywords: [
+    "buy hindu murti online", "handcrafted ganesha statue", "marble lakshmi murti", "bronze idol jaipur",
+    "religious statues india", "temple art online", "buy durga idol", "sacred sculpture", "jaipur murti",
+    "hindu god idols", "pooja murti", "authentic hindu statues", "buy murti online india"
+  ],
+  metadataBase: new URL("https://jaipurmurti.me"),
+  alternates: { canonical: "https://jaipurmurti.me" },
+  robots: { index: true, follow: true },
   openGraph: {
-    title: "Jaipur Murti",
-    description: "Where the Divine meets your home — premium handcrafted Hindu murtis.",
+    title: "Jaipur Murti | Premium Hindu Idols & Statues",
+    description: "Where the Divine meets your home — premium handcrafted Hindu murtis. Worldwide shipping.",
     type: "website",
+    url: "https://jaipurmurti.me",
+    siteName: "Jaipur Murti",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Jaipur Murti - Premium Hindu Statues" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Jaipur Murti | Premium Hindu Idols & Statues",
+    description: "Buy authentic handcrafted Hindu murtis online. Worldwide shipping.",
+    images: ["/og-image.jpg"],
   },
 };
 
