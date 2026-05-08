@@ -69,6 +69,14 @@ export const metadata: Metadata = {
     description: "Buy authentic handcrafted Hindu murtis online. Worldwide shipping.",
     images: ["/og-image.jpg"],
   },
+  icons: {
+    icon: [
+      { url: '/favicon.png', type: 'image/png', sizes: '512x512' },
+      { url: '/favicon.png', type: 'image/png', sizes: '32x32' },
+    ],
+    apple: [{ url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }],
+    shortcut: '/favicon.png',
+  },
 };
 
 export const viewport = {
