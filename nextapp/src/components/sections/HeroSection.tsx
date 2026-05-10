@@ -22,28 +22,30 @@ export default function HeroSection() {
     }),
   };
 
-
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-screen flex items-center overflow-hidden"
+      className="overflow-hidden min-h-screen flex flex-col md:relative md:block"
       style={{ background: 'radial-gradient(ellipse at top, #F5EFE6 0%, #FAFAF7 60%)' }}
     >
-      {/* Lightweight CSS 3D animation — works on all devices */}
+      {/* 3D animation:
+          mobile  → relative, h-[42vh], stacks above text
+          desktop → position:absolute inset-0 (handled in CSS module) */}
       <LightHero3D />
 
-
-
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-32 pb-20">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6
+                      pt-6 pb-10          /* mobile spacing */
+                      md:absolute md:inset-0 md:flex md:items-center md:pt-32 md:pb-20">
         <div className="max-w-3xl">
+
           {/* Eyebrow */}
           <motion.div
             custom={0}
             initial="hidden"
             animate="visible"
             variants={textVariants}
-            className="flex items-center gap-3 mb-8"
+            className="flex items-center gap-3 mb-6 md:mb-8"
           >
             <Sparkles size={14} className="text-gold" />
             <span className="text-xs tracking-[0.5em] text-gold uppercase font-light">
@@ -58,7 +60,7 @@ export default function HeroSection() {
             initial="hidden"
             animate="visible"
             variants={textVariants}
-            className="font-display text-4xl sm:text-6xl md:text-8xl xl:text-9xl leading-none mb-6"
+            className="font-display text-4xl sm:text-6xl md:text-8xl xl:text-9xl leading-none mb-4 md:mb-6"
           >
             <span className="block text-divine">Where the</span>
             <span className="block shimmer">Divine</span>
@@ -73,20 +75,20 @@ export default function HeroSection() {
             initial="hidden"
             animate="visible"
             variants={textVariants}
-            className="text-muted text-lg leading-relaxed max-w-lg mb-10"
+            className="text-muted text-base md:text-lg leading-relaxed max-w-lg mb-8 md:mb-10"
           >
             Museum-grade Hindu murtis crafted by master artisans across India,
             using 2,000-year-old techniques and sacred materials. Each piece carries
             living devotion.
           </motion.p>
 
-          {/* CTAs */}
+          {/* CTAs — extra top margin on mobile to push button down */}
           <motion.div
             custom={3}
             initial="hidden"
             animate="visible"
             variants={textVariants}
-            className="flex flex-wrap gap-4"
+            className="flex flex-wrap gap-4 mt-6 md:mt-0"
           >
             <Link
               href="/products"
@@ -109,7 +111,7 @@ export default function HeroSection() {
             initial="hidden"
             animate="visible"
             variants={textVariants}
-            className="grid grid-cols-2 md:flex gap-6 md:gap-10 mt-16 pt-10 border-t border-gold/10"
+            className="grid grid-cols-2 md:flex gap-6 md:gap-10 mt-12 md:mt-16 pt-8 md:pt-10 border-t border-gold/10"
           >
             {[
               { number: '50+',   label: 'Master Artisans' },
@@ -126,12 +128,12 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Scroll indicator */}
+      {/* Scroll indicator — desktop only */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2"
+        className="hidden md:flex absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex-col items-center gap-2"
       >
         <span className="text-[9px] tracking-[0.5em] text-muted uppercase">Scroll</span>
         <motion.div
@@ -141,8 +143,8 @@ export default function HeroSection() {
         />
       </motion.div>
 
-      {/* Bottom gradient fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-bg to-transparent z-5 pointer-events-none" />
+      {/* Bottom gradient fade — desktop only */}
+      <div className="hidden md:block absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-bg to-transparent z-5 pointer-events-none" />
     </section>
   );
 }
