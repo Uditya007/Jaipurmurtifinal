@@ -13,6 +13,7 @@ interface ProductCardProps {
   index?: number;
 }
 
+// Emoji fallback per category when image isn't available
 const categoryEmoji: Record<string, string> = {
   Bronze: '🕉️',
   Marble: '🌺',
@@ -56,18 +57,15 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
         <div
           className="rounded-2xl overflow-hidden relative"
           style={{
-            background: '#FFFFFF',
-            border: hovered
-              ? '1px solid rgba(160, 114, 10, 0.35)'
-              : '1px solid rgba(160, 114, 10, 0.12)',
+            background: 'linear-gradient(135deg, #0f0f0f 0%, #1a1a0a 50%, #0f0f0f 100%)',
             boxShadow: hovered
-              ? '0 20px 60px rgba(0,0,0,0.1), 0 0 0 0px transparent, 0 0 30px rgba(160,114,10,0.08)'
-              : '0 4px 24px rgba(0,0,0,0.06), 0 1px 4px rgba(0,0,0,0.04)',
-            transition: 'box-shadow 0.4s ease, border 0.3s ease',
+              ? '0 30px 80px rgba(0,0,0,0.8), 0 0 0 1px rgba(212,175,55,0.25), 0 0 40px rgba(212,175,55,0.1)'
+              : '0 20px 60px rgba(0,0,0,0.6), 0 0 0 1px rgba(212,175,55,0.08)',
+            transition: 'box-shadow 0.4s ease',
           }}
         >
-          {/* ── Image Area — consistent 1:1 square ratio ── */}
-          <div className="relative w-full aspect-square overflow-hidden" style={{ background: '#F5EFE6' }}>
+          {/* ── Image Area ── */}
+          <div className="relative w-full aspect-square overflow-hidden">
 
             {hasImage ? (
               <>
@@ -87,38 +85,38 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
                   />
                 </motion.div>
 
-                {/* Subtle warm gradient at bottom for badge readability */}
-                <div className="absolute inset-0 bg-gradient-to-t from-amber-50/60 via-transparent to-transparent z-10" />
+                {/* Gradient overlays for text legibility */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent z-10" />
+                <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-transparent z-10" />
 
-                {/* Warm glow rim on hover */}
+                {/* Divine glow rim on hover */}
                 <motion.div
                   animate={hovered ? { opacity: 1 } : { opacity: 0 }}
                   transition={{ duration: 0.4 }}
                   className="absolute inset-0 z-10 pointer-events-none"
                   style={{
-                    boxShadow: 'inset 0 0 40px rgba(160,114,10,0.12)',
-                    background: 'radial-gradient(ellipse at center, rgba(160,114,10,0.04) 0%, transparent 70%)',
+                    boxShadow: 'inset 0 0 40px rgba(212,175,55,0.2)',
+                    background: 'radial-gradient(ellipse at center, rgba(212,175,55,0.05) 0%, transparent 70%)',
                   }}
                 />
               </>
             ) : (
               /* ── Placeholder when no image ── */
-              <div className="absolute inset-0 flex items-center justify-center"
-                style={{ background: 'linear-gradient(135deg, #F5EFE6 0%, #EDE5D8 100%)' }}>
+              <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-b from-amber-950/30 via-amber-900/10 to-transparent">
                 <motion.div
                   animate={hovered ? { rotateY: 15, scale: 1.08 } : { rotateY: 0, scale: 1 }}
                   transition={{ duration: 0.6, type: 'spring', stiffness: 100 }}
                   className="text-8xl"
-                  style={{ filter: 'drop-shadow(0 4px 12px rgba(160,114,10,0.3))' }}
+                  style={{ filter: 'drop-shadow(0 0 24px rgba(212,175,55,0.5))' }}
                 >
                   {categoryEmoji[product.category] ?? '🕉️'}
                 </motion.div>
                 <motion.div
-                  animate={hovered ? { scale: 1.3, opacity: 0.5 } : { scale: 1, opacity: 0.2 }}
+                  animate={hovered ? { scale: 1.3, opacity: 0.7 } : { scale: 1, opacity: 0.3 }}
                   transition={{ duration: 0.5 }}
                   className="absolute inset-0 rounded-t-2xl"
                   style={{
-                    background: 'radial-gradient(ellipse at center, rgba(160,114,10,0.15) 0%, transparent 70%)',
+                    background: 'radial-gradient(ellipse at center, rgba(212,175,55,0.2) 0%, transparent 70%)',
                   }}
                 />
               </div>
@@ -127,23 +125,23 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
             {/* ── Badges ── */}
             <div className="absolute top-4 left-4 flex flex-col gap-2 z-20">
               {product.badge && (
-                <span className={`text-[10px] tracking-widest px-3 py-1 rounded-full font-medium shadow-sm ${product.badge === 'Bestseller'
-                    ? 'bg-amber-600 text-white'
+                <span className={`text-[10px] tracking-widest px-3 py-1 rounded-full font-medium backdrop-blur-sm ${product.badge === 'Bestseller'
+                    ? 'bg-gold text-black'
                     : product.badge === 'New Arrival'
-                      ? 'bg-emerald-500 text-white'
+                      ? 'bg-emerald-500/80 text-white border border-emerald-400/40'
                       : product.badge === 'Limited Edition'
-                        ? 'bg-violet-500 text-white'
+                        ? 'bg-purple-500/80 text-white border border-purple-400/40'
                         : product.badge === 'Sold Out'
-                          ? 'bg-stone-400 text-white'
+                          ? 'bg-black/60 text-white/50 border border-white/20'
                           : product.badge === 'Customer Favourite'
-                            ? 'bg-rose-500 text-white'
-                            : 'bg-amber-600 text-white'
+                            ? 'bg-rose-500/80 text-white border border-rose-400/40'
+                            : 'bg-gold/80 text-black'
                   }`}>
                   {product.badge}
                 </span>
               )}
               {discount && (
-                <span className="text-[10px] tracking-widest px-3 py-1 rounded-full bg-red-500 text-white shadow-sm">
+                <span className="text-[10px] tracking-widest px-3 py-1 rounded-full bg-red-600/80 text-white backdrop-blur-sm">
                   −{discount}%
                 </span>
               )}
@@ -151,12 +149,12 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
 
             {/* ── Wishlist ── */}
             <button
-              className="absolute top-4 right-4 z-20 w-9 h-9 rounded-full bg-white/90 border border-stone-200 flex items-center justify-center transition-all duration-300 hover:bg-amber-50 hover:border-amber-300 shadow-sm"
+              className="absolute top-4 right-4 z-20 w-9 h-9 rounded-full backdrop-blur-md bg-black/40 border border-white/10 flex items-center justify-center transition-all duration-300 hover:bg-gold/20 hover:border-gold/40"
               onClick={(e) => { e.preventDefault(); setWishlisted(!wishlisted); }}
             >
               <Heart
                 size={15}
-                className={wishlisted ? 'fill-rose-500 text-rose-500' : 'text-stone-400'}
+                className={wishlisted ? 'fill-gold text-gold' : 'text-white/70'}
               />
             </button>
 
@@ -166,35 +164,24 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
               transition={{ duration: 0.25 }}
               className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 pointer-events-none"
             >
-              <span className="flex items-center gap-2 text-[10px] tracking-widest text-amber-800 px-4 py-1.5 rounded-full bg-white/90 border border-amber-200 shadow-sm">
+              <span className="flex items-center gap-2 text-[10px] tracking-widest text-gold/90 px-4 py-1.5 rounded-full backdrop-blur-md bg-black/50 border border-gold/25">
                 <Eye size={11} /> VIEW DETAILS
               </span>
             </motion.div>
           </div>
 
-          {/* ── Info Area ── */}
-          <div className="p-3 md:p-5" style={{ background: '#FFFFFF' }}>
-
-            {/* Category / origin metadata */}
+          {/* ── Info ── */}
+          <div className="p-3 md:p-5">
             <div className="mb-1.5 flex flex-wrap items-center gap-1 md:gap-2">
-              <span className="text-[8px] md:text-[9px] tracking-[0.2em] md:tracking-[0.4em] text-amber-700 uppercase font-medium">
-                {product.material}
-              </span>
-              <span className="hidden md:block w-1 h-1 rounded-full bg-stone-300" />
-              <span className="text-[8px] md:text-[9px] tracking-[0.2em] md:tracking-[0.4em] text-stone-500 uppercase">
-                {product.origin.split(',')[0]}
-              </span>
+              <span className="text-[8px] md:text-[9px] tracking-[0.2em] md:tracking-[0.4em] text-gold/70 uppercase">{product.material}</span>
+              <span className="hidden md:block w-1 h-1 rounded-full bg-gold/30" />
+              <span className="text-[8px] md:text-[9px] tracking-[0.2em] md:tracking-[0.4em] text-muted uppercase">{product.origin.split(',')[0]}</span>
             </div>
 
-            {/* Name */}
-            <h3 className="font-display text-sm md:text-xl text-stone-800 mb-0.5 group-hover:text-amber-700 transition-colors duration-300 line-clamp-1">
+            <h3 className="font-display text-sm md:text-xl text-divine mb-0.5 group-hover:text-gold transition-colors duration-300 line-clamp-1">
               {product.name}
             </h3>
-
-            {/* Description */}
-            <p className="text-[10px] md:text-xs text-stone-500 mb-2 md:mb-3 line-clamp-2 leading-relaxed font-sans">
-              {product.description}
-            </p>
+            <p className="text-[10px] md:text-xs text-muted mb-2 md:mb-3 line-clamp-2 leading-relaxed">{product.description}</p>
 
             {/* Rating */}
             <div className="flex items-center gap-1 md:gap-2 mb-2 md:mb-4">
@@ -203,24 +190,21 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
                   <Star
                     key={i}
                     size={9}
-                    className={`md:w-3 md:h-3 ${i < Math.floor(product.rating)
-                      ? 'fill-amber-500 text-amber-500'
-                      : 'text-stone-300 fill-stone-200'
-                    }`}
+                    className={`md:w-3 md:h-3 ${i < Math.floor(product.rating) ? 'fill-gold text-gold' : 'text-muted/30'}`}
                   />
                 ))}
               </div>
-              <span className="text-[9px] md:text-[11px] text-stone-400">({product.reviews})</span>
+              <span className="text-[9px] md:text-[11px] text-muted">({product.reviews})</span>
             </div>
 
             {/* Price + CTA */}
             <div className="flex flex-col xl:flex-row xl:items-center justify-between gap-2 xl:gap-0 mt-2">
               <div className="flex items-center gap-2 xl:block">
-                <span className="font-display text-sm md:text-xl text-amber-700">
+                <span className="font-display text-sm md:text-xl text-gold">
                   ₹{product.price.toLocaleString('en-IN')}
                 </span>
                 {product.originalPrice && (
-                  <span className="text-[9px] md:text-xs text-stone-400 line-through xl:ml-2">
+                  <span className="text-[9px] md:text-xs text-muted line-through xl:ml-2">
                     ₹{product.originalPrice.toLocaleString('en-IN')}
                   </span>
                 )}
@@ -229,16 +213,15 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
               <button
                 onClick={handleAddToCart}
                 disabled={!product.inStock}
-                className={`w-full xl:w-auto flex items-center justify-center gap-1 md:gap-2 px-2 md:px-4 py-1.5 md:py-2 rounded-full text-[9px] md:text-[11px] tracking-widest font-medium transition-all duration-300 ${
-                  !product.inStock
-                    ? 'bg-stone-100 text-stone-400 cursor-not-allowed border border-stone-200'
+                className={`w-full xl:w-auto flex items-center justify-center gap-1 md:gap-2 px-2 md:px-4 py-1.5 md:py-2 rounded-full text-[9px] md:text-[11px] tracking-widest font-medium transition-all duration-300 ${!product.inStock
+                    ? 'bg-white/5 text-muted cursor-not-allowed'
                     : addedToCart
-                      ? 'bg-emerald-50 text-emerald-600 border border-emerald-300'
-                      : 'bg-amber-700 text-white hover:bg-amber-600 shadow-sm'
-                }`}
+                      ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30'
+                      : 'bg-gold/10 text-gold border border-gold/30 hover:bg-gold hover:text-black'
+                  }`}
               >
                 <ShoppingCart size={11} className="md:w-3 md:h-3" />
-                {!product.inStock ? 'SOLD OUT' : addedToCart ? 'ADDED ✓' : 'ADD'}
+                {!product.inStock ? 'SOLD OUT' : addedToCart ? 'ADDED' : 'ADD'}
               </button>
             </div>
           </div>
