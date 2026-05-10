@@ -1,3 +1,4 @@
+/* ─── Wrapper & background ─────────────────────────────────────── */
 .wrapper {
   position: absolute;
   inset: 0;
@@ -9,49 +10,69 @@
 .bg {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at 50% 40%, #2a1a00 0%, #0d0800 40%, #050505 100%);
+  /* Warm cream/marble gradient for light theme */
+  background: radial-gradient(ellipse at 50% 30%,
+    #F5EFE6 0%,
+    #EDE5D8 40%,
+    #E0D5C3 100%
+  );
 }
 
-/* 3D scene container that reacts to mouse */
+/* 3D scene — no flex centering here so absolutely-positioned children behave */
 .scene {
   position: absolute;
   inset: 0;
   transform-style: preserve-3d;
   transition: transform 0.1s ease-out;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+}
+
+/* ── Center anchor: rings are positioned relative to this ── */
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform-style: preserve-3d;
+  width: 0;
+  height: 0;
 }
 
 /* ── Rotating rings ── */
 .ring {
   position: absolute;
   border-radius: 50%;
-  border: 1px solid rgba(212, 175, 55, 0.25);
   animation: ringRotate linear infinite;
+  /* Centre the ring on the .center point */
+  top: 0;
+  left: 0;
 }
 
 .ring1 {
   width: 340px;
   height: 340px;
-  border-color: rgba(212, 175, 55, 0.3);
+  margin-top: -170px;
+  margin-left: -170px;
+  border: 1.5px solid rgba(160, 114, 10, 0.35);
+  box-shadow: 0 0 16px rgba(160, 114, 10, 0.1);
   animation-duration: 12s;
-  box-shadow: 0 0 20px rgba(212, 175, 55, 0.08);
 }
 
 .ring2 {
   width: 480px;
   height: 480px;
-  border-color: rgba(212, 175, 55, 0.15);
+  margin-top: -240px;
+  margin-left: -240px;
+  border: 1px dashed rgba(160, 114, 10, 0.2);
   animation-duration: 20s;
   animation-direction: reverse;
-  border-style: dashed;
 }
 
 .ring3 {
   width: 620px;
   height: 620px;
-  border-color: rgba(212, 175, 55, 0.08);
+  margin-top: -310px;
+  margin-left: -310px;
+  border: 1px solid rgba(160, 114, 10, 0.1);
   animation-duration: 30s;
 }
 
@@ -62,22 +83,24 @@
 
 /* ── Central orb ── */
 .orb {
-  position: relative;
+  position: absolute;
   width: 140px;
   height: 140px;
-  flex-shrink: 0;
+  top: -70px;
+  left: -70px;
 }
 
 .orbInner {
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  background: radial-gradient(circle at 35% 35%, #f0d060, #d4af37 40%, #6b3a00 80%, transparent);
+  /* Warm gold marble orb */
+  background: radial-gradient(circle at 35% 35%, #F0D060, #C8A030 45%, #8B6010 80%, rgba(240,210,96,0.1));
   animation: orbPulse 4s ease-in-out infinite;
   box-shadow:
-    0 0 40px rgba(212, 175, 55, 0.5),
-    0 0 80px rgba(212, 175, 55, 0.25),
-    0 0 120px rgba(212, 175, 55, 0.1);
+    0 0 30px rgba(160, 114, 10, 0.3),
+    0 0 60px rgba(160, 114, 10, 0.15),
+    inset 0 0 20px rgba(255, 255, 220, 0.4);
 }
 
 .orbCore {
@@ -91,26 +114,27 @@
 
 .omSymbol {
   font-size: 52px;
-  background: linear-gradient(135deg, #fff8e1, #d4af37, #f0d060);
+  /* Deep gold gradient on light bg */
+  background: linear-gradient(135deg, #7A5510, #A07820, #C8A030);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   animation: omFloat 6s ease-in-out infinite;
-  filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.8));
+  filter: drop-shadow(0 2px 6px rgba(160, 114, 10, 0.4));
   line-height: 1;
 }
 
 .orbGlow {
   position: absolute;
-  inset: -40px;
+  inset: -50px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(212, 175, 55, 0.2) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(160, 114, 10, 0.12) 0%, transparent 70%);
   animation: glowPulse 4s ease-in-out infinite;
 }
 
 @keyframes orbPulse {
-  0%, 100% { transform: scale(1); opacity: 0.9; }
-  50%       { transform: scale(1.05); opacity: 1; }
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.06); }
 }
 
 @keyframes omFloat {
@@ -119,8 +143,8 @@
 }
 
 @keyframes glowPulse {
-  0%, 100% { opacity: 0.6; transform: scale(1); }
-  50%       { opacity: 1; transform: scale(1.15); }
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50%       { opacity: 1; transform: scale(1.2); }
 }
 
 /* ── Orbiting dots ── */
@@ -128,20 +152,18 @@
   position: absolute;
   width: 8px;
   height: 8px;
+  top: -4px;
+  left: -4px;
   border-radius: 50%;
-  background: radial-gradient(circle, #f0d060, #d4af37);
-  box-shadow: 0 0 10px rgba(212, 175, 55, 0.8);
+  background: radial-gradient(circle, #C8A030, #A07820);
+  box-shadow: 0 0 8px rgba(160, 114, 10, 0.6);
   animation: orbit calc(8s + var(--i, 0) * 2s) linear infinite;
   animation-delay: calc(var(--i, 0) * -1.5s);
 }
 
 @keyframes orbit {
-  from {
-    transform: rotateZ(0deg) translateX(170px) rotateX(70deg);
-  }
-  to {
-    transform: rotateZ(360deg) translateX(170px) rotateX(70deg);
-  }
+  from { transform: rotateZ(0deg) translateX(170px) rotateX(70deg); }
+  to   { transform: rotateZ(360deg) translateX(170px) rotateX(70deg); }
 }
 
 /* ── Floating particles ── */
@@ -152,21 +174,21 @@
   width: 3px;
   height: 3px;
   border-radius: 50%;
-  background: rgba(212, 175, 55, 0.7);
-  box-shadow: 0 0 6px rgba(212, 175, 55, 0.5);
+  background: rgba(160, 114, 10, 0.5);
+  box-shadow: 0 0 5px rgba(160, 114, 10, 0.3);
   animation: particleFloat var(--dur, 5s) ease-in-out var(--delay, 0s) infinite;
 }
 
 @keyframes particleFloat {
-  0%, 100% { transform: translateY(0) scale(1); opacity: 0.3; }
-  50%       { transform: translateY(-30px) scale(1.5); opacity: 0.8; }
+  0%, 100% { transform: translateY(0) scale(1); opacity: 0.2; }
+  50%       { transform: translateY(-30px) scale(1.5); opacity: 0.7; }
 }
 
-/* Mobile optimisation — keep the rings, reduce complexity */
+/* ── Mobile ── */
 @media (max-width: 767px) {
-  .ring1 { width: 220px; height: 220px; }
-  .ring2 { width: 320px; height: 320px; }
-  .ring3 { width: 420px; height: 420px; }
-  .orb   { width: 110px; height: 110px; }
+  .ring1 { width: 220px; height: 220px; margin-top: -110px; margin-left: -110px; }
+  .ring2 { width: 320px; height: 320px; margin-top: -160px; margin-left: -160px; }
+  .ring3 { width: 420px; height: 420px; margin-top: -210px; margin-left: -210px; }
+  .orb   { width: 110px; height: 110px; top: -55px; left: -55px; }
   .omSymbol { font-size: 42px; }
 }

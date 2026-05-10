@@ -5,16 +5,16 @@
 @tailwind utilities;
 
 :root {
-  --gold: #D4AF37;
-  --gold-light: #F0D060;
-  --gold-dark: #B8941F;
-  --bg: #050505;
-  --bg-2: #0a0a0a;
-  --bg-3: #111111;
-  --text: #f5f0e8;
-  --text-muted: #9a8f7a;
-  --border: rgba(212, 175, 55, 0.15);
-  --glow: rgba(212, 175, 55, 0.3);
+  --gold: #A07820;
+  --gold-light: #C8A030;
+  --gold-dark: #7A5510;
+  --bg: #FAFAF7;
+  --bg-2: #F5EFE6;
+  --bg-3: #EDE5D8;
+  --text: #1C1208;
+  --text-muted: #6B5E4A;
+  --border: rgba(160, 114, 10, 0.2);
+  --glow: rgba(160, 114, 10, 0.15);
 }
 
 * {
@@ -59,7 +59,7 @@ body {
     pointer-events: none;
     z-index: 99999;
     transition: transform 0.15s ease, opacity 0.3s;
-    mix-blend-mode: difference;
+    mix-blend-mode: multiply;
   }
 
   .cursor-follower {
@@ -84,8 +84,8 @@ button, a {
 
 /* Scrollbar */
 ::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: var(--gold-dark); border-radius: 4px; }
+::-webkit-scrollbar-track { background: var(--bg-2); }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 4px; }
 
 /* Gold glow utilities */
 .glow-gold {
@@ -168,12 +168,12 @@ button, a {
   opacity: 0.4;
 }
 
-/* Glass effect */
+/* Glass effect — light version */
 .glass {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(212, 175, 55, 0.1);
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(160, 114, 10, 0.15);
 }
 
 /* Product card hover */
