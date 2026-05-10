@@ -66,8 +66,8 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
             transition: 'box-shadow 0.4s ease, border 0.3s ease',
           }}
         >
-          {/* ── Image Area ── */}
-          <div className="relative h-48 md:h-72 overflow-hidden" style={{ background: '#F5EFE6' }}>
+          {/* ── Image Area — consistent 1:1 square ratio ── */}
+          <div className="relative w-full aspect-square overflow-hidden" style={{ background: '#F5EFE6' }}>
 
             {hasImage ? (
               <>
@@ -82,7 +82,7 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
                     alt={product.name}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    className="object-contain p-4"
+                    className="object-contain p-6"
                     onError={() => setImgError(true)}
                   />
                 </motion.div>

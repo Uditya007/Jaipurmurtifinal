@@ -38,7 +38,8 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
-              className="relative aspect-[4/5] bg-black/40 rounded-3xl overflow-hidden border border-gold/10 group flex items-center justify-center"
+              className="relative aspect-square rounded-3xl overflow-hidden border border-amber-200 group flex items-center justify-center"
+              style={{ background: '#F5EFE6' }}
             >
               <AnimatePresence mode="wait">
                 <motion.div
@@ -62,10 +63,10 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
               {/* Controls */}
               {product.images.length > 1 && (
                 <>
-                  <button onClick={prevImage} className="absolute left-4 p-2 rounded-full bg-black/50 text-white backdrop-blur border border-white/10 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <button onClick={prevImage} className="absolute left-4 p-2 rounded-full bg-white/90 text-stone-700 backdrop-blur border border-stone-200 shadow-sm opacity-0 group-hover:opacity-100 transition-opacity hover:bg-amber-50 hover:border-amber-300">
                     <ChevronLeft size={20} />
                   </button>
-                  <button onClick={nextImage} className="absolute right-4 p-2 rounded-full bg-black/50 text-white backdrop-blur border border-white/10 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <button onClick={nextImage} className="absolute right-4 p-2 rounded-full bg-white/90 text-stone-700 backdrop-blur border border-stone-200 shadow-sm opacity-0 group-hover:opacity-100 transition-opacity hover:bg-amber-50 hover:border-amber-300">
                     <ChevronRight size={20} />
                   </button>
                 </>
@@ -79,11 +80,14 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
                   <button 
                     key={i}
                     onClick={() => setActiveImage(i)}
-                    className={`relative aspect-square rounded-xl overflow-hidden border transition-all ${
-                      activeImage === i ? 'border-gold opacity-100' : 'border-transparent opacity-50 hover:opacity-100'
+                    className={`relative aspect-square rounded-xl overflow-hidden border-2 transition-all ${
+                      activeImage === i
+                        ? 'border-amber-600 shadow-sm'
+                        : 'border-stone-200 opacity-60 hover:opacity-100 hover:border-amber-300'
                     }`}
+                    style={{ background: '#F5EFE6' }}
                   >
-                    <Image src={img} alt={`Thumbnail ${i}`} fill className="object-cover" />
+                    <Image src={img} alt={`Thumbnail ${i}`} fill className="object-contain p-1" />
                   </button>
                 ))}
               </div>
