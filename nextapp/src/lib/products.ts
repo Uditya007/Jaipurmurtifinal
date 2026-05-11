@@ -27,7 +27,7 @@ export const products: Product[] = [
     category: "Marble",
     finish: "Super White Makrana Marble with Gold",
     origin: "MADE IN INDIA",
-    keywords: "saraswati murti price, saraswati marble statue, goddess of music idol, buy saraswati murti online, makrana marble saraswati, music goddess idol jaipur, premium saraswati idol for home altar",
+    keywords: "saraswati murti price, saraswati marble statue, goddess of music idol, buy saraswati murti online, makrana marble saraswati, premium saraswati idol for home altar, housewarming gift for new home",
     purpose: "Education, Arts, Music, Wisdom, Home Mandir",
     features: [
       "Super White Makrana Marble",
@@ -180,7 +180,7 @@ export const products: Product[] = [
     category: "Marble",
     finish: "Hand-painted Marble",
     origin: "MADE IN INDIA",
-    keywords: "krishna murti on lotus price, murli manohara statue jaipur, lord krishna idol shop, buy krishna idol online india, krishna lotus throne statue luxury, jaipur hand-painted marble murti",
+    keywords: "krishna murti on lotus price, murli manohara statue jaipur, lord krishna idol shop, buy krishna idol online india, krishna lotus throne statue luxury, griha pravesh gift ideas",
     purpose: "Love, Joy, Devotion, Home Mandir, Gift for Wedding",
     features: [
       "White Marble Statue",
@@ -215,7 +215,7 @@ export const products: Product[] = [
     category: "Marble",
     finish: "Hand-painted White Marble with Stones",
     origin: "MADE IN INDIA",
-    keywords: "shri krishna murti price, krishna marble idol jaipur, buy krishna murti online india, white marble krishna statue shop, krishna playing flute jaipur, pooja idol quality",
+    keywords: "shri krishna murti price, krishna marble idol jaipur, buy krishna murti online india, white marble krishna statue shop, affordable luxury krishna idol, home inauguration gift",
     purpose: "Devotion, Love, Home Mandir, Puja Room, Auspicious Gift",
     features: [
       "White Marble Statue",
@@ -320,7 +320,7 @@ export const products: Product[] = [
     category: "Marble",
     finish: "Hand-painted White Marble with Stones",
     origin: "MADE IN INDIA",
-    keywords: "hanuman murti price, hanuman sanjeevani statue jaipur, lord hanuman idol shop, buy hanuman statue online india, marble hanuman statue jaipur premium, strength and devotion idol",
+    keywords: "hanuman murti price, hanuman sanjeevani statue jaipur, lord hanuman idol shop, buy hanuman statue online india, marble hanuman statue jaipur premium, house protection deity",
     purpose: "Protection, Health, Devotion, Home Mandir, Temple, Devotional Gift",
     features: [
       "White Marble Statue",

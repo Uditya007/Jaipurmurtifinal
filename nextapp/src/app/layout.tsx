@@ -43,7 +43,9 @@ export const metadata: Metadata = {
     "buy murti for mandir", "hindu deity idols online", "handcrafted marble murtis",
     "jaipur murti", "marble ganesha statue", "buy lakshmi idol online", "hanuman murti jaipur",
     "luxury hindu idols for home", "authentic jaipur marble art", "ganpati murti price",
-    "marble murti manufacturer jaipur", "custom marble statues india", "best marble murtis"
+    "marble murti manufacturer jaipur", "custom marble statues india", "best marble murtis",
+    "housewarming gift ideas", "griha pravesh murti", "new home mandir idols",
+    "affordable luxury marble murtis", "premium murtis for middle class", "home inauguration gifts"
   ],
   metadataBase: new URL("https://jaipurmurti.me"),
   alternates: { canonical: "https://jaipurmurti.me" },
