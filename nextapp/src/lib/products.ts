@@ -27,7 +27,7 @@ export const products: Product[] = [
     category: "Marble",
     finish: "Super White Makrana Marble with Gold",
     origin: "MADE IN INDIA",
-    keywords: "saraswati murti, saraswati marble statue, goddess of music idol, buy saraswati murti online, makrana marble saraswati, music goddess idol jaipur",
+    keywords: "saraswati murti price, saraswati marble statue, goddess of music idol, buy saraswati murti online, makrana marble saraswati, music goddess idol jaipur, best saraswati idol for students",
     purpose: "Education, Arts, Music, Wisdom, Home Mandir",
     features: [
       "Super White Makrana Marble",
@@ -66,7 +66,7 @@ export const products: Product[] = [
     category: "Marble",
     finish: "Polished White Marble",
     origin: "MADE IN INDIA",
-    keywords: "nandi murti, nandi marble statue, shiva bull idol, buy nandi murti online, white marble nandi, sacred bull jaipur",
+    keywords: "nandi murti price, nandi marble statue, shiva bull idol, buy nandi murti online, white marble nandi jaipur, sacred bull for shiva temple, nandi statue quality",
     purpose: "Devotion, Peace, Shiva Temple, Home Mandir",
     features: [
       "White Marble Statue",
@@ -105,7 +105,7 @@ export const products: Product[] = [
     category: "Marble",
     finish: "Super White Makrana Marble with Gold",
     origin: "MADE IN INDIA",
-    keywords: "durga maa murti, large durga statue, marble durga idol, buy durga murti online, parvati murti, durga statue jaipur, mahishasuramardini",
+    keywords: "durga maa murti price, large durga statue jaipur, marble durga idol shop, buy durga murti online india, parvati murti premium, durga statue manufacturer, mahishasuramardini marble",
     purpose: "Protection, Strength, Victory, Home Temple",
     features: [
       "Super White Makrana Marble",
@@ -144,7 +144,7 @@ export const products: Product[] = [
     category: "Marble",
     finish: "Hand-painted White Marble with Gold",
     origin: "MADE IN INDIA",
-    keywords: "vishnu lakshmi murti set, vishnu lakshmi marble idol, buy divine pair online, lakshmi vishnu statue, marble deity set, jaipur",
+    keywords: "vishnu lakshmi murti set price, vishnu lakshmi marble idol jaipur, buy divine pair online india, luxury lakshmi vishnu statue, marble deity set shop, jaipur handcrafted murtis",
     purpose: "Wealth, Preservation, Peace, Home Mandir",
     features: [
       "White Marble Statues",
@@ -180,7 +180,7 @@ export const products: Product[] = [
     category: "Marble",
     finish: "Hand-painted Marble",
     origin: "MADE IN INDIA",
-    keywords: "krishna murti on lotus, murli manohara statue, lord krishna idol, buy krishna idol online, krishna lotus throne statue, jaipur hand-painted murti",
+    keywords: "krishna murti on lotus price, murli manohara statue jaipur, lord krishna idol shop, buy krishna idol online india, krishna lotus throne statue luxury, jaipur hand-painted marble murti",
     purpose: "Love, Joy, Devotion, Home Mandir, Gift for Wedding",
     features: [
       "White Marble Statue",
@@ -215,7 +215,7 @@ export const products: Product[] = [
     category: "Marble",
     finish: "Hand-painted White Marble with Stones",
     origin: "MADE IN INDIA",
-    keywords: "shri krishna murti, krishna marble idol, buy krishna murti online, white marble krishna statue, krishna playing flute jaipur, pooja idol",
+    keywords: "shri krishna murti price, krishna marble idol jaipur, buy krishna murti online india, white marble krishna statue shop, krishna playing flute jaipur, pooja idol quality",
     purpose: "Devotion, Love, Home Mandir, Puja Room, Auspicious Gift",
     features: [
       "White Marble Statue",
@@ -251,7 +251,7 @@ export const products: Product[] = [
     category: "Stone",
     finish: "Hand-carved Stone",
     origin: "MADE IN INDIA",
-    keywords: "parvati murti, parvati serpent statue, divine mother sculpture, buy parvati idol online, south indian stone murti, mahabalipuram art",
+    keywords: "parvati murti price, parvati serpent statue jaipur, divine mother sculpture shop, buy parvati idol online, south indian stone murti india, mahabalipuram art stone",
     purpose: "Protection, Shakti, Home Temple, Spiritual Energy, Puja Room",
     features: [
       "Stone Statue from Mahabalipuram",
@@ -288,7 +288,7 @@ export const products: Product[] = [
     category: "Marble",
     finish: "Intricate Black Stone Polish",
     origin: "MADE IN INDIA",
-    keywords: "tirupati balaji murti, venkateshvara idol, lord balaji stone statue, buy balaji idol online, black stone balaji statue, jaipur, south indian deity",
+    keywords: "tirupati balaji murti price, venkateshvara idol jaipur, lord balaji stone statue shop, buy balaji idol online india, black stone balaji statue premium, south indian deity jaipur",
     purpose: "Wealth, Prosperity, Home Mandir, Puja Room, Business Success",
     features: [
       "Black Stone Statue",
@@ -320,7 +320,7 @@ export const products: Product[] = [
     category: "Marble",
     finish: "Hand-painted White Marble with Stones",
     origin: "MADE IN INDIA",
-    keywords: "hanuman murti, hanuman sanjeevani statue, lord hanuman idol, buy hanuman statue online, marble hanuman statue jaipur, strength and devotion",
+    keywords: "hanuman murti price, hanuman sanjeevani statue jaipur, lord hanuman idol shop, buy hanuman statue online india, marble hanuman statue jaipur premium, strength and devotion idol",
     purpose: "Protection, Health, Devotion, Home Mandir, Temple, Devotional Gift",
     features: [
       "White Marble Statue",
