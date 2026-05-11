@@ -19,6 +19,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
+  const categoryUrls = ['Marble', 'Bronze', 'Stone', 'Crystal'].map((cat) => ({
+    url: `${baseUrl}/products/category/${cat.toLowerCase()}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.85,
+  }));
+
   return [
     { url: baseUrl, lastModified: new Date(), changeFrequency: 'weekly', priority: 1 },
     { url: `${baseUrl}/products`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.9 },
@@ -30,5 +37,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/terms`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.3 },
     ...productUrls,
     ...blogUrls,
+    ...categoryUrls,
   ];
 }

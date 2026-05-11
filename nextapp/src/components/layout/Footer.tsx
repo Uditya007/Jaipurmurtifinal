@@ -53,14 +53,22 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Links */}
           <div>
             <h4 className="font-display text-sm tracking-[0.3em] text-gold mb-5">COLLECTION</h4>
             <ul className="space-y-3">
-              {['Bronze Murtis', 'Marble Murtis', 'Crystal Lingams', 'Brass Idols', 'Wood Carvings', 'Special Editions'].map(item => (
-                <li key={item}>
-                  <Link href="/products" className="text-muted text-sm hover:text-gold transition-colors duration-200">
-                    {item}
+              {[
+                { name: 'Marble Murtis', slug: 'Marble' },
+                { name: 'Bronze Statues', slug: 'Bronze' },
+                { name: 'Stone Carvings', slug: 'Stone' },
+                { name: 'Crystal Lingams', slug: 'Crystal' },
+                { name: 'Special Editions', slug: 'all' }
+              ].map(item => (
+                <li key={item.name}>
+                  <Link 
+                    href={item.slug === 'all' ? '/products' : `/products/category/${item.slug.toLowerCase()}`} 
+                    className="text-muted text-sm hover:text-gold transition-colors duration-200"
+                  >
+                    {item.name}
                   </Link>
                 </li>
               ))}
@@ -96,7 +104,7 @@ export default function Footer() {
         <div className="divine-divider mb-8" />
 
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-muted">
-          <span>© 2024 Jaipur Murti. All rights reserved.</span>
+          <span>© 2026 Jaipur Murti. All rights reserved.</span>
           <div className="flex gap-6">
             <Link href="/privacy-policy" className="hover:text-gold transition-colors">Privacy Policy</Link>
             <Link href="/terms" className="hover:text-gold transition-colors">Terms & Conditions</Link>
