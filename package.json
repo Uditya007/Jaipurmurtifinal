@@ -19,10 +19,8 @@
   },
   "homepage": "https://github.com/UDITYA007/Murti2#readme",
   "dependencies": {
-    "@supabase/supabase-js": "^2.104.1",
-    "cors": "^2.8.6",
-    "dotenv": "^17.4.2",
-    "express": "^5.2.1",
+    "@supabase/ssr": "^0.10.2",
+    "@supabase/supabase-js": "^2.105.3",
     "razorpay": "^2.9.6"
   }
 }

@@ -11,7 +11,7 @@ export const products: Product[] = [
     height: "15 inches",
     weight: "11 kg",
     description: "15\" The Saraswati - Goddess Of Music | Super White Makrana Marble Figurine",
-    longDescription: "An exquisite 15-inch (38 cm) statue of Goddess Saraswati, beautifully playing the Veena. Handcrafted from premium Super White Makrana Marble, this divine 11 kg figurine features intricate stonework and gold detailing, capturing the pure essence of the Goddess of Knowledge, Music, and Arts.",
+    longDescription: "This exquisite 15-inch (38 cm) statue of Goddess Saraswati is a masterpiece of sacred art, hand-carved from premium Super White Makrana Marble—the same pristine stone used in the Taj Mahal. Every detail of this divine 11 kg figurine captures the pure essence of the Goddess of Knowledge, Music, and Arts. \n\nSaraswati is depicted in a graceful seated posture, her four arms representing the four aspects of human personality in learning: mind, intellect, alertness, and ego. She delicately holds the Veena, the symbol of the harmony of all creative arts and sciences. Her other hands hold the Vedas (symbolizing true knowledge) and a crystal mala (representing the power of meditation and spirituality). \n\nThe artisan has used traditional Jaipur chiseling techniques passed down through generations to create the intricate floral patterns on her garments and the delicate features of her face, which radiates a serene, meditative peace. Accented with subtle 24K gold leaf detailing on her crown and ornaments, this murti is not just a sculpture but a living presence of inspiration. Ideal for students, artists, and musicians, it brings a vibration of clarity and wisdom to any study room, music studio, or home mandir. Each piece is unique, bearing the subtle marks of the artisan's hand and the natural veining of the Makrana marble, ensuring you possess a one-of-a-kind sacred treasure.",
     images: [
       "/products/saraswati-hero.png",
       "/products/saraswati-1.png",
@@ -27,6 +27,8 @@ export const products: Product[] = [
     category: "Marble",
     finish: "Super White Makrana Marble with Gold",
     origin: "MADE IN INDIA",
+    keywords: "saraswati murti, saraswati marble statue, goddess of music idol, buy saraswati murti online, makrana marble saraswati, music goddess idol jaipur",
+    purpose: "Education, Arts, Music, Wisdom, Home Mandir",
     features: [
       "Super White Makrana Marble",
       "Height: 38 cm (15 inch)",
@@ -64,6 +66,8 @@ export const products: Product[] = [
     category: "Marble",
     finish: "Polished White Marble",
     origin: "MADE IN INDIA",
+    keywords: "nandi murti, nandi marble statue, shiva bull idol, buy nandi murti online, white marble nandi, sacred bull jaipur",
+    purpose: "Devotion, Peace, Shiva Temple, Home Mandir",
     features: [
       "White Marble Statue",
       "Height: 42 cm (16.5 inch)",
@@ -101,6 +105,8 @@ export const products: Product[] = [
     category: "Marble",
     finish: "Super White Makrana Marble with Gold",
     origin: "MADE IN INDIA",
+    keywords: "durga maa murti, large durga statue, marble durga idol, buy durga murti online, parvati murti, durga statue jaipur, mahishasuramardini",
+    purpose: "Protection, Strength, Victory, Home Temple",
     features: [
       "Super White Makrana Marble",
       "Height: 99 cm (39 inch)",
@@ -138,6 +144,8 @@ export const products: Product[] = [
     category: "Marble",
     finish: "Hand-painted White Marble with Gold",
     origin: "MADE IN INDIA",
+    keywords: "vishnu lakshmi murti set, vishnu lakshmi marble idol, buy divine pair online, lakshmi vishnu statue, marble deity set, jaipur",
+    purpose: "Wealth, Preservation, Peace, Home Mandir",
     features: [
       "White Marble Statues",
       "Vishnu: 18\" H x 7.5\" W x 4\" D",
@@ -172,6 +180,8 @@ export const products: Product[] = [
     category: "Marble",
     finish: "Hand-painted Marble",
     origin: "MADE IN INDIA",
+    keywords: "krishna murti on lotus, murli manohara statue, lord krishna idol, buy krishna idol online, krishna lotus throne statue, jaipur hand-painted murti",
+    purpose: "Love, Joy, Devotion, Home Mandir, Gift for Wedding",
     features: [
       "White Marble Statue",
       "Height: 37.5 cm (14.8 inch)",
@@ -205,6 +215,8 @@ export const products: Product[] = [
     category: "Marble",
     finish: "Hand-painted White Marble with Stones",
     origin: "MADE IN INDIA",
+    keywords: "shri krishna murti, krishna marble idol, buy krishna murti online, white marble krishna statue, krishna playing flute jaipur, pooja idol",
+    purpose: "Devotion, Love, Home Mandir, Puja Room, Auspicious Gift",
     features: [
       "White Marble Statue",
       "Height: 38 cm (15 inch)",
@@ -239,6 +251,8 @@ export const products: Product[] = [
     category: "Stone",
     finish: "Hand-carved Stone",
     origin: "MADE IN INDIA",
+    keywords: "parvati murti, parvati serpent statue, divine mother sculpture, buy parvati idol online, south indian stone murti, mahabalipuram art",
+    purpose: "Protection, Shakti, Home Temple, Spiritual Energy, Puja Room",
     features: [
       "Stone Statue from Mahabalipuram",
       "Height: 21.5 cm (8.5 inch)",
@@ -274,6 +288,8 @@ export const products: Product[] = [
     category: "Marble",
     finish: "Intricate Black Stone Polish",
     origin: "MADE IN INDIA",
+    keywords: "tirupati balaji murti, venkateshvara idol, lord balaji stone statue, buy balaji idol online, black stone balaji statue, jaipur, south indian deity",
+    purpose: "Wealth, Prosperity, Home Mandir, Puja Room, Business Success",
     features: [
       "Black Stone Statue",
       "Height: 6 inches",
@@ -304,6 +320,8 @@ export const products: Product[] = [
     category: "Marble",
     finish: "Hand-painted White Marble with Stones",
     origin: "MADE IN INDIA",
+    keywords: "hanuman murti, hanuman sanjeevani statue, lord hanuman idol, buy hanuman statue online, marble hanuman statue jaipur, strength and devotion",
+    purpose: "Protection, Health, Devotion, Home Mandir, Temple, Devotional Gift",
     features: [
       "White Marble Statue",
       "Height: 49.5 cm (19.5 inch)",

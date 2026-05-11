@@ -18,6 +18,8 @@ export interface Product {
   finish: string;
   origin: string;
   features: string[];
+  keywords?: string;
+  purpose?: string;
 }
 
 export interface CartItem extends Product {

@@ -109,11 +109,11 @@ export default function ProductClient({ product }: { product: Product }) {
               </span>
             </div>
             
-            <h1 className="font-display text-3xl md:text-4xl text-divine mt-4 mb-2">
-              {product.name}
+            <h1 className="font-display text-3xl md:text-5xl text-divine mt-4 mb-2">
+              {product.height} {product.material} {product.deity.split('—')[0].trim()} Murti
             </h1>
 
-            <p className="text-muted font-display text-lg mb-6">{product.deity}</p>
+            <p className="text-muted font-display text-lg mb-6 italic">{product.deity.split('—')[1]?.trim() || product.deity}</p>
             
             <div className="flex items-center gap-2 mb-6 text-sm text-muted">
               <div className="flex text-gold">

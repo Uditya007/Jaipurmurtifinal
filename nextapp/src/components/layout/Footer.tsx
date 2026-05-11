@@ -19,8 +19,9 @@ export default function Footer() {
               <span className="text-xs tracking-[0.5em] text-muted uppercase whitespace-nowrap">Sacred Murtis</span>
             </div>
             <p className="text-muted text-sm leading-relaxed max-w-sm mb-6">
-              Bringing the divine into your home through unparalleled craftsmanship. 
-              Each murti is a bridge between the human and the sacred, crafted by master artisans following millennia-old traditions.
+              Premium handcrafted Hindu murtis from Jaipur, Rajasthan. 
+              Specializing in museum-grade marble Ganesha, Hanuman, Lakshmi, and Saraswati idols 
+              crafted with authentic Vedic proportions for home mandir and spiritual practice.
             </p>
             <div className="flex gap-4">
               <Link

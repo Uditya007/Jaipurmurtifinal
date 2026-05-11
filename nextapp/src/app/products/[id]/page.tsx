@@ -13,10 +13,11 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
   }
 
   // Generate a dynamic SEO title: [Primary keyword] | [Secondary keyword] — [Brand]
-  const title = `${product.name} - ${product.deity} Idol | Jaipur Murti`;
+  const deityName = product.deity.split('—')[0].trim();
+  const title = `${product.height} ${product.material} ${deityName} Murti — Sacred Hindu Idol | Jaipur Murti`;
   
   // Create a unique meta description
-  const description = `Handcrafted ${product.material} ${product.deity} murti from ${product.origin}. ${product.description}. Includes authenticity certificate. Free shipping across India.`;
+  const description = `Buy this museum-grade ${product.height} ${product.material} ${deityName} murti. Hand-chiseled by master artisans from ${product.origin.replace('MADE IN ', '')}. Authentic sacred art for your home mandir. Free shipping.`;
 
   return {
     title,
@@ -24,7 +25,7 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
     openGraph: {
       title,
       description,
-      images: [{ url: product.images[0] }],
+      images: [{ url: product.images[0], alt: `${product.material} ${deityName} Statue` }],
     },
     twitter: {
       card: 'summary_large_image',
@@ -94,10 +95,12 @@ export default function ProductPage({ params }: { params: { id: string } }) {
     additionalProperty: [
       { '@type': 'PropertyValue', name: 'Material', value: product.material },
       { '@type': 'PropertyValue', name: 'Height', value: product.height },
+      { '@type': 'PropertyValue', name: 'Weight', value: product.weight },
       { '@type': 'PropertyValue', name: 'Origin', value: product.origin },
-      { '@type': 'PropertyValue', name: 'Finish', value: product.finish }
+      { '@type': 'PropertyValue', name: 'Finish', value: product.finish },
+      ...(product.purpose ? [{ '@type': 'PropertyValue', name: 'Purpose', value: product.purpose }] : [])
     ],
-    keywords: `${product.deity.split('—')[0].trim().toLowerCase()} murti, ${product.material.toLowerCase()} idol, buy ${product.deity.split('—')[0].trim().toLowerCase()} idol online, ${product.category.toLowerCase()} murti, jaipur murti`
+    keywords: product.keywords || `${product.deity.split('—')[0].trim().toLowerCase()} murti, ${product.material.toLowerCase()} idol, buy ${product.deity.split('—')[0].trim().toLowerCase()} idol online, ${product.category.toLowerCase()} murti, jaipur murti`
   };
 
   return (
