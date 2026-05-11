@@ -2,7 +2,7 @@ import { Product } from "@/types";
 
 export const products: Product[] = [
   {
-    id: "saraswati-music",
+    id: "saraswati-marble-murti",
     name: "15\" The Saraswati - Goddess Of Music | Super White Makrana Marble",
     deity: "Saraswati — The Goddess of Knowledge & Arts",
     price: 100065,
@@ -41,7 +41,7 @@ export const products: Product[] = [
     ],
   },
   {
-    id: "nandi-auspicious",
+    id: "nandi-marble-statue",
     name: "Nandi: An Auspicious Presence",
     deity: "Nandi — The Sacred Bull",
     price: 140700,
@@ -80,7 +80,7 @@ export const products: Product[] = [
     ],
   },
   {
-    id: "durga-maa-large",
+    id: "durga-maa-marble-murti",
     name: "39\" Large Durga Maa Statue - The Warrior Form Of Parvati",
     deity: "Durga — The Invincible Force",
     price: 520380,
@@ -119,7 +119,7 @@ export const products: Product[] = [
     ],
   },
   {
-    id: "vishnu-lakshmi-set",
+    id: "vishnu-lakshmi-marble-set",
     name: "18\" Standing Vishnu - Lakshmi in Blessing Gesture | Set of Two",
     deity: "Vishnu & Lakshmi",
     price: 160125,
@@ -156,7 +156,7 @@ export const products: Product[] = [
     ],
   },
   {
-    id: "krishna-lotus-throne",
+    id: "krishna-lotus-marble-statue",
     name: "14\" Murli Manohara Krishna Marble Statue on a Lotus Throne",
     deity: "Krishna — The Divine Flutist",
     price: 63000,
@@ -194,7 +194,7 @@ export const products: Product[] = [
     ],
   },
   {
-    id: "shri-krishna-marble",
+    id: "shri-krishna-marble-idol",
     name: "Shri Krishna",
     deity: "Krishna — The Divine Flutist",
     price: 47250,
@@ -229,7 +229,7 @@ export const products: Product[] = [
     ],
   },
   {
-    id: "parvati-serpent",
+    id: "parvati-serpent-stone-statue",
     name: "Goddess Parvati with Five-hooded Serpent Canopying Atop",
     deity: "Parvati — The Divine Mother",
     price: 10500,
@@ -264,7 +264,7 @@ export const products: Product[] = [
     ],
   },
   {
-    id: "tirupati-balaji",
+    id: "tirupati-balaji-stone-murti",
     name: "6\" Tirupati Balaji (Venkateshvara)",
     deity: "Venkateshvara — Lord of the Universe",
     price: 60000,
@@ -299,7 +299,7 @@ export const products: Product[] = [
     ],
   },
   {
-    id: "hanuman-sanjeevani",
+    id: "hanuman-sanjeevani-marble-statue",
     name: "Hanuman Ji Carrying Mount Dron of Sanjeevani Herbs",
     deity: "Hanuman — The Supreme Devotee",
     price: 95865,
@@ -334,7 +334,7 @@ export const products: Product[] = [
     ],
   },
   {
-    id: "vishnu-chaturbhuja",
+    id: "vishnu-chaturbhuja-marble-statue",
     name: "Chaturbhuja Vishnu",
     deity: "Vishnu — The Preserver",
     price: 85365,
