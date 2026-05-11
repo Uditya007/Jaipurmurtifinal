@@ -127,6 +127,20 @@ export default function CartPage() {
 
             if (orderError) {
               console.error('Order save error:', orderError);
+            } else {
+              // Trigger WhatsApp Notification
+              await fetch('/api/notify', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                  orderDetails: {
+                    name: form.name,
+                    total: total,
+                    items: items,
+                    city: form.city
+                  }
+                }),
+              }).catch(err => console.error('Notify error:', err));
             }
           } catch (err) {
             console.error('Failed to save order:', err);
