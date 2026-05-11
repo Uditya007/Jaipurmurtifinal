@@ -178,12 +178,15 @@ function ShippingMarquee() {
   );
 }
 
+import HeritageSection from '@/components/sections/HeritageSection';
+
 export default function HomePage() {
   return (
     <>
       <HeroSection />
       <ShippingMarquee />
       <FeaturedProducts />
+      <HeritageSection />
       <FeaturesSection />
       <MantraSection />
       <CraftSection />
