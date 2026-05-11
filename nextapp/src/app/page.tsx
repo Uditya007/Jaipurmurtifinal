@@ -7,6 +7,7 @@ import { ArrowRight } from 'lucide-react';
 import HeroSection from '@/components/sections/HeroSection';
 import FeaturesSection from '@/components/sections/FeaturesSection';
 import TestimonialsSection from '@/components/sections/TestimonialsSection';
+import FAQSection from '@/components/sections/FAQSection';
 import ProductCard from '@/components/ui/ProductCard';
 import { products } from '@/lib/products';
 
@@ -186,6 +187,7 @@ export default function HomePage() {
       <FeaturesSection />
       <MantraSection />
       <CraftSection />
+      <FAQSection />
       <TestimonialsSection />
     </>
   );
