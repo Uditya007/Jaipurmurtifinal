@@ -40,7 +40,7 @@ function FeaturedProducts() {
           </Link>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-8">
           {featured.map((product, i) => (
             <ProductCard key={product.id} product={product} index={i} />
           ))}

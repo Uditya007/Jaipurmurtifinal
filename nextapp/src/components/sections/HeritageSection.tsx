@@ -43,7 +43,7 @@ export default function HeritageSection() {
             </div>
             
             {/* Decorative Om */}
-            <div className="absolute -top-10 -left-10 text-9xl text-gold/5 pointer-events-none select-none">
+            <div className="absolute -top-10 -left-10 md:-top-14 md:-left-14 text-7xl md:text-9xl text-gold/5 pointer-events-none select-none z-10">
               🕉️
             </div>
           </motion.div>
