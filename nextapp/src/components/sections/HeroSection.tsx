@@ -35,7 +35,7 @@ export default function HeroSection() {
 
       {/* Content */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6
-                      pt-6 pb-10          /* mobile spacing */
+                      pt-12 pb-16          /* increased mobile spacing to avoid 3D overlap */
                       md:absolute md:inset-0 md:flex md:items-center md:pt-32 md:pb-20">
         <div className="max-w-3xl">
 
