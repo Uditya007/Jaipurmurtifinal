@@ -12,9 +12,94 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "makrana-vs-vietnamese-marble-murti-comparison",
+    title: "Makrana Marble vs Vietnamese Marble Murti — Which Is Right for Your Home Temple?",
+    date: "May 15, 2026",
+    author: "Master Artisan",
+    image: "/blog/makrana-vs-vietnamese.jpg",
+    category: "Buying Guide",
+    readTime: "7 min read",
+    excerpt: "When buying a marble murti, the choice between Makrana and Vietnamese stone is critical for durability and spiritual purity. We compare whiteness, price, and quality.",
+    content: `
+      <h2>The Great Marble Debate: Indian vs. Imported</h2>
+      <p>For centuries, <strong>Makrana Marble</strong> from Rajasthan has been the undisputed king of sacred stone. However, in recent years, <strong>Vietnamese White Marble</strong> has flooded the market. While both look white, they are worlds apart in terms of quality, durability, and spiritual value.</p>
+      
+      <h3>1. Whiteness and Purity</h3>
+      <p>Vietnamese marble often appears "paper white" or milky white initially, which attracts many buyers. However, this whiteness is often artificial or due to a lack of crystalline depth. <strong>Makrana Marble</strong>, on the other hand, has a translucent, glass-like quality. It doesn't just look white; it glows from within when light hits it.</p>
+
+      <h3>2. Durability and Aging</h3>
+      <p>Vietnamese marble is relatively softer and more porous. Over 5-10 years, it can develop yellow stains or small cracks due to exposure to incense smoke, oil, and water from <em>abhishekam</em>. Makrana is famously non-porous. It is the same stone used for the <strong>Taj Mahal</strong>—it stays pristine for centuries without yellowing.</p>
+
+      <h3>3. Price vs. Value</h3>
+      <p>Vietnamese murtis are often 30-40% cheaper because the stone is easier to cut with machines. Makrana requires skilled hand-carving. While the initial cost of Makrana is higher, it is a one-time investment for a lifetime (or generations) of worship.</p>
+
+      <h3>The Verdict</h3>
+      <p>If you are looking for a temporary decorative piece, Vietnamese marble is fine. But for a <strong>Home Temple (Mandir)</strong> where daily rituals are performed, <strong>Makrana Marble</strong> is the only choice that ensures the murti remains sacred and beautiful forever.</p>
+    `
+  },
+  {
+    slug: "how-to-choose-perfect-marble-murti-vastu-guide",
+    title: "How to Choose the Perfect Marble Murti for Your Pooja Room (Size, Material & Vastu Guide)",
+    date: "May 14, 2026",
+    author: "Vastu Expert",
+    image: "/blog/vastu-size-guide.jpg",
+    category: "Vastu Shastra",
+    readTime: "9 min read",
+    excerpt: "Choosing a murti involves more than just aesthetics. Our Vastu guide covers ideal sizes for home mandirs and the correct directions for each deity.",
+    content: `
+      <h2>Aligning Your Devotion with Vastu</h2>
+      <p>Selecting a murti for your home is a deeply personal journey, but following <strong>Vastu Shastra</strong> principles ensures that the energy in your home remains balanced and harmonious.</p>
+
+      <h3>1. The Ideal Size for Home Mandirs</h3>
+      <p>In Vastu, it is generally recommended that a murti for a home temple should not be taller than <strong>12 to 18 inches</strong>. A murti that is too large can overwhelm the domestic energy of the house. For larger bungalows or dedicated prayer halls, you can go up to 2.5 or 3 feet, but 12-15 inches is the "golden ratio" for most apartments.</p>
+
+      <h3>2. Material Matters</h3>
+      <p>White Marble is considered the most <em>Sattvic</em> (pure) material for home use. It promotes peace and mental clarity. Avoid using broken, cracked, or "hollow" murtis, as they are believed to leak energy.</p>
+
+      <h3>3. Directional Placement</h3>
+      <ul>
+        <li><strong>Ganesha & Lakshmi:</strong> Northeast (Ishan Kone) is best.</li>
+        <li><strong>Hanuman:</strong> Should face North to ward off negative influences.</li>
+        <li><strong>Radha Krishna:</strong> East or North to attract love and harmony.</li>
+      </ul>
+
+      <h3>The Finishing Touch</h3>
+      <p>Always ensure the murti's face is at the eye level of the devotee when they are sitting or kneeling to pray. This creates a direct connection between the soul and the divine.</p>
+    `
+  },
+  {
+    slug: "custom-marble-murti-carving-process-step-by-step",
+    title: "Custom Marble Murti from Jaipur: How the Carving Process Works (Step by Step)",
+    date: "May 13, 2026",
+    author: "Master Artisan",
+    image: "/blog/carving-process.jpg",
+    category: "Craftsmanship",
+    readTime: "10 min read",
+    excerpt: "Ever wondered how a block of stone becomes a divine deity? Follow our master artisans through the 5-step sacred carving process in Jaipur.",
+    content: `
+      <h2>From Stone to Soul: The Artisan's Journey</h2>
+      <p>At Jaipur Murti, we follow the <strong>Shilpa Shastras</strong>—ancient texts that dictate the exact proportions and rituals required to carve a deity. Here is how your custom murti comes to life.</p>
+
+      <h3>Step 1: Selection of the Block (Sila Chayan)</h3>
+      <p>Everything starts in the quarries of Makrana. We select a "living stone"—a block without hidden cracks or impurities. We even test the stone's "sound" to ensure it is spiritually vibrant.</p>
+
+      <h3>Step 2: Rough Carving (Rekha-Karna)</h3>
+      <p>The artisan draws the outline of the deity directly on the stone. Using large chisels, the basic shape is "born" from the block. This is the most physically demanding stage.</p>
+
+      <h3>Step 3: Fine Detailing (Ullikarna)</h3>
+      <p>This is where the magic happens. Using tiny, surgical-grade chisels, the artisan carves the eyelashes, the folds of the clothing, and the intricate jewelry. This stage alone can take 3-4 weeks for a single 15-inch murti.</p>
+
+      <h3>Step 4: Smoothing & Polishing (Ghisai)</h3>
+      <p>No chemicals are used. We use progressively finer stones and water to hand-polish the marble until it shines like a mirror. This "natural polish" is what makes Makrana marble stay white for centuries.</p>
+
+      <h3>Step 5: Painting & Gold Work (Shringar)</h3>
+      <p>The final touch is the <em>Shringar</em>. Using organic colors and <strong>24K Gold Leaf</strong>, we paint the eyes (Prana Pratishtha) and ornaments, bringing the deity to life.</p>
+    `
+  },
+  {
     slug: "which-ganesha-murti-best-for-home-mandir",
     title: "Which Ganesha murti is best for home mandir — marble, brass or bronze?",
-    date: "May 11, 2024",
+    date: "May 12, 2026",
     author: "Jaipur Murti Editorial",
     image: "/blog/ganesha-material-guide.jpg",
     category: "Buying Guide",
@@ -59,7 +144,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "vastu-guide-where-to-place-deities-home",
     title: "Vastu guide: where to place each deity in your home",
-    date: "May 10, 2024",
+    date: "May 11, 2026",
     author: "Vastu Expert",
     image: "/blog/vastu-placement-guide.jpg",
     category: "Vastu Shastra",
@@ -101,7 +186,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "what-is-makrana-marble-sacred-murtis",
     title: "What is Makrana marble and why it's used for sacred murtis",
-    date: "May 9, 2024",
+    date: "May 10, 2026",
     author: "Master Artisan",
     image: "/blog/makrana-marble-guide.jpg",
     category: "Materials",
