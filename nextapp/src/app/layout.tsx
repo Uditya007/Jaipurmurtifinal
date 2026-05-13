@@ -35,10 +35,13 @@ const cinzel = Cinzel({
 });
 
 export const metadata: Metadata = {
-  title: "Buy Marble Hindu Murtis Online — Handcrafted Ganesha, Lakshmi & Hanuman Idols | Jaipur Murti",
-  description:
-    "Explore our collection of museum-grade Hindu murtis handcrafted by master artisans. Shop authentic marble Ganesha, Lakshmi, Hanuman, and Saraswati idols for home mandir. Free shipping across India & Worldwide.",
+  title: {
+    default: "Jaipur Murti — Premium Handcrafted Marble Hindu Idols & Statues",
+    template: "%s | Jaipur Murti"
+  },
+  description: "Authentic, museum-grade Hindu murtis handcrafted in Jaipur. Specializing in Makrana marble Ganesha, Lakshmi, Hanuman, and Saraswati idols with worldwide shipping. Jaipur Murthi - The home of sacred artistry.",
   keywords: [
+    "Jaipur Murti", "Jaipur Murthi", "Jaipur Murti Online", "Jaipur Murthi Shop",
     "buy ganesh murti online", "marble ganesh murti jaipur", "buy marble murti online", 
     "buy murti for mandir", "hindu deity idols online", "handcrafted marble murtis",
     "jaipur murti", "marble ganesha statue", "buy lakshmi idol online", "hanuman murti jaipur",
