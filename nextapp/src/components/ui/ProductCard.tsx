@@ -171,19 +171,21 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
           </div>
 
           {/* ── Info ── */}
-          <div className="p-4 md:p-6 flex flex-col flex-1 min-h-[180px] md:min-h-[220px]">
-            <div className="mb-2 flex flex-wrap items-center gap-2">
-              <span className="text-[9px] tracking-[0.3em] text-gold/70 uppercase whitespace-nowrap">{product.material}</span>
-              <span className="w-1 h-1 rounded-full bg-gold/30" />
-              <span className="text-[9px] tracking-[0.3em] text-muted uppercase whitespace-nowrap">{product.origin.split(',')[0]}</span>
+          <div className="p-5 md:p-7 flex flex-col flex-1 min-h-[200px] md:min-h-[250px]">
+            <div className="mb-3 flex flex-wrap items-center gap-2">
+              <span className="text-[10px] tracking-[0.3em] text-gold/60 uppercase whitespace-nowrap">{product.material}</span>
+              <span className="w-1 h-1 rounded-full bg-gold/20" />
+              <span className="text-[10px] tracking-[0.3em] text-stone-400 uppercase whitespace-nowrap">{product.origin.split(',')[0]}</span>
             </div>
 
-            <h3 className="font-display text-lg md:text-xl text-divine mb-1 group-hover:text-gold transition-colors duration-300 line-clamp-1 h-7">
+            {/* Title - Fixed height for 2 lines to ensure perfect alignment */}
+            <h3 className="font-display text-lg md:text-2xl text-stone-700 mb-2 group-hover:text-gold transition-colors duration-300 line-clamp-2 h-14 md:h-16 leading-tight">
               {product.name}
             </h3>
             
-            <div className="h-10 md:h-12 overflow-hidden mb-4">
-              <p className="text-[10px] md:text-xs text-muted line-clamp-2 leading-relaxed">
+            {/* Description - Fixed height */}
+            <div className="h-12 md:h-16 overflow-hidden mb-4">
+              <p className="text-xs md:text-sm text-stone-400 line-clamp-2 leading-relaxed">
                 {product.description}
               </p>
             </div>
@@ -194,22 +196,22 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
                 {[...Array(5)].map((_, i) => (
                   <Star
                     key={i}
-                    size={10}
-                    className={`${i < Math.floor(product.rating) ? 'fill-gold text-gold' : 'text-muted/30'}`}
+                    size={11}
+                    className={`${i < Math.floor(product.rating) ? 'fill-gold/80 text-gold/80' : 'text-stone-200'}`}
                   />
                 ))}
               </div>
-              <span className="text-[10px] text-muted">({product.reviews})</span>
+              <span className="text-xs text-stone-300">({product.reviews})</span>
             </div>
 
             {/* Price + CTA - Pushed to bottom */}
-            <div className="mt-auto flex items-center justify-between gap-4 pt-4 border-t border-gold/10">
+            <div className="mt-auto flex items-center justify-between gap-4 pt-5 border-t border-stone-100">
               <div className="flex flex-col">
-                <span className="font-display text-lg md:text-xl text-gold leading-none">
+                <span className="font-display text-xl md:text-2xl text-gold/90 leading-none">
                   ₹{product.price.toLocaleString('en-IN')}
                 </span>
                 {product.originalPrice && (
-                  <span className="text-[10px] text-muted line-through mt-1">
+                  <span className="text-xs text-stone-300 line-through mt-1">
                     ₹{product.originalPrice.toLocaleString('en-IN')}
                   </span>
                 )}
@@ -218,15 +220,15 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
               <button
                 onClick={handleAddToCart}
                 disabled={!product.inStock}
-                className={`flex items-center justify-center gap-2 px-5 py-2.5 rounded-full text-[10px] md:text-xs tracking-widest font-medium transition-all duration-300 ${!product.inStock
-                    ? 'bg-white/5 text-muted cursor-not-allowed'
+                className={`flex items-center justify-center gap-2 px-6 py-3 rounded-full text-[10px] md:text-xs tracking-widest font-semibold transition-all duration-300 ${!product.inStock
+                    ? 'bg-stone-50 text-stone-300 cursor-not-allowed'
                     : addedToCart
-                      ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30'
-                      : 'bg-gold/10 text-gold border border-gold/30 hover:bg-gold hover:text-black'
+                      ? 'bg-emerald-50 text-emerald-500 border border-emerald-100'
+                      : 'bg-gold/5 text-gold border border-gold/20 hover:bg-gold hover:text-black hover:border-gold shadow-sm'
                   }`}
               >
-                <ShoppingCart size={12} />
-                {!product.inStock ? 'SOLD OUT' : addedToCart ? 'ADDED' : 'ADD'}
+                <ShoppingCart size={13} />
+                {!product.inStock ? 'SOLD OUT' : addedToCart ? 'ADDED' : 'ADD TO CART'}
               </button>
             </div>
           </div>
