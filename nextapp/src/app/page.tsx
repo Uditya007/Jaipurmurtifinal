@@ -107,7 +107,7 @@ function CraftSection() {
         >
           <span className="text-xs tracking-[0.5em] text-gold uppercase">2000 Years of Tradition</span>
           <h2 className="font-display text-5xl md:text-6xl text-divine mt-4 mb-4">
-            The Jaipur Murti <span className="shimmer">Sacred Process</span>
+            The Sacred Process
           </h2>
           <div className="divine-divider max-w-xs mx-auto" />
         </motion.div>

@@ -62,9 +62,10 @@ export default function HeroSection() {
             variants={textVariants}
             className="font-display text-4xl sm:text-6xl md:text-8xl xl:text-9xl leading-none mb-4 md:mb-6"
           >
-            <span className="block shimmer uppercase">JAIPUR MURTI</span>
+            <span className="block text-divine">Where the</span>
+            <span className="block shimmer">Divine</span>
             <span className="block text-divine/80 text-3xl sm:text-5xl md:text-6xl xl:text-7xl font-serif italic mt-2">
-              Sacred Artistry in Marble
+              meets your home
             </span>
           </motion.h1>
 
@@ -76,8 +77,9 @@ export default function HeroSection() {
             variants={textVariants}
             className="text-muted text-base md:text-lg leading-relaxed max-w-lg mb-8 md:mb-10"
           >
-            The official home of Jaipur Murthi craftsmanship. Museum-grade Hindu idols handcrafted 
-            by master artisans across India. Each piece carries living devotion.
+            Museum-grade Hindu murtis handcrafted by master artisans across India,
+            using 2,000-year-old techniques and sacred materials. Each piece carries
+            living devotion.
           </motion.p>
 
           {/* CTAs — extra top margin on mobile to push button down */}
