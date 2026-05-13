@@ -49,13 +49,13 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-50px' }}
       transition={{ duration: 0.6, delay: index * 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
-      className="product-card group"
+      className="product-card group h-full"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      <Link href={`/products/${product.id}`}>
+      <Link href={`/products/${product.id}`} className="block h-full">
         <div
-          className="rounded-2xl overflow-hidden relative"
+          className="rounded-2xl overflow-hidden relative flex flex-col h-full"
           style={{
             background: 'linear-gradient(135deg, #0f0f0f 0%, #1a1a0a 50%, #0f0f0f 100%)',
             boxShadow: hovered
@@ -65,7 +65,7 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
           }}
         >
           {/* ── Image Area ── */}
-          <div className="relative w-full aspect-square overflow-hidden">
+          <div className="relative w-full aspect-square overflow-hidden flex-shrink-0">
 
             {hasImage ? (
               <>
@@ -111,38 +111,14 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
                 >
                   {categoryEmoji[product.category] ?? '🕉️'}
                 </motion.div>
-                <motion.div
-                  animate={hovered ? { scale: 1.3, opacity: 0.7 } : { scale: 1, opacity: 0.3 }}
-                  transition={{ duration: 0.5 }}
-                  className="absolute inset-0 rounded-t-2xl"
-                  style={{
-                    background: 'radial-gradient(ellipse at center, rgba(212,175,55,0.2) 0%, transparent 70%)',
-                  }}
-                />
               </div>
             )}
 
             {/* ── Badges ── */}
             <div className="absolute top-4 left-4 flex flex-col gap-2 z-20">
               {product.badge && (
-                <span className={`text-[10px] tracking-widest px-3 py-1 rounded-full font-medium backdrop-blur-sm ${product.badge === 'Bestseller'
-                    ? 'bg-gold text-black'
-                    : product.badge === 'New Arrival'
-                      ? 'bg-emerald-500/80 text-white border border-emerald-400/40'
-                      : product.badge === 'Limited Edition'
-                        ? 'bg-purple-500/80 text-white border border-purple-400/40'
-                        : product.badge === 'Sold Out'
-                          ? 'bg-black/60 text-white/50 border border-white/20'
-                          : product.badge === 'Customer Favourite'
-                            ? 'bg-rose-500/80 text-white border border-rose-400/40'
-                            : 'bg-gold/80 text-black'
-                  }`}>
+                <span className="text-[10px] tracking-widest px-3 py-1 rounded-full font-medium backdrop-blur-sm bg-gold text-black">
                   {product.badge}
-                </span>
-              )}
-              {discount && (
-                <span className="text-[10px] tracking-widest px-3 py-1 rounded-full bg-red-600/80 text-white backdrop-blur-sm">
-                  −{discount}%
                 </span>
               )}
             </div>
@@ -171,47 +147,47 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
           </div>
 
           {/* ── Info ── */}
-          <div className="p-5 md:p-7 flex flex-col flex-1 min-h-[200px] md:min-h-[250px]">
-            <div className="mb-3 flex flex-wrap items-center gap-2">
-              <span className="text-[10px] tracking-[0.3em] text-gold/60 uppercase whitespace-nowrap">{product.material}</span>
-              <span className="w-1 h-1 rounded-full bg-gold/20" />
-              <span className="text-[10px] tracking-[0.3em] text-stone-400 uppercase whitespace-nowrap">{product.origin.split(',')[0]}</span>
+          <div className="p-6 md:p-8 flex flex-col flex-1">
+            <div className="mb-4 flex flex-wrap items-center gap-2">
+              <span className="text-[10px] tracking-[0.3em] text-gold/70 uppercase whitespace-nowrap font-medium">{product.material}</span>
+              <span className="w-1 h-1 rounded-full bg-gold/30" />
+              <span className="text-[10px] tracking-[0.3em] text-stone-500 uppercase whitespace-nowrap font-medium">MADE IN INDIA</span>
             </div>
 
-            {/* Title - Fixed height for 2 lines to ensure perfect alignment */}
-            <h3 className="font-display text-lg md:text-2xl text-stone-700 mb-2 group-hover:text-gold transition-colors duration-300 line-clamp-2 h-14 md:h-16 leading-tight">
+            {/* Title - Strict fixed height for 2 lines */}
+            <h3 className="font-display text-xl md:text-2xl text-stone-100 mb-3 group-hover:text-gold transition-colors duration-300 line-clamp-2 h-14 md:h-16 leading-tight">
               {product.name}
             </h3>
             
-            {/* Description - Fixed height */}
-            <div className="h-12 md:h-16 overflow-hidden mb-4">
-              <p className="text-xs md:text-sm text-stone-400 line-clamp-2 leading-relaxed">
+            {/* Description - Strict fixed height */}
+            <div className="h-12 md:h-16 overflow-hidden mb-6">
+              <p className="text-xs md:text-sm text-stone-500 line-clamp-2 leading-relaxed font-light">
                 {product.description}
               </p>
             </div>
 
             {/* Rating */}
-            <div className="flex items-center gap-2 mb-6">
+            <div className="flex items-center gap-2 mb-8">
               <div className="flex">
                 {[...Array(5)].map((_, i) => (
                   <Star
                     key={i}
                     size={11}
-                    className={`${i < Math.floor(product.rating) ? 'fill-gold/80 text-gold/80' : 'text-stone-200'}`}
+                    className={`${i < Math.floor(product.rating) ? 'fill-gold/90 text-gold/90' : 'text-stone-800'}`}
                   />
                 ))}
               </div>
-              <span className="text-xs text-stone-300">({product.reviews})</span>
+              <span className="text-xs text-stone-600 font-medium">({product.reviews})</span>
             </div>
 
-            {/* Price + CTA - Pushed to bottom */}
-            <div className="mt-auto flex items-center justify-between gap-4 pt-5 border-t border-stone-100">
+            {/* Price + CTA - Bottom Aligned */}
+            <div className="mt-auto flex items-center justify-between gap-4 pt-6 border-t border-white/5">
               <div className="flex flex-col">
-                <span className="font-display text-xl md:text-2xl text-gold/90 leading-none">
+                <span className="font-display text-2xl md:text-3xl text-gold/90 tracking-wide leading-none">
                   ₹{product.price.toLocaleString('en-IN')}
                 </span>
                 {product.originalPrice && (
-                  <span className="text-xs text-stone-300 line-through mt-1">
+                  <span className="text-[10px] text-stone-600 line-through mt-1 tracking-widest font-medium">
                     ₹{product.originalPrice.toLocaleString('en-IN')}
                   </span>
                 )}
@@ -220,14 +196,14 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
               <button
                 onClick={handleAddToCart}
                 disabled={!product.inStock}
-                className={`flex items-center justify-center gap-2 px-6 py-3 rounded-full text-[10px] md:text-xs tracking-widest font-semibold transition-all duration-300 ${!product.inStock
-                    ? 'bg-stone-50 text-stone-300 cursor-not-allowed'
+                className={`flex items-center justify-center gap-2 px-7 py-3.5 rounded-full text-[10px] md:text-xs tracking-[0.2em] font-bold transition-all duration-500 shadow-lg ${!product.inStock
+                    ? 'bg-stone-900 text-stone-700 cursor-not-allowed'
                     : addedToCart
-                      ? 'bg-emerald-50 text-emerald-500 border border-emerald-100'
-                      : 'bg-gold/5 text-gold border border-gold/20 hover:bg-gold hover:text-black hover:border-gold shadow-sm'
+                      ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 shadow-[0_0_20px_rgba(16,185,129,0.1)]'
+                      : 'bg-black text-gold border border-gold/30 hover:bg-gold hover:text-black hover:border-gold hover:shadow-[0_0_30px_rgba(212,175,55,0.2)]'
                   }`}
               >
-                <ShoppingCart size={13} />
+                <ShoppingCart size={14} className="mb-0.5" />
                 {!product.inStock ? 'SOLD OUT' : addedToCart ? 'ADDED' : 'ADD TO CART'}
               </button>
             </div>
