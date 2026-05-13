@@ -158,20 +158,20 @@ function CraftSection() {
 
 function ShippingMarquee() {
   const content = [
-    'Worldwide Shipping', '✦', 'Domestic Delivery: 20 Days', '✦', 'International Delivery: 20-30 Days', '✦',
-    'Worldwide Shipping', '✦', 'Domestic Delivery: 20 Days', '✦', 'International Delivery: 20-30 Days', '✦',
-    'Worldwide Shipping', '✦', 'Domestic Delivery: 20 Days', '✦', 'International Delivery: 20-30 Days', '✦',
+    'Worldwide Shipping', '✦', 'Domestic Delivery: 10-15 Days', '✦', 'Secure International Shipping', '✦',
+    'Exquisite Craftsmanship', '✦', 'Worldwide Shipping', '✦', 'Domestic Delivery: 10-15 Days', '✦',
+    'Secure International Shipping', '✦', 'Exquisite Craftsmanship', '✦',
   ];
 
   return (
-    <div className="bg-gold text-black py-2.5 overflow-hidden flex whitespace-nowrap relative z-20 border-y border-gold/40">
+    <div className="bg-[#D4AF37] py-2.5 overflow-hidden flex whitespace-nowrap relative z-20 border-y border-gold/20 shadow-sm">
       <motion.div
         animate={{ x: ['0%', '-50%'] }}
         transition={{ repeat: Infinity, ease: 'linear', duration: 30 }}
-        className="flex items-center gap-8 md:gap-12 font-medium tracking-[0.2em] text-[10px] md:text-[11px] uppercase w-max"
+        className="flex items-center gap-12 md:gap-24 font-bold tracking-[0.2em] text-[10px] md:text-[12px] text-black uppercase w-max"
       >
         {content.map((item, i) => (
-          <span key={i} className={item === '✦' ? 'text-black/40' : ''}>{item}</span>
+          <span key={i}>{item}</span>
         ))}
       </motion.div>
     </div>

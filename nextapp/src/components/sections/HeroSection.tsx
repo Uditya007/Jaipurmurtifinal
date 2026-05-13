@@ -34,9 +34,7 @@ export default function HeroSection() {
       <LightHero3D />
 
       {/* Content */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6
-                      pt-12 pb-16          /* increased mobile spacing to avoid 3D overlap */
-                      md:absolute md:inset-0 md:flex md:items-center md:pt-32 md:pb-20">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 pt-12 md:pt-24 pb-16">
         <div className="max-w-3xl">
 
           {/* Eyebrow */}
