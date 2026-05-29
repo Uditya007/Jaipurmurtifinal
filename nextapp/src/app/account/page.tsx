@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Package, Clock, HelpCircle, LogOut, ExternalLink, ChevronRight, MapPin, CheckCircle2 } from 'lucide-react';
+import { Package, Clock, HelpCircle, LogOut, ExternalLink, ChevronRight, MapPin, CheckCircle2, Sparkles } from 'lucide-react';
 import { createClient } from '@/lib/client';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
@@ -98,6 +98,10 @@ export default function AccountPage() {
                 <Link href="/contact" className="w-full flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/5 text-divine/70 hover:text-divine text-sm tracking-widest font-medium transition-colors">
                   <HelpCircle size={16} />
                   GET HELP
+                </Link>
+                <Link href="/admin/instagram" className="w-full flex items-center gap-3 px-4 py-3 rounded-xl bg-gold/5 hover:bg-gold/15 text-gold text-sm tracking-widest font-semibold transition-all border border-gold/20 shadow-[0_0_12px_rgba(212,175,55,0.05)]">
+                  <Sparkles size={16} className="text-gold" />
+                  INSTAGRAM AGENT
                 </Link>
                 <button 
                   onClick={handleSignOut}
