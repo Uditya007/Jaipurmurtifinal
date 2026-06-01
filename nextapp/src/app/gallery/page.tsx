@@ -52,9 +52,54 @@ const galleryItems = [
     size: '19.5 inches (49.5 cm)',
     description: 'Depicting the exceptionally rare and powerful five-faced (Panchamukhi) form of Lord Hanuman in a kneeling devotional posture, carrying his iconic golden mace (Gada). Carved with precision, representing ultimate protection, mastery over all directions, and selfless devotion.',
   },
+  {
+    id: 6,
+    src: '/gallery/gallery-6.jpg',
+    title: 'Shiva Parivar — Divine Family Assembly',
+    category: 'Shiva',
+    material: 'Premium White Makrana Marble',
+    size: '24 inches (61 cm)',
+    description: 'A breathtaking assembly of the Shiva Parivar—Lord Shiva, Goddess Parvati, Lord Ganesha, and Lord Kartikeya. Hand-carved in Jaipur from premium white Makrana marble, highlighted with delicate gold leaf details and oil lamp reflections, radiating absolute domestic harmony and cosmic peace.',
+  },
+  {
+    id: 7,
+    src: '/gallery/gallery-7.jpg',
+    title: 'Radha Krishna — Eternal Divine Love',
+    category: 'Krishna',
+    material: 'Super White Makrana Marble',
+    size: '30 inches (76 cm)',
+    description: 'Standing together in their iconic venugopal and blessing postures, Shri Radha and Lord Krishna represent the supreme spiritual union. Elaborately decorated with handmade rose garlands, golden headwear (crowns), and flowing off-white and gold marble garments.',
+  },
+  {
+    id: 8,
+    src: '/gallery/gallery-8.jpg',
+    title: 'Goddess Saraswati — Wisdom & Harmony',
+    category: 'Saraswati',
+    material: 'Pure Makrana White Marble',
+    size: '21 inches (53 cm)',
+    description: 'Seated gracefully on a blooming lotus alongside her sacred swan (Hamsa), Goddess Saraswati holds the Veena and Vedas. Carved from flawless white marble, this idol brings divine vibrations of knowledge, fine arts, and spiritual clarity to any home mandir.',
+  },
+  {
+    id: 9,
+    src: '/gallery/gallery-9.jpg',
+    title: 'Ram Darbar — The Righteous Assembly',
+    category: 'Rama',
+    material: 'Super White Makrana Marble',
+    size: '36 inches (91.5 cm)',
+    description: 'A grand representation of Ram Darbar—featuring Lord Rama, his consort Sita, his devoted brother Laxmana, and Lord Hanuman kneeling in humble devotion. Highlighted with a magnificent golden umbrella (chhatra) and traditional temple arch (prabhavali).',
+  },
+  {
+    id: 10,
+    src: '/gallery/gallery-10.jpg',
+    title: 'Lord Tirupati Balaji — Venkateshvara',
+    category: 'Vishnu',
+    material: 'Sacred Black Granite & Gold Leafing',
+    size: '30 inches (76 cm)',
+    description: 'A spectacular standing Venkateshvara (Tirupati Balaji) murti. Sculpted with divine precision from black granite stone, adorned with intricate gold-plated crown (kireetam), celestial weapons (Sudarshana Chakra and Panchajanya Conch), and multiple layers of flower garlands.',
+  },
 ];
 
-const categories = ['All', 'Durga Maa', 'Ganesha', 'Krishna', 'Hanuman'];
+const categories = ['All', 'Durga Maa', 'Ganesha', 'Krishna', 'Hanuman', 'Shiva', 'Saraswati', 'Rama', 'Vishnu'];
 
 export default function GalleryPage() {
   const [filter, setFilter] = useState('All');
@@ -266,7 +311,7 @@ export default function GalleryPage() {
                 <X size={18} />
               </button>
 
-              {/* Left Side: Dynamic Image */}
+              {/* Left Side: Image */}
               <div className="w-full md:w-1/2 aspect-[4/5] md:aspect-auto relative bg-stone-950 flex-shrink-0">
                 <Image
                   src={activeItem.src}
