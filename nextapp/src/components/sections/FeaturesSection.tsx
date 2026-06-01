@@ -43,7 +43,7 @@ export default function FeaturesSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="relative overflow-hidden rounded-[32px] border p-8 md:p-12 lg:p-16 mb-20 bg-gradient-to-br from-zinc-950 via-stone-900/40 to-zinc-950 shadow-[0_20px_50px_rgba(0,0,0,0.6)]"
+          className="relative overflow-hidden rounded-[32px] border p-8 md:p-12 lg:p-16 mb-20 bg-black shadow-[0_20px_50px_rgba(0,0,0,0.6)]"
           style={{ borderColor: 'rgba(212,175,55,0.15)' }}
         >
           {/* Subtle warm glow orb */}
@@ -59,7 +59,7 @@ export default function FeaturesSection() {
               "Museum-Grade Devotion. <span className="shimmer">Jaipur Heritage.</span>"
             </h2>
 
-            <p className="text-muted text-base md:text-lg leading-relaxed max-w-4xl font-light">
+            <p className="text-stone-400 text-base md:text-lg leading-relaxed max-w-4xl font-light">
               Positioning Jaipur Murti at the intersection of <strong className="text-gold font-medium">luxury craftsmanship</strong> and <strong className="text-gold font-medium">spiritual authenticity</strong>. We are not just a murti seller — we are the <span className="italic font-serif text-stone-300">custodians of 2,000-year-old Vedic artistry</span>. While others offer mass-manufactured or unverified local statues, we occupy the premium, story-driven, and highly sacred space your home temple deserves.
             </p>
           </div>
