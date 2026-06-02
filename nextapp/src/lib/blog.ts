@@ -112,7 +112,7 @@ export const blogPosts: BlogPost[] = [
       <p>While the spiritual essence of the Lord remains the same regardless of the medium, different materials offer distinct vibrations, maintenance requirements, and aesthetic appeal. Here is a comprehensive guide to help you choose the perfect material for your devotion.</p>
 
       <h3>1. Marble: The Symbol of Purity (Sattva)</h3>
-      <p>Marble, especially the pristine white White marble from Rajasthan, is the most popular choice for home mandirs. In Vedic tradition, white represents <em>Sattva</em>—purity, peace, and divine knowledge.</p>
+      <p>Marble, especially the pristine White marble from Rajasthan, is the most popular choice for home mandirs. In Vedic tradition, white represents <em>Sattva</em>—purity, peace, and divine knowledge.</p>
       <ul>
         <li><strong>Aesthetics:</strong> Marble murtis radiate a soft, ethereal glow. They are often hand-painted with vibrant colors and 24K gold leaf, making them visually stunning.</li>
         <li><strong>Vibration:</strong> Marble is believed to absorb the spiritual energy of prayers and mantras effectively, making it ideal for a focused puja space.</li>
