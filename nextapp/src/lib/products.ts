@@ -2,6 +2,40 @@ import { Product } from "@/types";
 
 export const products: Product[] = [
   {
+    id: "serene-buddha-head",
+    name: "Serene Buddha Head White Marble Sculpture",
+    deity: "Buddha — The Enlightened One",
+    price: 14000,
+    originalPrice: 14000,
+    material: "White Marble Statue",
+    height: "10 inches",
+    weight: "6 kg",
+    description: "Serene Buddha Head White Marble Sculpture | Handcrafted Meditative Masterpiece",
+    longDescription: "This breathtaking 10-inch Serene Buddha Head in White Marble is a sublime masterpiece of spiritual artistry. Hand-carved by master artisans from premium solid white marble, it embodies the ultimate state of inner peace, mindfulness, and enlightenment. Every detail, from the beautifully spiraled ushnisha (the cranial bump representing spiritual wisdom) to the soft, half-closed eyes and gentle, tranquil smile, has been meticulously chiseled to perfection. The pristine white marble features a polished, velvet-smooth finish that reflects light with a soft, ethereal glow, creating a calming sanctuary in any space. Perfect for modern home entrances, living rooms, meditation corners, or premium corporate wellness gifts, this sculpture serves as a gentle daily reminder of clarity, focus, and serenity.",
+    images: [
+      "/products/buddha-head-hero.png"
+    ],
+    rating: 4.9,
+    reviews: 24,
+    inStock: true,
+    badge: "Just Added",
+    category: "Marble",
+    finish: "Polished Pure White Marble",
+    origin: "MADE IN INDIA",
+    keywords: "buddha head marble sculpture, white marble buddha statue, buy buddha head online, meditative buddha bust, marble buddha head 10 inch, home decor buddha, premium mindfulness gift",
+    purpose: "Mindfulness, Peace, Home Decor, Meditation Corner, Premium Gift",
+    features: [
+      "Premium White Marble",
+      "Height: 10 inches (25 cm)",
+      "Width: 6.5 inches (16.5 cm)",
+      "Depth: 6 inches (15 cm)",
+      "Weight: 6 kg",
+      "100% Handmade in India",
+      "Fully Insured Order",
+      "Easy Returns within 7 days"
+    ],
+  },
+  {
     id: "small-smart-ganesha",
     name: "4\" Small Smart Ganesha in White Marble Statue",
     deity: "Ganesha — Remover of Obstacles",
