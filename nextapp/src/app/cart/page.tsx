@@ -26,6 +26,8 @@ export default function CartPage() {
   const [authChecked, setAuthChecked] = useState(false);
   const supabase = createClient();
   const router = useRouter();
+  const [paymentMethod, setPaymentMethod] = useState<'razorpay' | 'paypal'>('razorpay');
+  const [paypalLoaded, setPaypalLoaded] = useState(false);
 
   const stepIndex = STEPS.indexOf(step);
 
@@ -49,6 +51,113 @@ export default function CartPage() {
     };
     checkAuth();
   }, []);
+
+  // Dynamic PayPal SDK Loader & Handler
+  useEffect(() => {
+    if (step === 'payment' && paymentMethod === 'paypal') {
+      const scriptId = 'paypal-sdk-script';
+      let script = document.getElementById(scriptId) as HTMLScriptElement;
+      
+      const renderPaypalButtons = () => {
+        const container = document.getElementById('paypal-button-container');
+        if (container) {
+          container.innerHTML = '';
+          
+          (window as any).paypal.Buttons({
+            style: {
+              layout: 'vertical',
+              color: 'gold',
+              shape: 'rect',
+              label: 'paypal'
+            },
+            createOrder: function (data: any, actions: any) {
+              const usdAmount = (total / 83.5).toFixed(2);
+              return actions.order.create({
+                purchase_units: [{
+                  description: 'Jaipur Murti Altar Statues Purchase',
+                  amount: {
+                    currency_code: 'USD',
+                    value: usdAmount
+                  }
+                }]
+              });
+            },
+            onApprove: function (data: any, actions: any) {
+              return actions.order.capture().then(async function (details: any) {
+                setIsProcessing(true);
+                try {
+                  const shippingAddr = [form.address, form.city, form.state, form.pin]
+                    .filter(Boolean).join(', ');
+
+                  // Save order to Supabase
+                  const { error: orderError } = await supabase.from('orders').insert({
+                    user_id: user.id,
+                    status: 'processing',
+                    total_amount: total,
+                    items: items.map(i => ({
+                      id: i.id,
+                      name: i.name,
+                      price: i.price,
+                      quantity: i.quantity,
+                      image: i.images?.[0] || '',
+                    })),
+                    shipping_address: shippingAddr || 'Address not provided',
+                    razorpay_order_id: `paypal_${details.id}`,
+                    razorpay_payment_id: `paypal_capture_${details.purchase_units?.[0]?.payments?.captures?.[0]?.id || 'unknown'}`,
+                  });
+
+                  if (orderError) {
+                    console.error('Order save error:', orderError);
+                  } else {
+                    // Trigger WhatsApp Notification
+                    await fetch('/api/notify', {
+                      method: 'POST',
+                      headers: { 'Content-Type': 'application/json' },
+                      body: JSON.stringify({
+                        orderDetails: {
+                          name: form.name,
+                          total: total,
+                          items: items,
+                          city: form.city
+                        }
+                      }),
+                    }).catch(err => console.error('Notify error:', err));
+                  }
+                } catch (err) {
+                  console.error('Failed to save PayPal order:', err);
+                }
+                clearCart();
+                setStep('success');
+                setIsProcessing(false);
+              });
+            },
+            onError: function (err: any) {
+              console.error('PayPal Error:', err);
+              setIsProcessing(false);
+            }
+          }).render('#paypal-button-container');
+        }
+      };
+
+      if (!script) {
+        script = document.createElement('script');
+        script.id = scriptId;
+        script.src = `https://www.paypal.com/sdk/js?client-id=${process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID || 'sb'}&currency=USD`;
+        script.async = true;
+        script.onload = () => {
+          setPaypalLoaded(true);
+          renderPaypalButtons();
+        };
+        document.body.appendChild(script);
+      } else {
+        if ((window as any).paypal) {
+          renderPaypalButtons();
+        } else {
+          script.addEventListener('load', renderPaypalButtons);
+        }
+      }
+    }
+  }, [step, paymentMethod, paypalLoaded, total, form, user, items]);
 
   // Guard: redirect to login if not logged in and tries to go to shipping
   const proceedToShipping = () => {
@@ -429,11 +538,56 @@ export default function CartPage() {
                     <Lock size={10} className="text-gold" /> 256-bit SSL encrypted · PCI DSS compliant
                   </p>
 
-                  <div className="bg-gold/5 border border-gold/20 rounded-xl p-6 text-center mb-8">
-                    <img src="https://razorpay.com/assets/razorpay-logo.svg" alt="Razorpay" className="h-6 mx-auto mb-4 opacity-80 invert" />
-                    <p className="text-sm text-divine mb-2">You will be redirected to Razorpay to complete your payment securely.</p>
-                    <p className="text-xs text-muted">Supports UPI, all major Credit/Debit Cards, and Net Banking.</p>
+                  {/* Payment Method Selector */}
+                  <div className="grid grid-cols-2 gap-4 mb-8">
+                    <button
+                      onClick={() => setPaymentMethod('razorpay')}
+                      className={`flex flex-col items-center justify-center p-5 rounded-2xl border transition-all duration-300 ${
+                        paymentMethod === 'razorpay'
+                          ? 'bg-gold/10 border-gold shadow-gold text-divine'
+                          : 'bg-black/20 border-gold/15 text-muted hover:border-gold/30'
+                      }`}
+                    >
+                      <span className="text-sm font-semibold mb-1">Razorpay</span>
+                      <span className="text-[10px] opacity-75">UPI, Cards, Netbanking</span>
+                    </button>
+                    <button
+                      onClick={() => setPaymentMethod('paypal')}
+                      className={`flex flex-col items-center justify-center p-5 rounded-2xl border transition-all duration-300 ${
+                        paymentMethod === 'paypal'
+                          ? 'bg-gold/10 border-gold shadow-gold text-divine'
+                          : 'bg-black/20 border-gold/15 text-muted hover:border-gold/30'
+                      }`}
+                    >
+                      <span className="text-sm font-semibold mb-1">PayPal</span>
+                      <span className="text-[10px] opacity-75">International Cards, Wallet</span>
+                    </button>
                   </div>
+
+                  {paymentMethod === 'razorpay' ? (
+                    <div className="bg-gold/5 border border-gold/20 rounded-xl p-6 text-center mb-8">
+                      <img src="https://razorpay.com/assets/razorpay-logo.svg" alt="Razorpay" className="h-6 mx-auto mb-4 opacity-80 invert" />
+                      <p className="text-sm text-divine mb-2">You will be redirected to Razorpay to complete your payment securely.</p>
+                      <p className="text-xs text-muted">Supports UPI, all major Credit/Debit Cards, and Net Banking.</p>
+                    </div>
+                  ) : (
+                    <div className="bg-gold/5 border border-gold/20 rounded-xl p-6 mb-8 text-center">
+                      <div className="flex items-center justify-center gap-2 mb-4">
+                        <span className="text-sm font-bold text-divine">PayPal Secure Checkout</span>
+                      </div>
+                      <p className="text-sm text-divine mb-2">
+                        Your total of ₹{total.toLocaleString('en-IN')} will be converted to approximately <span className="text-gold font-bold">${(total / 83.5).toFixed(2)} USD</span> for dynamic international processing.
+                      </p>
+                      <p className="text-xs text-muted mb-4">Pay securely using your PayPal Account or Credit/Debit Card.</p>
+                      
+                      {!paypalLoaded && (
+                        <div className="flex items-center justify-center gap-2 py-4 text-xs text-gold">
+                          <Loader2 size={14} className="animate-spin" /> LOADING PAYPAL SECURE MODULE...
+                        </div>
+                      )}
+                      <div id="paypal-button-container" className="w-full mt-2 min-h-[150px]" />
+                    </div>
+                  )}
 
                   <div className="flex gap-4 mt-8">
                     <button
@@ -442,21 +596,23 @@ export default function CartPage() {
                     >
                       <ArrowLeft size={13} /> BACK
                     </button>
-                    <button
-                      onClick={handleOrderPlace}
-                      disabled={isProcessing}
-                      className={`flex-1 flex items-center justify-center gap-2 py-3 rounded-full text-xs tracking-widest font-medium transition-all ${
-                        isProcessing 
-                          ? 'bg-gold/50 text-black/50 cursor-not-allowed' 
-                          : 'bg-gold text-black hover:bg-gold-light shadow-gold'
-                      }`}
-                    >
-                      {isProcessing ? (
-                        <><Loader2 size={13} className="animate-spin" /> INITIALIZING...</>
-                      ) : (
-                        <><Shield size={13} /> PAY SECURELY VIA RAZORPAY</>
-                      )}
-                    </button>
+                    {paymentMethod === 'razorpay' && (
+                      <button
+                        onClick={handleOrderPlace}
+                        disabled={isProcessing}
+                        className={`flex-1 flex items-center justify-center gap-2 py-3 rounded-full text-xs tracking-widest font-medium transition-all ${
+                          isProcessing 
+                            ? 'bg-gold/50 text-black/50 cursor-not-allowed' 
+                            : 'bg-gold text-black hover:bg-gold-light shadow-gold'
+                        }`}
+                      >
+                        {isProcessing ? (
+                          <><Loader2 size={13} className="animate-spin" /> INITIALIZING...</>
+                        ) : (
+                          <><Shield size={13} /> PAY SECURELY VIA RAZORPAY</>
+                        )}
+                      </button>
+                    )}
                   </div>
                 </div>
               </div>
