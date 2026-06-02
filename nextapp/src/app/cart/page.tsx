@@ -311,9 +311,9 @@ export default function CartPage() {
       const paymentObject = new (window as any).Razorpay(options);
       paymentObject.open();
 
-    } catch (error) {
+    } catch (error: any) {
       console.error('Payment Error:', error);
-      alert('Could not initiate payment. Please try again.');
+      alert(`Could not initiate payment: ${error.message || 'Please try again.'}`);
       setIsProcessing(false);
     }
   };
