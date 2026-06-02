@@ -63,79 +63,101 @@ export default function CartPage() {
         if (container) {
           container.innerHTML = '';
           
-          (window as any).paypal.Buttons({
-            style: {
-              layout: 'vertical',
-              color: 'gold',
-              shape: 'rect',
-              label: 'paypal'
-            },
-            createOrder: function (data: any, actions: any) {
-              const usdAmount = (total / 83.5).toFixed(2);
-              return actions.order.create({
-                purchase_units: [{
-                  description: 'Jaipur Murti Altar Statues Purchase',
-                  amount: {
-                    currency_code: 'USD',
-                    value: usdAmount
-                  }
-                }]
-              });
-            },
-            onApprove: function (data: any, actions: any) {
-              return actions.order.capture().then(async function (details: any) {
-                setIsProcessing(true);
-                try {
-                  const shippingAddr = [form.address, form.city, form.state, form.pin]
-                    .filter(Boolean).join(', ');
+          if (!(window as any).paypal) {
+            console.warn("PayPal SDK object not found. Falling back to sandbox.");
+            const oldScript = document.getElementById(scriptId);
+            if (oldScript) oldScript.remove();
+            
+            const fallbackScript = document.createElement('script');
+            fallbackScript.id = scriptId;
+            fallbackScript.src = `https://www.paypal.com/sdk/js?client-id=sb&currency=USD`;
+            fallbackScript.async = true;
+            fallbackScript.onload = () => {
+              renderPaypalButtons();
+            };
+            document.body.appendChild(fallbackScript);
+            return;
+          }
+          
+          setPaypalLoaded(true);
+          
+          try {
+            (window as any).paypal.Buttons({
+              style: {
+                layout: 'vertical',
+                color: 'gold',
+                shape: 'rect',
+                label: 'paypal'
+              },
+              createOrder: function (data: any, actions: any) {
+                const usdAmount = (total / 83.5).toFixed(2);
+                return actions.order.create({
+                  purchase_units: [{
+                    description: 'Jaipur Murti Altar Statues Purchase',
+                    amount: {
+                      currency_code: 'USD',
+                      value: usdAmount
+                    }
+                  }]
+                });
+              },
+              onApprove: function (data: any, actions: any) {
+                return actions.order.capture().then(async function (details: any) {
+                  setIsProcessing(true);
+                  try {
+                    const shippingAddr = [form.address, form.city, form.state, form.pin]
+                      .filter(Boolean).join(', ');
 
-                  // Save order to Supabase
-                  const { error: orderError } = await supabase.from('orders').insert({
-                    user_id: user.id,
-                    status: 'processing',
-                    total_amount: total,
-                    items: items.map(i => ({
-                      id: i.id,
-                      name: i.name,
-                      price: i.price,
-                      quantity: i.quantity,
-                      image: i.images?.[0] || '',
-                    })),
-                    shipping_address: shippingAddr || 'Address not provided',
-                    razorpay_order_id: `paypal_${details.id}`,
-                    razorpay_payment_id: `paypal_capture_${details.purchase_units?.[0]?.payments?.captures?.[0]?.id || 'unknown'}`,
-                  });
+                    // Save order to Supabase
+                    const { error: orderError } = await supabase.from('orders').insert({
+                      user_id: user.id,
+                      status: 'processing',
+                      total_amount: total,
+                      items: items.map(i => ({
+                        id: i.id,
+                        name: i.name,
+                        price: i.price,
+                        quantity: i.quantity,
+                        image: i.images?.[0] || '',
+                      })),
+                      shipping_address: shippingAddr || 'Address not provided',
+                      razorpay_order_id: `paypal_${details.id}`,
+                      razorpay_payment_id: `paypal_capture_${details.purchase_units?.[0]?.payments?.captures?.[0]?.id || 'unknown'}`,
+                    });
 
-                  if (orderError) {
-                    console.error('Order save error:', orderError);
-                  } else {
-                    // Trigger WhatsApp Notification
-                    await fetch('/api/notify', {
-                      method: 'POST',
-                      headers: { 'Content-Type': 'application/json' },
-                      body: JSON.stringify({
-                        orderDetails: {
-                          name: form.name,
-                          total: total,
-                          items: items,
-                          city: form.city
-                        }
-                      }),
-                    }).catch(err => console.error('Notify error:', err));
+                    if (orderError) {
+                      console.error('Order save error:', orderError);
+                    } else {
+                      // Trigger WhatsApp Notification
+                      await fetch('/api/notify', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                          orderDetails: {
+                            name: form.name,
+                            total: total,
+                            items: items,
+                            city: form.city
+                          }
+                        }),
+                      }).catch(err => console.error('Notify error:', err));
+                    }
+                  } catch (err) {
+                    console.error('Failed to save PayPal order:', err);
                   }
-                } catch (err) {
-                  console.error('Failed to save PayPal order:', err);
-                }
-                clearCart();
-                setStep('success');
+                  clearCart();
+                  setStep('success');
+                  setIsProcessing(false);
+                });
+              },
+              onError: function (err: any) {
+                console.error('PayPal Error:', err);
                 setIsProcessing(false);
-              });
-            },
-            onError: function (err: any) {
-              console.error('PayPal Error:', err);
-              setIsProcessing(false);
-            }
-          }).render('#paypal-button-container');
+              }
+            }).render('#paypal-button-container');
+          } catch (e) {
+            console.error("Buttons render error:", e);
+          }
         }
       };
 
@@ -145,8 +167,19 @@ export default function CartPage() {
         script.src = `https://www.paypal.com/sdk/js?client-id=${process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID || 'sb'}&currency=USD`;
         script.async = true;
         script.onload = () => {
-          setPaypalLoaded(true);
           renderPaypalButtons();
+        };
+        script.onerror = () => {
+          console.error("PayPal SDK failed to load. Falling back to sandbox.");
+          script.remove();
+          const fallbackScript = document.createElement('script');
+          fallbackScript.id = scriptId;
+          fallbackScript.src = `https://www.paypal.com/sdk/js?client-id=sb&currency=USD`;
+          fallbackScript.async = true;
+          fallbackScript.onload = () => {
+            renderPaypalButtons();
+          };
+          document.body.appendChild(fallbackScript);
         };
         document.body.appendChild(script);
       } else {
@@ -154,10 +187,22 @@ export default function CartPage() {
           renderPaypalButtons();
         } else {
           script.addEventListener('load', renderPaypalButtons);
+          script.addEventListener('error', () => {
+            console.error("Existing PayPal script error. Falling back.");
+            script.remove();
+            const fallbackScript = document.createElement('script');
+            fallbackScript.id = scriptId;
+            fallbackScript.src = `https://www.paypal.com/sdk/js?client-id=sb&currency=USD`;
+            fallbackScript.async = true;
+            fallbackScript.onload = () => {
+              renderPaypalButtons();
+            };
+            document.body.appendChild(fallbackScript);
+          });
         }
       }
     }
-  }, [step, paymentMethod, paypalLoaded, total, form, user, items]);
+  }, [step, paymentMethod, total, form, user, items]);
 
   // Guard: redirect to login if not logged in and tries to go to shipping
   const proceedToShipping = () => {
