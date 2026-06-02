@@ -12,7 +12,7 @@ const galleryItems = [
     src: '/gallery/gallery-1.jpg',
     title: 'Maa Durga — The Cosmic Warrior',
     category: 'Durga Maa',
-    material: 'Super White Makrana Marble',
+    material: 'Pristine White Marble',
     size: '39 inches (99 cm)',
     description: 'A magnificent carving representing Goddess Durga in her Mahishasuramardini avatar. Every hand holds a precise iconographic weapon chiseled to exact Shilpa Shastra proportions, riding her fierce lion vahana, highlighted with brilliant 24K gold leaf and royal red drapery.',
   },
@@ -21,7 +21,7 @@ const galleryItems = [
     src: '/gallery/gallery-2.jpg',
     title: 'Shri Siddhivinayak Ganesha',
     category: 'Ganesha',
-    material: 'Pristine Makrana Marble',
+    material: 'Pristine White Marble',
     size: '18 inches (46 cm)',
     description: 'A detailed close-up of Lord Ganesha, capturing his tranquil omniscient gaze. Ornamented with deep-relief golden crown engravings (Mukut), emerald-studded jewelry detail, and a beautifully curved trunk holding a sweet modak, radiating serenity and good fortune.',
   },
@@ -30,7 +30,7 @@ const galleryItems = [
     src: '/gallery/gallery-3.jpg',
     title: 'Maa Durga — Eternal Protector',
     category: 'Durga Maa',
-    material: 'Super White Makrana Marble',
+    material: 'Pristine White Marble',
     size: '30 inches (76 cm)',
     description: 'Seated gracefully on her lion amidst sacred oil lamps, this deity sculpture represents the ultimate protector of the universe. The serene expression of the Goddess contrasts beautifully with the dynamic posture of her lion, symbolizing the balance of peace and strength.',
   },
@@ -57,16 +57,16 @@ const galleryItems = [
     src: '/gallery/gallery-6.jpg',
     title: 'Shiva Parivar — Divine Family Assembly',
     category: 'Shiva',
-    material: 'Premium White Makrana Marble',
+    material: 'Premium White White Marble',
     size: '24 inches (61 cm)',
-    description: 'A breathtaking assembly of the Shiva Parivar—Lord Shiva, Goddess Parvati, Lord Ganesha, and Lord Kartikeya. Hand-carved in Jaipur from premium white Makrana marble, highlighted with delicate gold leaf details and oil lamp reflections, radiating absolute domestic harmony and cosmic peace.',
+    description: 'A breathtaking assembly of the Shiva Parivar—Lord Shiva, Goddess Parvati, Lord Ganesha, and Lord Kartikeya. Hand-carved in Jaipur from premium white White marble, highlighted with delicate gold leaf details and oil lamp reflections, radiating absolute domestic harmony and cosmic peace.',
   },
   {
     id: 7,
     src: '/gallery/gallery-7.jpg',
     title: 'Radha Krishna — Eternal Divine Love',
     category: 'Krishna',
-    material: 'Super White Makrana Marble',
+    material: 'Pristine White Marble',
     size: '30 inches (76 cm)',
     description: 'Standing together in their iconic venugopal and blessing postures, Shri Radha and Lord Krishna represent the supreme spiritual union. Elaborately decorated with handmade rose garlands, golden headwear (crowns), and flowing off-white and gold marble garments.',
   },
@@ -75,7 +75,7 @@ const galleryItems = [
     src: '/gallery/gallery-8.jpg',
     title: 'Goddess Saraswati — Wisdom & Harmony',
     category: 'Saraswati',
-    material: 'Pure Makrana White Marble',
+    material: 'Pure White White Marble',
     size: '21 inches (53 cm)',
     description: 'Seated gracefully on a blooming lotus alongside her sacred swan (Hamsa), Goddess Saraswati holds the Veena and Vedas. Carved from flawless white marble, this idol brings divine vibrations of knowledge, fine arts, and spiritual clarity to any home mandir.',
   },
@@ -84,7 +84,7 @@ const galleryItems = [
     src: '/gallery/gallery-9.jpg',
     title: 'Ram Darbar — The Righteous Assembly',
     category: 'Rama',
-    material: 'Super White Makrana Marble',
+    material: 'Pristine White Marble',
     size: '36 inches (91.5 cm)',
     description: 'A grand representation of Ram Darbar—featuring Lord Rama, his consort Sita, his devoted brother Laxmana, and Lord Hanuman kneeling in humble devotion. Highlighted with a magnificent golden umbrella (chhatra) and traditional temple arch (prabhavali).',
   },
@@ -260,7 +260,7 @@ export default function GalleryPage() {
               Looking for a custom <span className="shimmer">sacred idol?</span>
             </h2>
             <p className="text-stone-400 text-sm md:text-base leading-relaxed font-light">
-              We specialize in custom sizing, marble selection (Premium Makrana or White Alabaster), and specific posture commissioning based strictly on your home temple’s Vastu and Agama Shastra guidelines. Connect with our sacred advisors to draft your custom legacy murti.
+              We specialize in custom sizing, marble selection (Premium White or White Alabaster), and specific posture commissioning based strictly on your home temple’s Vastu and Agama Shastra guidelines. Connect with our sacred advisors to draft your custom legacy murti.
             </p>
             <div className="pt-6 flex flex-wrap gap-4 justify-center">
               <Link 

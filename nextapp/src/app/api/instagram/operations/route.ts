@@ -51,7 +51,7 @@ async function generateGeminiCaption(apiKey: string, deity: string, details: str
   } else if (tone === 'sales') {
     toneGuideline = 'Captivating and exclusive, showcasing the elite heritage and master craftsmanship. Focus on high-end art collecting, worldwide shipping, and premium home styling.';
   } else if (tone === 'elegant') {
-    toneGuideline = 'Poetic, sophisticated, luxury art-gallery style. Emphasize legacy, the beauty of Makrana marble/lost-wax bronze, and aesthetic placement in home design.';
+    toneGuideline = 'Poetic, sophisticated, luxury art-gallery style. Emphasize legacy, the beauty of White marble/lost-wax bronze, and aesthetic placement in home design.';
   } else {
     toneGuideline = 'Graceful and warm devotional greeting, highlighting positive energy, new beginnings, and housewarming blessings.';
   }
@@ -69,7 +69,7 @@ Guidelines:
 2. **Body Text**:
    - Write 2-3 short, beautifully formatted paragraphs (use spacing/emojis tastefully, avoid dense walls of text).
    - Talk about the sacred symbolism of the deity's posture (e.g. Abhaya Mudra for protection, Veena for arts/harmony).
-   - Highlight the exquisite craftsmanship: chiseled by palace artisans in Jaipur/Swamimalai, premium Makrana marble, 24K gold leaf detail, 100% handmade, representing a legacy of devotion.
+   - Highlight the exquisite craftsmanship: chiseled by palace artisans in Jaipur/Swamimalai, premium White marble, 24K gold leaf detail, 100% handmade, representing a legacy of devotion.
    - Speak to how this Murti brings positive energy, peace, and spiritual aesthetics to a home Mandir, creative studio, or living space.
 3. **Call to Action (CTA)**: Elegant, non-pushy invite to visit jaipurmurti.me, explore the collection (worldwide shipping, fully insured), or DM for custom sizes.
 4. **Hashtags**: Place them at the absolute bottom, separated by a couple of clean dots/lines. Combine these general brand hashtags [${hashtags}] with 5-6 highly specific hashtags for this deity (e.g. #ganeshstatue #homemandir).

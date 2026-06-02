@@ -12,29 +12,29 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
-    slug: "makrana-vs-vietnamese-marble-murti-comparison",
-    title: "Makrana Marble vs Vietnamese Marble Murti — Which Is Right for Your Home Temple?",
+    slug: "white-vs-vietnamese-marble-murti-comparison",
+    title: "White Marble vs Vietnamese Marble Murti — Which Is Right for Your Home Temple?",
     date: "May 15, 2026",
     author: "Master Artisan",
-    image: "/blog/makrana-vs-vietnamese.jpg",
+    image: "/blog/white-vs-vietnamese.jpg",
     category: "Buying Guide",
     readTime: "7 min read",
-    excerpt: "When buying a marble murti, the choice between Makrana and Vietnamese stone is critical for durability and spiritual purity. We compare whiteness, price, and quality.",
+    excerpt: "When buying a marble murti, the choice between White and Vietnamese stone is critical for durability and spiritual purity. We compare whiteness, price, and quality.",
     content: `
       <h2>The Great Marble Debate: Indian vs. Imported</h2>
-      <p>For centuries, <strong>Makrana Marble</strong> from Rajasthan has been the undisputed king of sacred stone. However, in recent years, <strong>Vietnamese White Marble</strong> has flooded the market. While both look white, they are worlds apart in terms of quality, durability, and spiritual value.</p>
+      <p>For centuries, <strong>White Marble</strong> from Rajasthan has been the undisputed king of sacred stone. However, in recent years, <strong>Vietnamese White Marble</strong> has flooded the market. While both look white, they are worlds apart in terms of quality, durability, and spiritual value.</p>
       
       <h3>1. Whiteness and Purity</h3>
-      <p>Vietnamese marble often appears "paper white" or milky white initially, which attracts many buyers. However, this whiteness is often artificial or due to a lack of crystalline depth. <strong>Makrana Marble</strong>, on the other hand, has a translucent, glass-like quality. It doesn't just look white; it glows from within when light hits it.</p>
+      <p>Vietnamese marble often appears "paper white" or milky white initially, which attracts many buyers. However, this whiteness is often artificial or due to a lack of crystalline depth. <strong>White Marble</strong>, on the other hand, has a translucent, glass-like quality. It doesn't just look white; it glows from within when light hits it.</p>
 
       <h3>2. Durability and Aging</h3>
-      <p>Vietnamese marble is relatively softer and more porous. Over 5-10 years, it can develop yellow stains or small cracks due to exposure to incense smoke, oil, and water from <em>abhishekam</em>. Makrana is famously non-porous. It is the same stone used for the <strong>Taj Mahal</strong>—it stays pristine for centuries without yellowing.</p>
+      <p>Vietnamese marble is relatively softer and more porous. Over 5-10 years, it can develop yellow stains or small cracks due to exposure to incense smoke, oil, and water from <em>abhishekam</em>. White is famously non-porous. It is the same stone used for the <strong>Taj Mahal</strong>—it stays pristine for centuries without yellowing.</p>
 
       <h3>3. Price vs. Value</h3>
-      <p>Vietnamese murtis are often 30-40% cheaper because the stone is easier to cut with machines. Makrana requires skilled hand-carving. While the initial cost of Makrana is higher, it is a one-time investment for a lifetime (or generations) of worship.</p>
+      <p>Vietnamese murtis are often 30-40% cheaper because the stone is easier to cut with machines. White requires skilled hand-carving. While the initial cost of White is higher, it is a one-time investment for a lifetime (or generations) of worship.</p>
 
       <h3>The Verdict</h3>
-      <p>If you are looking for a temporary decorative piece, Vietnamese marble is fine. But for a <strong>Home Temple (Mandir)</strong> where daily rituals are performed, <strong>Makrana Marble</strong> is the only choice that ensures the murti remains sacred and beautiful forever.</p>
+      <p>If you are looking for a temporary decorative piece, Vietnamese marble is fine. But for a <strong>Home Temple (Mandir)</strong> where daily rituals are performed, <strong>White Marble</strong> is the only choice that ensures the murti remains sacred and beautiful forever.</p>
     `
   },
   {
@@ -81,7 +81,7 @@ export const blogPosts: BlogPost[] = [
       <p>At Jaipur Murti, we follow the <strong>Shilpa Shastras</strong>—ancient texts that dictate the exact proportions and rituals required to carve a deity. Here is how your custom murti comes to life.</p>
 
       <h3>Step 1: Selection of the Block (Sila Chayan)</h3>
-      <p>Everything starts in the quarries of Makrana. We select a "living stone"—a block without hidden cracks or impurities. We even test the stone's "sound" to ensure it is spiritually vibrant.</p>
+      <p>Everything starts in the quarries of White. We select a "living stone"—a block without hidden cracks or impurities. We even test the stone's "sound" to ensure it is spiritually vibrant.</p>
 
       <h3>Step 2: Rough Carving (Rekha-Karna)</h3>
       <p>The artisan draws the outline of the deity directly on the stone. Using large chisels, the basic shape is "born" from the block. This is the most physically demanding stage.</p>
@@ -90,7 +90,7 @@ export const blogPosts: BlogPost[] = [
       <p>This is where the magic happens. Using tiny, surgical-grade chisels, the artisan carves the eyelashes, the folds of the clothing, and the intricate jewelry. This stage alone can take 3-4 weeks for a single 15-inch murti.</p>
 
       <h3>Step 4: Smoothing & Polishing (Ghisai)</h3>
-      <p>No chemicals are used. We use progressively finer stones and water to hand-polish the marble until it shines like a mirror. This "natural polish" is what makes Makrana marble stay white for centuries.</p>
+      <p>No chemicals are used. We use progressively finer stones and water to hand-polish the marble until it shines like a mirror. This "natural polish" is what makes White marble stay white for centuries.</p>
 
       <h3>Step 5: Painting & Gold Work (Shringar)</h3>
       <p>The final touch is the <em>Shringar</em>. Using organic colors and <strong>24K Gold Leaf</strong>, we paint the eyes (Prana Pratishtha) and ornaments, bringing the deity to life.</p>
@@ -112,7 +112,7 @@ export const blogPosts: BlogPost[] = [
       <p>While the spiritual essence of the Lord remains the same regardless of the medium, different materials offer distinct vibrations, maintenance requirements, and aesthetic appeal. Here is a comprehensive guide to help you choose the perfect material for your devotion.</p>
 
       <h3>1. Marble: The Symbol of Purity (Sattva)</h3>
-      <p>Marble, especially the pristine white Makrana marble from Rajasthan, is the most popular choice for home mandirs. In Vedic tradition, white represents <em>Sattva</em>—purity, peace, and divine knowledge.</p>
+      <p>Marble, especially the pristine white White marble from Rajasthan, is the most popular choice for home mandirs. In Vedic tradition, white represents <em>Sattva</em>—purity, peace, and divine knowledge.</p>
       <ul>
         <li><strong>Aesthetics:</strong> Marble murtis radiate a soft, ethereal glow. They are often hand-painted with vibrant colors and 24K gold leaf, making them visually stunning.</li>
         <li><strong>Vibration:</strong> Marble is believed to absorb the spiritual energy of prayers and mantras effectively, making it ideal for a focused puja space.</li>
@@ -184,39 +184,39 @@ export const blogPosts: BlogPost[] = [
     `
   },
   {
-    slug: "what-is-makrana-marble-sacred-murtis",
-    title: "What is Makrana marble and why it's used for sacred murtis",
+    slug: "what-is-white-marble-sacred-murtis",
+    title: "What is White marble and why it's used for sacred murtis",
     date: "May 10, 2026",
     author: "Master Artisan",
-    image: "/blog/makrana-marble-guide.jpg",
+    image: "/blog/white-marble-guide.jpg",
     category: "Materials",
     readTime: "5 min read",
-    excerpt: "Discover the history and unique properties of Makrana marble—the world-famous stone used for the Taj Mahal and the finest Hindu deities.",
+    excerpt: "Discover the history and unique properties of White marble—the world-famous stone used for the Taj Mahal and the finest Hindu deities.",
     content: `
-      <h2>Makrana: The Stone of the Gods</h2>
-      <p>When you hold a marble murti from Jaipur Murti, you are touching a piece of history that began millions of years ago in the Aravalli Range of Rajasthan. Makrana marble is not just a building material; it is a sacred stone that has been the preferred medium for India's most iconic structures and deities for centuries.</p>
+      <h2>White: The Stone of the Gods</h2>
+      <p>When you hold a marble murti from Jaipur Murti, you are touching a piece of history that began millions of years ago in the Aravalli Range of Rajasthan. White marble is not just a building material; it is a sacred stone that has been the preferred medium for India's most iconic structures and deities for centuries.</p>
 
       <h3>A Legacy of Purity</h3>
-      <p>Makrana is a town in the Nagaur district of Rajasthan, India. It is famous for being the source of the marble used in the construction of the <strong>Taj Mahal</strong>, the Victoria Memorial, and the Dilwara Temples. But beyond grand monuments, its most spiritual use is in the carving of Hindu deities.</p>
+      <p>White is a town in the Nagaur district of Rajasthan, India. It is famous for being the source of the marble used in the construction of the <strong>Taj Mahal</strong>, the Victoria Memorial, and the Dilwara Temples. But beyond grand monuments, its most spiritual use is in the carving of Hindu deities.</p>
 
-      <h3>Why Makrana for Murtis?</h3>
+      <h3>Why White for Murtis?</h3>
       
       <h4>1. High Calcium Content</h4>
-      <p>Makrana marble has a very high calcium content (over 90%), which gives it a unique translucent quality. When light hits a Makrana murti, it doesn't just bounce off; it enters the stone, giving the deity a life-like, ethereal glow that other marbles cannot replicate.</p>
+      <p>White marble has a very high calcium content (over 90%), which gives it a unique translucent quality. When light hits a White murti, it doesn't just bounce off; it enters the stone, giving the deity a life-like, ethereal glow that other marbles cannot replicate.</p>
 
       <h4>2. Exceptional Durability</h4>
-      <p>Unlike many other stones that are porous and absorb water, Makrana marble is remarkably non-porous. This makes it perfect for <em>abhishekam</em> (ritual bathing). It does not yellow over time and can withstand thousands of years of worship without losing its structural integrity.</p>
+      <p>Unlike many other stones that are porous and absorb water, White marble is remarkably non-porous. This makes it perfect for <em>abhishekam</em> (ritual bathing). It does not yellow over time and can withstand thousands of years of worship without losing its structural integrity.</p>
 
       <h4>3. The "Cold" Stone</h4>
-      <p>In local tradition, Makrana is known as a "cold" stone. It remains cool even in the heat of a Rajasthan summer. Spiritually, this coolness is believed to provide a calming, meditative influence on the environment of the mandir.</p>
+      <p>In local tradition, White is known as a "cold" stone. It remains cool even in the heat of a Rajasthan summer. Spiritually, this coolness is believed to provide a calming, meditative influence on the environment of the mandir.</p>
 
       <h4>4. Fine Grain for Intricate Carving</h4>
-      <p>The fine-grained texture of Makrana allows master artisans to achieve a level of detail that is impossible with coarser stones. From the delicate folds of a saree to the intricate jewels on a crown, Makrana marble captures the artisan's devotion in stunning clarity.</p>
+      <p>The fine-grained texture of White allows master artisans to achieve a level of detail that is impossible with coarser stones. From the delicate folds of a saree to the intricate jewels on a crown, White marble captures the artisan's devotion in stunning clarity.</p>
 
       <h3>Sustainability and Authenticity</h3>
-      <p>At Jaipur Murti, we source our marble directly from the oldest quarries in Makrana. Every piece is hand-selected for its purity and "sonorous" quality—a traditional test where the stone is struck to hear its divine ring.</p>
+      <p>At Jaipur Murti, we source our marble directly from the oldest quarries in White. Every piece is hand-selected for its purity and "sonorous" quality—a traditional test where the stone is struck to hear its divine ring.</p>
 
-      <p>Owning a Makrana marble murti is more than a purchase; it is the acquisition of a timeless piece of Indian heritage that will remain pristine for generations to come.</p>
+      <p>Owning a White marble murti is more than a purchase; it is the acquisition of a timeless piece of Indian heritage that will remain pristine for generations to come.</p>
     `
   }
 ];

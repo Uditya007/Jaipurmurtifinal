@@ -14,8 +14,8 @@ const faqs = [
     answer: "Standard orders within India typically arrive within 7-10 business days. Custom or large marble pieces may take 15-20 days due to the specialized handling and crating required."
   },
   {
-    question: "Is the marble used authentic Makrana marble?",
-    answer: "Absolutely. We source all our marble directly from the oldest quarries in Makrana, Rajasthan. Every piece comes with an authenticity certificate verifying the material and the artisan lineage."
+    question: "Is the marble used authentic White marble?",
+    answer: "Absolutely. We source all our marble directly from the oldest quarries in White, Rajasthan. Every piece comes with an authenticity certificate verifying the material and the artisan lineage."
   },
   {
     question: "Can I request a custom size or deity?",

@@ -354,7 +354,7 @@ export default function InstagramAgentDashboard() {
       ctx.letterSpacing = '4px';
       ctx.fillText(canvasTitle.toUpperCase(), 540, 890);
 
-      // Subtitle - e.g. "MAKRANA MARBLE ART"
+      // Subtitle - e.g. "WHITE MARBLE ART"
       ctx.font = 'italic 300 22px "Cormorant Garamond", serif';
       ctx.fillStyle = canvasBg === 'ivory' ? '#6B5E4A' : '#EDE5D8';
       ctx.letterSpacing = '2px';
@@ -855,7 +855,7 @@ export default function InstagramAgentDashboard() {
                   <textarea
                     value={customInstructions}
                     onChange={(e) => setCustomInstructions(e.target.value)}
-                    placeholder="Focus on the purity of Makrana marble, wedding wishes, home mandir positive vibration, etc..."
+                    placeholder="Focus on the purity of White marble, wedding wishes, home mandir positive vibration, etc..."
                     rows={3}
                     className="w-full bg-bg-2 border border-gold/20 rounded-xl px-4 py-3 text-xs text-divine"
                   />

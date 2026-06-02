@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     default: "Jaipur Murti — Premium Handcrafted Marble Hindu Idols & Statues",
     template: "%s | Jaipur Murti"
   },
-  description: "Authentic, museum-grade Hindu murtis handcrafted in Jaipur. Specializing in Makrana marble Ganesha, Lakshmi, Hanuman, and Saraswati idols with worldwide shipping. Jaipur Murthi - The home of sacred artistry.",
+  description: "Authentic, museum-grade Hindu murtis handcrafted in Jaipur. Specializing in White marble Ganesha, Lakshmi, Hanuman, and Saraswati idols with worldwide shipping. Jaipur Murthi - The home of sacred artistry.",
   keywords: [
     "Jaipur Murti", "Jaipur Murthi", "Jaipur Murti Online", "Jaipur Murthi Shop",
     "buy ganesh murti online", "marble ganesh murti jaipur", "buy marble murti online", 

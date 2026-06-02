@@ -41,7 +41,7 @@ Guidelines:
 2. **Body Text**:
    - Write 2-3 short, beautifully formatted paragraphs (use spacing/emojis tastefully).
    - Talk about the sacred symbolism of the deity (e.g. blessings, wisdom, prosperity, remover of obstacles).
-   - Highlight the exquisite craftsmanship: hand-chiseled by palace artisans in Jaipur, pristine Makrana marble or lost-wax Swamimalai bronze, museum-tier legacy of devotion.
+   - Highlight the exquisite craftsmanship: hand-chiseled by palace artisans in Jaipur, pristine White marble or lost-wax Swamimalai bronze, museum-tier legacy of devotion.
    - Speak to how this Murti brings positive energy, peace, and spiritual aesthetics to a home Mandir or living space.
 3. **Call to Action (CTA)**: Elegant invite to visit jaipurmurti.me, explore the collection (worldwide shipping, fully insured).
 4. **Hashtags**: Place them at the absolute bottom. Combine these general brand hashtags [${hashtags}] with 5-6 highly specific hashtags for this deity (e.g. #ganeshstatue #homemandir).

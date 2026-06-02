@@ -8,7 +8,7 @@ import { ArrowLeft } from 'lucide-react';
 export async function generateMetadata({ params }: { params: { category: string } }): Promise<Metadata> {
   const category = params.category.charAt(0).toUpperCase() + params.category.slice(1);
   const title = `Premium ${category} Murtis & Idols — Handcrafted in Jaipur | Jaipur Murti`;
-  const description = `Shop our exclusive collection of museum-grade ${category} Hindu murtis. Hand-carved from authentic ${category === 'Marble' ? 'Makrana Marble' : category} by master artisans. Worldwide shipping.`;
+  const description = `Shop our exclusive collection of museum-grade ${category} Hindu murtis. Hand-carved from authentic ${category === 'Marble' ? 'White Marble' : category} by master artisans. Worldwide shipping.`;
 
   return {
     title,

@@ -63,7 +63,7 @@ export default function HeritageSection() {
               Located in the heart of Jaipur, the world's capital for marble artistry, 
               Jaipur Murti is more than just a store—it is a sanctuary of tradition. 
               Our storefront stands as a gateway to 2,000 years of Vedic heritage, 
-              where every sculpture is born from the finest Makrana marble and a 
+              where every sculpture is born from the finest White marble and a 
               lifetime of devotion.
             </p>
 

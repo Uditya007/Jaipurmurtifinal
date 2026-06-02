@@ -4,7 +4,7 @@ import BlogCard from '@/components/ui/BlogCard';
 
 export const metadata: Metadata = {
   title: 'Sacred Art Blog | Vastu Guides & Murti Buying Tips | Jaipur Murti',
-  description: 'Deepen your connection with the divine. Read our latest guides on Vastu Shastra, sacred materials like Makrana marble, and how to choose the perfect murti for your home.',
+  description: 'Deepen your connection with the divine. Read our latest guides on Vastu Shastra, sacred materials like White marble, and how to choose the perfect murti for your home.',
 };
 
 export default function BlogPage() {
