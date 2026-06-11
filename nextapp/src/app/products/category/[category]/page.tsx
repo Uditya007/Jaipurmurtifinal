@@ -13,6 +13,9 @@ export async function generateMetadata({ params }: { params: { category: string 
   return {
     title,
     description,
+    alternates: {
+      canonical: `https://jaipurmurti.me/products/category/${params.category}`,
+    },
     openGraph: {
       title,
       description,

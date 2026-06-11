@@ -25,7 +25,7 @@ export default function Footer() {
             </p>
             <div className="flex gap-4">
               <Link
-                href="https://www.instagram.com/jaipurmurthi?igsh=ZmFnNzVxdGJvMjhy&utm_source=qr"
+                href="https://www.instagram.com/jaipurmurthi"
                 target="_blank"
                 className="w-9 h-9 border border-gold/20 rounded-full flex items-center justify-center text-muted hover:text-gold hover:border-gold/50 transition-all duration-300"
               >
@@ -59,7 +59,7 @@ export default function Footer() {
               {[
                 { name: 'Marble Murtis', slug: 'Marble' },
                 { name: 'Bronze Statues', slug: 'Bronze' },
-                { name: 'Stone Carvings', slug: 'Stone' },
+                { name: 'Stone Carvings', slug: 'Marble' },
                 { name: 'Crystal Lingams', slug: 'Crystal' },
                 { name: 'Special Editions', slug: 'all' }
               ].map(item => (
