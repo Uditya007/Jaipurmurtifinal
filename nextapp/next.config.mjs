@@ -10,6 +10,15 @@ const nextConfig = {
     remotePatterns: [],
     formats: ['image/webp', 'image/avif'],
   },
+  async redirects() {
+    return [
+      {
+        source: '/products/category/stone',
+        destination: '/products/category/marble',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
