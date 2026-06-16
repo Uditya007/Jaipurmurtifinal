@@ -55,7 +55,7 @@ export default function ProductClient({ product }: { product: Product }) {
                   <Image 
                     src={product.images[activeImage]} 
                     alt={`${product.material.toLowerCase()} ${product.deity.toLowerCase().replace(/—.*/, '').trim()} murti statue ${product.height} ${product.origin.toLowerCase().replace('made in ', '')} - view ${activeImage + 1}`}
-                    fill 
+                    fill sizes="(max-width: 768px) 100vw, 50vw" 
                     className="object-contain p-8"
                     priority
                   />
@@ -89,7 +89,7 @@ export default function ProductClient({ product }: { product: Product }) {
                     }`}
                     style={{ background: '#F5EFE6' }}
                   >
-                    <Image src={img} alt={`${product.material.toLowerCase()} ${product.deity.toLowerCase().replace(/—.*/, '').trim()} idol thumbnail ${i + 1}`} fill className="object-contain p-1" />
+                    <Image src={img} alt={`${product.material.toLowerCase()} ${product.deity.toLowerCase().replace(/—.*/, '').trim()} idol thumbnail ${i + 1}`} fill sizes="(max-width: 768px) 20vw, 10vw" className="object-contain p-1" />
                   </button>
                 ))}
               </div>
@@ -174,7 +174,7 @@ export default function ProductClient({ product }: { product: Product }) {
             <div className="space-y-6 pt-8 border-t border-gold/10">
               {/* Symbolism */}
               <div className="glass p-6 rounded-2xl">
-                <h3 className="font-display text-xl text-divine mb-3">Divine Symbolism</h3>
+                <h2 className="font-display text-xl text-divine mb-3">Divine Symbolism</h2>
                 <p className="text-sm text-muted leading-relaxed">
                   Every element of this {product.deity.split('—')[0].trim()} murti is crafted strictly according to Agama Shastra. The posture, mudras, and divine implements hold deep spiritual significance, making this not just a piece of art, but a sacred presence that brings auspiciousness, peace, and spiritual energy to your space.
                 </p>
@@ -182,7 +182,7 @@ export default function ProductClient({ product }: { product: Product }) {
               
               {/* Care Instructions */}
               <div className="glass p-6 rounded-2xl">
-                <h3 className="font-display text-xl text-divine mb-3">Care Instructions</h3>
+                <h2 className="font-display text-xl text-divine mb-3">Care Instructions</h2>
                 <ul className="text-sm text-muted space-y-2 list-disc list-inside">
                   <li>Wipe gently with a soft, dry cotton cloth.</li>
                   <li>Avoid using harsh chemicals or abrasive cleaners.</li>
@@ -193,7 +193,7 @@ export default function ProductClient({ product }: { product: Product }) {
 
               {/* Placement & Vastu FAQ */}
               <div className="glass p-6 rounded-2xl">
-                <h3 className="font-display text-xl text-divine mb-3">Vastu & Placement FAQ</h3>
+                <h2 className="font-display text-xl text-divine mb-3">Vastu & Placement FAQ</h2>
                 <div className="space-y-4">
                   <div>
                     <h4 className="text-sm font-medium text-gold mb-1">Where should I place this murti?</h4>
@@ -209,7 +209,7 @@ export default function ProductClient({ product }: { product: Product }) {
 
             {/* Customer Reviews Preview */}
             <div className="mt-8 pt-8 border-t border-gold/10">
-              <h3 className="font-display text-2xl text-divine mb-4">Customer Reviews</h3>
+              <h2 className="font-display text-2xl text-divine mb-4">Customer Reviews</h2>
               <div className="flex items-center gap-4 mb-4">
                 <div className="flex text-gold">
                   {[...Array(5)].map((_, i) => (

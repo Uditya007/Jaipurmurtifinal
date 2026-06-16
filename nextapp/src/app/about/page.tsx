@@ -48,9 +48,9 @@ export default function AboutPage() {
             transition={{ duration: 0.8 }}
           >
             <span className="text-xs tracking-[0.5em] text-gold uppercase">Our Mission</span>
-            <h2 className="font-display text-4xl text-divine mt-4 mb-6">
+            <h1 className="font-display text-4xl text-divine mt-4 mb-6">
               Preserving Living Traditions
-            </h2>
+            </h1>
             <div className="space-y-4 text-muted text-sm leading-relaxed">
               <p>
                 India's temple artisans are among the world's most skilled craftspeople, yet their 

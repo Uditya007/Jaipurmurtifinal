@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Contact Us',
+  title: 'Contact Us | Premium Jaipur Murtis & Support',
   description: "Need help finding the perfect murti? Contact Jaipur Murti's support team for guidance on custom handcrafted idols. We're here to assist you.",
 };
 

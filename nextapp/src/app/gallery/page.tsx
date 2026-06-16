@@ -265,7 +265,7 @@ export default function GalleryPage() {
             <div className="pt-6 flex flex-wrap gap-4 justify-center">
               <Link 
                 href="https://wa.me/917665941949" 
-                target="_blank"
+                target="_blank" rel="noopener noreferrer"
                 className="flex items-center gap-3 px-8 py-4 bg-gold text-black font-semibold text-xs tracking-widest rounded-full hover:bg-gold-light transition-all duration-300 shadow-gold"
               >
                 <MessageCircle size={16} />
@@ -356,7 +356,7 @@ export default function GalleryPage() {
                 <div className="pt-4 flex flex-col sm:flex-row gap-3">
                   <Link
                     href={`https://wa.me/917665941949?text=Hello%20Jaipur%20Murti%2C%20I%20am%20interested%20in%20inquiring%20about%20the%20${encodeURIComponent(activeItem.title)}%20sculpture%20featured%20in%20your%20Divine%20Gallery.`}
-                    target="_blank"
+                    target="_blank" rel="noopener noreferrer"
                     className="flex-1 flex items-center justify-center gap-2 bg-gold text-black font-semibold py-3.5 px-6 rounded-full text-xs tracking-widest hover:bg-gold-light transition-all duration-300 shadow-gold"
                   >
                     <MessageCircle size={15} />

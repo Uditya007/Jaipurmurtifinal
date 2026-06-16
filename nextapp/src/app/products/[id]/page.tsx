@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
 
   // Generate a dynamic SEO title: [Primary keyword] | [Secondary keyword] — [Brand]
   const deityName = product.deity.split('—')[0].trim();
-  const title = `${product.height} ${product.material} ${deityName} Murti — Sacred Hindu Idol | Jaipur Murti`;
+  const title = `${product.height} ${product.material} ${deityName} Murti | Jaipur Murti`;
   
   // Create a unique meta description
   const description = `Buy this museum-grade ${product.height} ${product.material} ${deityName} murti. Hand-chiseled by master artisans from ${product.origin.replace('MADE IN ', '')}. Authentic sacred art for your home mandir. Free shipping.`;

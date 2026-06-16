@@ -48,9 +48,8 @@ export default function ContactPage() {
           className="text-center mb-16"
         >
           <span className="text-xs tracking-[0.5em] text-gold uppercase">Get in Touch</span>
-          <h1 className="font-display text-5xl md:text-6xl text-divine mt-4 mb-4">
-            Contact Us
-          </h1>
+          <h1 className="font-display text-5xl md:text-6xl text-divine mt-4 mb-4">Contact Us</h1>
+          <h2 className="text-xl text-muted mt-2 mb-4">Get in Touch with Our Jaipur Artisans</h2>
           <div className="divine-divider max-w-sm mx-auto mt-8" />
         </motion.div>
 
@@ -93,7 +92,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="text-xs tracking-widest text-[#25D366] mb-1 uppercase">WhatsApp</h3>
-                  <Link href="https://wa.me/917665941949" target="_blank" className="text-lg text-divine hover:text-gold transition-colors">
+                  <Link href="https://wa.me/917665941949" target="_blank" rel="noopener noreferrer" className="text-lg text-divine hover:text-gold transition-colors">
                     +91 76659 41949
                   </Link>
                 </div>
@@ -151,7 +150,7 @@ export default function ContactPage() {
               <div className="mt-8">
                 <Link 
                   href="https://wa.me/917665941949"
-                  target="_blank"
+                  target="_blank" rel="noopener noreferrer"
                   className="w-full flex items-center justify-center gap-2 bg-[#25D366]/20 text-[#25D366] border border-[#25D366]/30 font-medium py-3 rounded-full text-xs tracking-widest hover:bg-[#25D366] hover:text-white transition-all"
                 >
                   <MessageCircle size={16} />
@@ -244,6 +243,15 @@ export default function ContactPage() {
             </button>
           </form>
         </motion.div>
+
+        <div className="max-w-4xl mx-auto mt-16 pt-8 border-t border-gold/10 text-center">
+          <p className="text-muted text-sm leading-relaxed mb-4">
+            At Jaipur Murti, we take immense pride in preserving the ancient, sacred art of Hindu deity sculpting. Our master artisans in Jaipur hand-carve each murti with devotion, using premium Makrana white marble, authentic Panchaloha bronze, and radiant Narmada sphatik crystal. 
+          </p>
+          <p className="text-muted text-sm leading-relaxed">
+            Whether you are establishing a home mandir, gifting a loved one, or seeking spiritual elevation, our murtis are designed to bring peace and divine energy into your space. Every idol is securely packaged and shipped worldwide with complete insurance, ensuring that your sacred art arrives flawlessly.
+          </p>
+        </div>
       </div>
     </div>
   );

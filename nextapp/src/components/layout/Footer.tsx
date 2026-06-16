@@ -26,7 +26,7 @@ export default function Footer() {
             <div className="flex gap-4">
               <Link
                 href="https://www.instagram.com/jaipurmurthi"
-                target="_blank"
+                target="_blank" rel="noopener noreferrer"
                 className="w-9 h-9 border border-gold/20 rounded-full flex items-center justify-center text-muted hover:text-gold hover:border-gold/50 transition-all duration-300"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -45,7 +45,7 @@ export default function Footer() {
               
               <Link
                 href="https://wa.me/917665941949"
-                target="_blank"
+                target="_blank" rel="noopener noreferrer"
                 className="w-9 h-9 border border-gold/20 rounded-full flex items-center justify-center text-muted hover:text-gold hover:border-gold/50 transition-all duration-300"
               >
                 <MessageCircle size={15} />

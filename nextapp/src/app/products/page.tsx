@@ -32,9 +32,7 @@ function ProductsContent() {
           className="text-center mb-16"
         >
           <span className="text-xs tracking-[0.5em] text-gold uppercase">Handcrafted in Jaipur, India</span>
-          <h1 className="font-display text-4xl md:text-5xl text-divine mt-4 mb-4">
-            Buy Hindu Murtis Online
-          </h1>
+          <h1 className="font-display text-4xl md:text-5xl text-divine mt-4 mb-4">Handcrafted Hindu Deity Statues — Shop All Murtis</h1>
           <p className="text-muted text-sm max-w-xl mx-auto">
             Authentic handcrafted Ganesha, Lakshmi, Durga &amp; more — Bronze, Marble &amp; Crystal idols shipped across India
           </p>

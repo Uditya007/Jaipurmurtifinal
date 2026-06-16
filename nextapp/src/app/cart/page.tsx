@@ -360,6 +360,16 @@ export default function CartPage() {
           </div>
         )}
 
+        <div className="max-w-4xl mx-auto mt-16 pt-8 border-t border-gold/10 text-center">
+          <p className="text-muted text-sm leading-relaxed mb-4">
+            At Jaipur Murti, we take immense pride in preserving the ancient, sacred art of Hindu deity sculpting. Our master artisans in Jaipur hand-carve each murti with devotion, using premium Makrana white marble, authentic Panchaloha bronze, and radiant Narmada sphatik crystal. 
+          </p>
+          <p className="text-muted text-sm leading-relaxed">
+            Whether you are establishing a home mandir, gifting a loved one, or seeking spiritual elevation, our murtis are designed to bring peace and divine energy into your space. Every idol is securely packaged and shipped worldwide with complete insurance, ensuring that your sacred art arrives flawlessly.
+          </p>
+        </div>
+
+
         <AnimatePresence mode="wait">
           {/* ─── CART STEP ─── */}
           {step === 'cart' && (
@@ -611,7 +621,7 @@ export default function CartPage() {
 
                   {paymentMethod === 'razorpay' ? (
                     <div className="bg-gold/5 border border-gold/20 rounded-xl p-6 text-center mb-8">
-                      <img src="https://razorpay.com/assets/razorpay-logo.svg" alt="Razorpay" className="h-6 mx-auto mb-4 opacity-80 invert" />
+                      <img src="https://razorpay.com/assets/razorpay-logo.svg" alt="Razorpay" width="100" height="24" className="h-6 mx-auto mb-4 opacity-80 invert" />
                       <p className="text-sm text-divine mb-2">You will be redirected to Razorpay to complete your payment securely.</p>
                       <p className="text-xs text-muted">Supports UPI, all major Credit/Debit Cards, and Net Banking.</p>
                     </div>
