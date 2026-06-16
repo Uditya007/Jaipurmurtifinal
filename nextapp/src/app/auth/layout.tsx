@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Login & Signup',
-  description: 'Log in or create a Jaipur Murti account to track your orders, save your favorite handcrafted idols, and manage your spiritual collection.',
+  description: "Log in or sign up to track your sacred murti orders. Join Jaipur Murti to build your premium handcrafted Hindu deity collection.",
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {

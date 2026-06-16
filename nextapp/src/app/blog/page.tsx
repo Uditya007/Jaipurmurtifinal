@@ -4,7 +4,7 @@ import BlogCard from '@/components/ui/BlogCard';
 
 export const metadata: Metadata = {
   title: 'Sacred Art Blog | Vastu Guides & Murti Buying Tips | Jaipur Murti',
-  description: 'Read the Jaipur Murti blog for expert guides on Vastu shastra, murti materials, placement tips, and the sacred art of idol carving.',
+  description: "Read the Jaipur Murti blog for expert guides on Vastu shastra, murti materials, and placement tips. Discover the sacred art of idol carving.",
 };
 
 export default function BlogPage() {

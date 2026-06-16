@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Divine Gallery',
-  description: 'Explore our Divine Gallery. View high-resolution photos of our museum-grade handcrafted marble murtis, straight from our Jaipur workshop.',
+  description: "View our divine photo gallery of premium marble murtis. Witness the intricate craftsmanship of Jaipur artisans. Find inspiration for your mandir.",
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {

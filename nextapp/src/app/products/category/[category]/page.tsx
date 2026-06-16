@@ -10,11 +10,11 @@ export async function generateMetadata({ params }: { params: { category: string 
   const title = `Premium ${category} Murtis & Idols — Handcrafted in Jaipur | Jaipur Murti`;
   let description = '';
   if (params.category.toLowerCase() === 'marble') {
-    description = 'Shop our exclusive collection of pristine White Marble murtis. Masterfully hand-carved in Jaipur for your home mandir.';
+    description = 'Shop pristine white marble murtis handcrafted in Jaipur. Elevate your mandir with premium, sacred artistry. Enjoy free worldwide shipping.';
   } else if (params.category.toLowerCase() === 'bronze') {
-    description = 'Discover traditional Panchaloha Bronze statues. Authentic, detailed deity sculptures crafted by master artisans.';
+    description = 'Discover traditional Panchaloha bronze deity statues. Authentic, masterfully cast murtis for your spiritual space. Browse the collection.';
   } else if (params.category.toLowerCase() === 'crystal') {
-    description = 'Explore our sacred Crystal and Sphatik idols. High-quality Narmada crystal murtis and Shivalingams for spiritual energy.';
+    description = 'Explore sacred Narmada crystal and sphatik murtis. Handcrafted to radiate pure spiritual energy. Shop premium idols with free shipping.';
   } else {
     description = `Shop our exclusive collection of museum-grade ${category} Hindu murtis. Hand-carved from authentic ${category === 'Marble' ? 'White Marble' : category} by master artisans. Worldwide shipping.`;
   }

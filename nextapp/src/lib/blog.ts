@@ -19,7 +19,7 @@ export const blogPosts: BlogPost[] = [
     image: "/blog/white-vs-vietnamese.jpg",
     category: "Buying Guide",
     readTime: "7 min read",
-    excerpt: "Understand the differences between Indian White Makrana and Vietnamese marble murtis. Compare whiteness, price, and carving quality.",
+    excerpt: "Compare Indian white Makrana vs Vietnamese marble murtis. Understand the differences in premium handcrafted idol carving. Read our review.",
     content: `
       <h2>The Great Marble Debate: Indian vs. Imported</h2>
       <p>For centuries, <strong>White Marble</strong> from Rajasthan has been the undisputed king of sacred stone. However, in recent years, <strong>Vietnamese White Marble</strong> has flooded the market. While both look white, they are worlds apart in terms of quality, durability, and spiritual value.</p>
@@ -45,7 +45,7 @@ export const blogPosts: BlogPost[] = [
     image: "/blog/vastu-size-guide.jpg",
     category: "Vastu Shastra",
     readTime: "9 min read",
-    excerpt: "Choosing a murti involves more than just aesthetics. Our Vastu guide covers ideal sizes for home mandirs and the correct directions for each deity.",
+    excerpt: "Learn how to choose the perfect handcrafted marble murti according to Vastu Shastra. Elevate your spiritual space with our expert tips.",
     content: `
       <h2>Aligning Your Devotion with Vastu</h2>
       <p>Selecting a murti for your home is a deeply personal journey, but following <strong>Vastu Shastra</strong> principles ensures that the energy in your home remains balanced and harmonious.</p>
@@ -75,7 +75,7 @@ export const blogPosts: BlogPost[] = [
     image: "/blog/carving-process.jpg",
     category: "Craftsmanship",
     readTime: "10 min read",
-    excerpt: "Ever wondered how a block of stone becomes a divine deity? Follow our master artisans through the 5-step sacred carving process in Jaipur.",
+    excerpt: "Discover the step-by-step process of custom marble murti carving. See how Jaipur master artisans bring sacred Hindu deity idols to life.",
     content: `
       <h2>From Stone to Soul: The Artisan's Journey</h2>
       <p>At Jaipur Murti, we follow the <strong>Shilpa Shastras</strong>—ancient texts that dictate the exact proportions and rituals required to carve a deity. Here is how your custom murti comes to life.</p>
@@ -104,7 +104,7 @@ export const blogPosts: BlogPost[] = [
     image: "/blog/ganesha-material-guide.jpg",
     category: "Buying Guide",
     readTime: "6 min read",
-    excerpt: "Compare marble, brass, and bronze Ganesha murtis to find the perfect idol for your home mandir's spiritual and aesthetic needs.",
+    excerpt: "Find the perfect Ganesha murti for your home mandir. Compare handcrafted marble, brass, and bronze idols in our complete Vastu guide.",
     content: `
       <h2>The Divine Dilemma: Marble, Brass, or Bronze?</h2>
       <p>Lord Ganesha, the remover of obstacles and the harbinger of new beginnings, is the first deity worshipped in any Hindu ritual. When it comes to bringing Ganpati into your home mandir, one of the most common questions we receive at Jaipur Murti is: <strong>"Which material is best?"</strong></p>
@@ -149,7 +149,7 @@ export const blogPosts: BlogPost[] = [
     image: "/blog/vastu-placement-guide.jpg",
     category: "Vastu Shastra",
     readTime: "8 min read",
-    excerpt: "Follow our comprehensive Vastu guide to learn the ideal directions and placements for Hindu deities in your home for positive energy.",
+    excerpt: "Follow our expert Vastu guide for placing Hindu deities in your home. Maximize positive energy with proper murti placement. Learn more.",
     content: `
       <h2>Aligning with the Divine: The Science of Vastu Placement</h2>
       <p>In Hindu tradition, a home is more than just a shelter; it is a sacred space where the divine resides alongside the family. Vastu Shastra, the ancient Indian science of architecture, provides specific guidelines on where and how to place deities to ensure that your home remains a sanctuary of peace, prosperity, and positive energy.</p>
@@ -191,7 +191,7 @@ export const blogPosts: BlogPost[] = [
     image: "/blog/white-marble-guide.jpg",
     category: "Materials",
     readTime: "5 min read",
-    excerpt: "Discover the history and unique properties of White marble—the world-famous stone used for the Taj Mahal and the finest Hindu deities.",
+    excerpt: "Learn why premium white marble is the ultimate choice for sacred murtis. Discover the purity of handcrafted Jaipur idols. Read our guide.",
     content: `
       <h2>White: The Stone of the Gods</h2>
       <p>When you hold a marble murti from Jaipur Murti, you are touching a piece of history that began millions of years ago in the Aravalli Range of Rajasthan. White marble is not just a building material; it is a sacred stone that has been the preferred medium for India's most iconic structures and deities for centuries.</p>

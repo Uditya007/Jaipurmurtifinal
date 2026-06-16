@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Shipping Policy',
-  description: "Learn about Jaipur Murti's shipping policies. We offer secure, fully insured, and fast worldwide shipping for all our handcrafted idols.",
+  description: "Read our shipping policy for handcrafted Hindu statues. We ensure secure, fully insured, and free worldwide shipping direct from Jaipur.",
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {

@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
-  description: "Read Jaipur Murti's privacy policy. We are committed to protecting your personal data and ensuring a secure shopping experience.",
+  description: "Review our privacy policy. Jaipur Murti is committed to protecting your data while you shop for authentic, handcrafted Hindu deity statues.",
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {

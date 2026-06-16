@@ -10,7 +10,7 @@ export const products: Product[] = [
     material: "White Marble Statue",
     height: "10 inches",
     weight: "6 kg",
-    description: "10 inches White Marble Buddha Head sculpture. Hand-carved in India. Free worldwide shipping.",
+    description: "Cultivate peace with a 10-inch white marble Buddha head. A premium, hand-carved Jaipur masterpiece. Elevate your space with free shipping.",
     longDescription: "This breathtaking 10-inch Serene Buddha Head in White Marble is a sublime masterpiece of spiritual artistry. Hand-carved by master artisans from premium solid white marble, it embodies the ultimate state of inner peace, mindfulness, and enlightenment. Every detail, from the beautifully spiraled ushnisha (the cranial bump representing spiritual wisdom) to the soft, half-closed eyes and gentle, tranquil smile, has been meticulously chiseled to perfection. The pristine white marble features a polished, velvet-smooth finish that reflects light with a soft, ethereal glow, creating a calming sanctuary in any space. Perfect for modern home entrances, living rooms, meditation corners, or premium corporate wellness gifts, this sculpture serves as a gentle daily reminder of clarity, focus, and serenity.",
     images: [
       "/products/buddha-head-hero.png"
@@ -44,7 +44,7 @@ export const products: Product[] = [
     material: "Pristine White Marble",
     height: "15 inches",
     weight: "11 kg",
-    description: "15 inches Pristine White Marble Saraswati idol. Hand-carved in India. Free worldwide shipping.",
+    description: "Invite wisdom with this 15-inch white marble Saraswati idol. Masterfully hand-carved by Jaipur artisans. Shop now with free shipping.",
     longDescription: "This exquisite 15-inch (38 cm) statue of Goddess Saraswati is a masterpiece of sacred art, hand-carved from premium Pristine White Marble—the same pristine stone used in the Taj Mahal. Every detail of this divine 11 kg figurine captures the pure essence of the Goddess of Knowledge, Music, and Arts. \n\nSaraswati is depicted in a graceful seated posture, her four arms representing the four aspects of human personality in learning: mind, intellect, alertness, and ego. She delicately holds the Veena, the symbol of the harmony of all creative arts and sciences. Her other hands hold the Vedas (symbolizing true knowledge) and a crystal mala (representing the power of meditation and spirituality). \n\nThe artisan has used traditional Jaipur chiseling techniques passed down through generations to create the intricate floral patterns on her garments and the delicate features of her face, which radiates a serene, meditative peace. Accented with subtle 24K gold leaf detailing on her crown and ornaments, this murti is not just a sculpture but a living presence of inspiration. Ideal for homes, professional studios, and creative spaces, it brings a vibration of clarity and wisdom to any study room, music studio, or home mandir. Each piece is unique, bearing the subtle marks of the artisan's hand and the natural veining of the White marble, ensuring you possess a one-of-a-kind sacred treasure.",
     images: [
       "/products/saraswati-hero.png",
@@ -83,7 +83,7 @@ export const products: Product[] = [
     material: "White Marble Statue",
     height: "16.5 inches",
     weight: "56.55 kg",
-    description: "16.5 inches White Marble Nandi. Beautifully hand-carved in India. Free worldwide shipping.",
+    description: "Secure this sacred 16.5-inch white marble Nandi. Flawlessly handcrafted in Jaipur to guard your mandir. Order now with free shipping.",
     longDescription: "A glorious 16.5-inch (42 cm) statue of Nandi, the sacred bull and devoted vahana of Lord Shiva. Meticulously carved from pristine white marble, this 56.55 kg murti radiates peace, devotion, and auspiciousness, making it a perfect addition to any divine altar.",
     images: [
       "/products/nandi-hero.png",
@@ -122,7 +122,7 @@ export const products: Product[] = [
     material: "Pristine White Marble",
     height: "39 inches",
     weight: "140 kg",
-    description: "39 inches Pristine White Marble Durga Maa idol. Hand-carved in India. Free worldwide shipping.",
+    description: "Honor the Divine Mother with a majestic 39-inch white marble Durga murti. Expertly handcrafted in Jaipur. Shop with free global shipping.",
     longDescription: "A massive and awe-inspiring 39-inch (99 cm) marble statue of Goddess Durga riding her fierce lion. Crafted from premium Pristine White Marble, this 140 kg masterpiece intricately depicts the Warrior Form of Parvati with Her eight arms, each holding a divine weapon to protect the universe.",
     images: [
       "/products/durga-maa-hero.png",
@@ -161,7 +161,7 @@ export const products: Product[] = [
     material: "White Marble Statues",
     height: "18 inches",
     weight: "Handmade",
-    description: "18 inches White Marble Vishnu & Lakshmi pair. Hand-carved in India. Free worldwide shipping.",
+    description: "Invite prosperity with an 18-inch white marble Vishnu and Lakshmi set. Authentic Jaipur craftsmanship. Order for free worldwide shipping.",
     longDescription: "A breathtaking pair of white marble statues depicting Lord Vishnu and Goddess Lakshmi in a supreme blessing gesture. Standing at 18 inches and 17 inches respectively, these handcrafted murtis feature exquisite gold detailing and intricate stonework, representing the ultimate divine union of preservation and prosperity.",
     images: [
       "/products/vishnu-lakshmi-set-hero.png",
@@ -198,7 +198,7 @@ export const products: Product[] = [
     material: "Marble Statue",
     height: "14.8 inches",
     weight: "13.11 kg",
-    description: "14.8 inches Marble Krishna on Lotus Throne. Hand-carved in India. Free worldwide shipping.",
+    description: "Adorn your mandir with a 14.8-inch marble Krishna on a lotus throne. Premium handcrafted Jaipur artistry. Shop now with free delivery.",
     longDescription: "A breathtaking 14.8-inch (37.5 cm) marble statue of Murli Manohara Krishna gracefully seated on a vibrant lotus throne. Every detail, from the divine peacock feather crown to the delicately held flute, is masterfully hand-painted to capture the enchanting beauty and eternal joy of the Lord.",
     images: [
       "/products/krishna-lotus-hero.png",
@@ -236,7 +236,7 @@ export const products: Product[] = [
     material: "Marble Statue",
     height: "15 inches",
     weight: "3.70 kg",
-    description: "15 inches Marble Krishna statue. Masterfully hand-carved in India. Free worldwide shipping.",
+    description: "Embrace divine love with a 15-inch white marble Krishna statue. Premium Jaipur craftsmanship for your home. Enjoy free worldwide delivery.",
     longDescription: "A glorious 15-inch (38 cm) white marble statue of Shri Krishna playing his divine flute. Expertly carved and adorned with beautiful painted details and delicate stones, this enchanting murti perfectly captures the supreme love, joy, and magnetism of the Lord.",
     images: [
       "/products/shri-krishna-hero.png",
@@ -272,7 +272,7 @@ export const products: Product[] = [
     material: "White Marble",
     height: "19.5 inches",
     weight: "10 kg",
-    description: "19.5 inches White Marble Hanuman holding Sanjeevani. Hand-carved in India. Free worldwide shipping.",
+    description: "Bring home this 19.5-inch white marble Hanuman murti. Handcrafted in Jaipur with divine precision. Order today for free worldwide shipping.",
     longDescription: "A glorious 19.5-inch (49.5 cm) white marble statue depicting Lord Hanuman flying with Mount Dron to bring the life-saving Sanjeevani herbs. Handcrafted with exquisite detailing, painted with vibrant colors, and adorned with delicate stones, this murti perfectly captures the strength, devotion, and urgency of the Supreme Devotee.",
     images: [
       "/products/hanuman-sanjeevani-hero.png",
@@ -307,7 +307,7 @@ export const products: Product[] = [
     material: "White Marble",
     height: "14.7 inches",
     weight: "3.50 kg",
-    description: "14.7 inches White Marble Vishnu Chaturbhuja. Hand-carved in India. Free worldwide shipping.",
+    description: "Bring home this 14.7-inch white marble Vishnu Chaturbhuja. Intricately hand-carved by Jaipur masters. Secure yours with free shipping.",
     longDescription: "A magnificent 14.7-inch (37.5 cm) white marble statue of Lord Vishnu in his four-armed (Chaturbhuja) form, holding the conch, discus, mace, and lotus. This divine murti is adorned with exquisite detailing and represents the supreme preserver of the universe.",
     images: [
       "/products/vishnu-chaturbhuja-hero.png",
@@ -341,7 +341,7 @@ export const products: Product[] = [
     material: "White Marble",
     height: "24 inches",
     weight: "28.20 kg",
-    description: "24 inches White Marble Krishna idol. Masterfully hand-carved in India. Free worldwide shipping.",
+    description: "Experience divine grace with a 24-inch white marble Krishna murti. An authentic handcrafted Jaipur treasure. Order with free shipping.",
     longDescription: "A breathtaking 24-inch (61 cm) white marble statue of Lord Krishna playing his divine flute. Known as 'The Omnibenevolent Gaze', this masterpiece is adorned with intricate golden painting, sparkling jewels, and a majestic crown. The statue weighs 28.20 kg, making it a substantial and deeply commanding centerpiece for any spiritual space.",
     images: [
       "/products/krishna-omnibenevolent-hero.jpg",
@@ -377,7 +377,7 @@ export const products: Product[] = [
     material: "Black Marble",
     height: "6 inches",
     weight: "Handmade",
-    description: "6 inches Black Marble Shiva Lingam. Authentic carving from India. Free worldwide shipping.",
+    description: "Enhance your pooja with a 6-inch black marble Shivalingam. Sacred, handcrafted quality from Jaipur. Bring divine energy home today.",
     longDescription: "A perfectly proportioned 6\" Small Black Marble Shivalingam, handcrafted from pure black stone. This sacred murti represents Lord Shiva in his most abstract and infinite form, ideal for daily puja and home mandir installation.",
     images: ["/products/shiva-lingam-hero.jpg", "/products/shiva-lingam-black.jpg"],
     rating: 5.0,
@@ -404,7 +404,7 @@ export const products: Product[] = [
     material: "White Marble",
     height: "36 inches",
     weight: "Handmade",
-    description: "36 inches White Marble Dancing Ganesha. Masterfully hand-carved in India. Free worldwide shipping.",
+    description: "Celebrate new beginnings with a 36-inch white marble dancing Ganesha. A premium Jaipur handcrafted masterpiece. Shop with free shipping.",
     longDescription: "Exquisite 36\" Large Dancing Ganesha handmade from pure White Marble. A mesmerizing Ganpati Statue capturing the joyful dance of the Lord of New Beginnings.",
     images: [
       "/products/dancing-ganesha-hero.jpg",
@@ -436,7 +436,7 @@ export const products: Product[] = [
     material: "White Marble",
     height: "18 inches",
     weight: "4.8 kg",
-    description: "18 inches White Marble Durga idol. Hand-carved by master artisans in Jaipur. Free worldwide shipping.",
+    description: "Welcome Goddess Durga with an 18-inch white marble murti. Hand-carved with devotion by Jaipur artisans. Enjoy free international shipping.",
     longDescription: "This extraordinary Durga Mata murti is carved from the finest White marble by a family of sculptors whose lineage served the Rajput royal courts of Jaipur for seven generations. The Goddess is shown in her Mahishasuramardini form — triumphant, seated gracefully on her sacred lion (Simha), eight arms each holding a divine weapon: trishul, sword, bow, chakra, lotus, and bestowing both abhaya (fearlessness) and varada (boon-giving) blessings. The detailed folds of her garments and each strand of her crown's pearl strings are carved with microscopic precision. The pure white marble symbolizes the Goddess's transcendent purity and victory over darkness.",
     images: ["/products/durga-marble.jpg"],
     rating: 4.9,
@@ -463,7 +463,7 @@ export const products: Product[] = [
     material: "Panchaloha Brass",
     height: "16 inches",
     weight: "3.6 kg",
-    description: "16 inches Panchaloha Brass Krishna idol. Traditional craftsmanship from Tamil Nadu. Free worldwide shipping.",
+    description: "Shop this 16-inch Panchaloha brass Krishna statue. Authentic traditional casting from Tamil Nadu. Elevate your mandir with free shipping.",
     longDescription: "This magnificent Krishna murti captures the Lord in his most beloved Venugopal (flute-playing) form — standing in the graceful Tribhanga posture, with his flute (bansuri) held to his lips, peacock feather crown, and the eternally divine smile that melts all hearts. Cast in Panchaloha brass using the lost-wax method perfected in Swamimalai over 2,000 years, the deep golden-bronze patina develops richer character with each passing year. The intricate surface detailing — from the individual feathers of his crown to the fine beadwork of his necklaces — took the master artisan over six weeks to complete by hand. Traditionally adorned with fresh jasmine and rose garlands during worship.",
     images: ["/products/krishna-brass.jpg"],
     rating: 4.8,
@@ -491,7 +491,7 @@ export const products: Product[] = [
     material: "Narmada Sphatik Crystal",
     height: "6 inches",
     weight: "1.2 kg",
-    description: "6 inches Narmada Sphatik Crystal Shiva Lingam from MP. Sacred spiritual energy. Free worldwide shipping.",
+    description: "Radiate purity with a 6-inch Narmada sphatik crystal Shiva. Sacred, authentic spiritual energy. Invite the divine with free shipping.",
     longDescription: "These sacred Sphatik Shiva Lingams are naturally formed in the Narmada River — one of India's holiest rivers. Each lingam is unique in its veining and translucency, shaped by millions of years of riverbed polishing. Sphatik (rock crystal quartz) is considered the purest manifestation of Lord Shiva's cosmic energy in the Shaiva tradition. The crystal's natural piezoelectric properties are believed to amplify meditation and prayer. Comes with a handcrafted brass yoni base, engraved with sacred geometric patterns.",
     images: ["/products/shiva-crystal.jpg"],
     rating: 4.9,
@@ -517,7 +517,7 @@ export const products: Product[] = [
     material: "Panchaloha Bronze",
     height: "14 inches",
     weight: "3.1 kg",
-    description: "14 inches Panchaloha Bronze Hanuman. Authentic traditional casting from Tamil Nadu. Free worldwide shipping.",
+    description: "Secure a 14-inch Panchaloha bronze Hanuman murti. Premium traditional craftsmanship from Tamil Nadu. Order today for free global shipping.",
     longDescription: "The Panchamukhi (five-faced) form of Hanuman is exceptionally rare in murti-making, as each face must be perfectly proportioned while maintaining devotional accuracy. The five faces — Hanuman (north), Narasimha (south), Garuda (west), Varaha (east), and Hayagriva (sky-facing) — represent mastery over all five directions and protection from all negative forces. This murti is cast by a fourth-generation master craftsman from Kumbakonam, Tamil Nadu, following strict Agama Shastra specifications. It is especially revered for installation at home entrances as a powerful protective deity.",
     images: ["/products/hanuman-bronze.jpg"],
     rating: 4.8,
