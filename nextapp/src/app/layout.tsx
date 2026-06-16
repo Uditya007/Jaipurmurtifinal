@@ -6,6 +6,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import dynamic from "next/dynamic";
 import Script from "next/script";
+import CanonicalTag from "@/components/seo/CanonicalTag";
 
 // Load heavy components client-side only to avoid blocking first paint
 const ParticleBackground = dynamic(() => import("@/components/ui/ParticleBackground"), { ssr: false });
@@ -40,7 +41,7 @@ export const metadata: Metadata = {
     default: "Jaipur Murti — Premium Handcrafted Marble Hindu Idols & Statues",
     template: "%s | Jaipur Murti"
   },
-  description: "Authentic, museum-grade Hindu murtis handcrafted in Jaipur. Specializing in White marble Ganesha, Lakshmi, Hanuman, and Saraswati idols with worldwide shipping. Jaipur Murthi - The home of sacred artistry.",
+  description: "Authentic handcrafted marble Hindu murtis from Jaipur. Shop premium Ganesha, Hanuman, and Lakshmi idols. Worldwide shipping available.",
   keywords: [
     "Jaipur Murti", "Jaipur Murthi", "Jaipur Murti Online", "Jaipur Murthi Shop",
     "buy ganesh murti online", "marble ganesh murti jaipur", "buy marble murti online", 
@@ -52,7 +53,6 @@ export const metadata: Metadata = {
     "affordable luxury marble murtis", "premium murtis for middle class", "home inauguration gifts"
   ],
   metadataBase: new URL("https://jaipurmurti.me"),
-  alternates: { canonical: "https://jaipurmurti.me" },
   robots: { index: true, follow: true },
   openGraph: {
     title: "Buy Authentic Hindu Murtis Online — Handcrafted for Devotion | Jaipur Murti",
@@ -94,6 +94,7 @@ export default function RootLayout({
       className={`scroll-smooth ${cormorant.variable} ${inter.variable} ${cinzel.variable}`}
     >
       <head>
+        <CanonicalTag />
         <Script id="fb-pixel" strategy="afterInteractive">
           {`
             !function(f,b,e,v,n,t,s)

@@ -1,0 +1,10 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "www.jaipurmurti.me" }],
+      "destination": "https://jaipurmurti.me/$1",
+      "permanent": true
+    }
+  ]
+}

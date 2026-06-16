@@ -19,7 +19,7 @@ export const blogPosts: BlogPost[] = [
     image: "/blog/white-vs-vietnamese.jpg",
     category: "Buying Guide",
     readTime: "7 min read",
-    excerpt: "When buying a marble murti, the choice between White and Vietnamese stone is critical for durability and spiritual purity. We compare whiteness, price, and quality.",
+    excerpt: "Understand the differences between Indian White Makrana and Vietnamese marble murtis. Compare whiteness, price, and carving quality.",
     content: `
       <h2>The Great Marble Debate: Indian vs. Imported</h2>
       <p>For centuries, <strong>White Marble</strong> from Rajasthan has been the undisputed king of sacred stone. However, in recent years, <strong>Vietnamese White Marble</strong> has flooded the market. While both look white, they are worlds apart in terms of quality, durability, and spiritual value.</p>
@@ -104,7 +104,7 @@ export const blogPosts: BlogPost[] = [
     image: "/blog/ganesha-material-guide.jpg",
     category: "Buying Guide",
     readTime: "6 min read",
-    excerpt: "Choosing the right material for your Ganesha murti is a decision that blends aesthetics, tradition, and personal connection. We compare marble, brass, and bronze to help you decide.",
+    excerpt: "Compare marble, brass, and bronze Ganesha murtis to find the perfect idol for your home mandir's spiritual and aesthetic needs.",
     content: `
       <h2>The Divine Dilemma: Marble, Brass, or Bronze?</h2>
       <p>Lord Ganesha, the remover of obstacles and the harbinger of new beginnings, is the first deity worshipped in any Hindu ritual. When it comes to bringing Ganpati into your home mandir, one of the most common questions we receive at Jaipur Murti is: <strong>"Which material is best?"</strong></p>
@@ -149,7 +149,7 @@ export const blogPosts: BlogPost[] = [
     image: "/blog/vastu-placement-guide.jpg",
     category: "Vastu Shastra",
     readTime: "8 min read",
-    excerpt: "Placing your sacred murtis according to Vastu Shastra can harmonize the energy of your home. Learn the ideal directions for Ganesha, Lakshmi, Shiva, and more.",
+    excerpt: "Follow our comprehensive Vastu guide to learn the ideal directions and placements for Hindu deities in your home for positive energy.",
     content: `
       <h2>Aligning with the Divine: The Science of Vastu Placement</h2>
       <p>In Hindu tradition, a home is more than just a shelter; it is a sacred space where the divine resides alongside the family. Vastu Shastra, the ancient Indian science of architecture, provides specific guidelines on where and how to place deities to ensure that your home remains a sanctuary of peace, prosperity, and positive energy.</p>

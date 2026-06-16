@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Buy Ganesh Murti Jaipur | Marble Ganesh, Hanuman, Lakshmi Idols Online',
-  description: 'Buy ganesh murti jaipur, marble ganesh murti, hanuman idol, lakshmi murti for mandir & office. Handcrafted in Jaipur. Best price, free shipping in India.',
+  description: 'Browse our complete collection of premium handcrafted Hindu murtis. Shop authentic marble, bronze, and crystal idols from Jaipur.',
   keywords: [
     'ganesh murti jaipur', 'marble ganesh murti jaipur', 'ganesh statue jaipur',
     'buy ganesh murti', 'buy ganpati murti online', 'buy hanuman murti',
@@ -12,7 +12,6 @@ export const metadata: Metadata = {
     'buy durga idol online india', 'buy murti online india',
     'pooja murti online', 'best murti shop jaipur', 'buy murti near me'
   ],
-  alternates: { canonical: 'https://jaipurmurti.me/products' },
   openGraph: {
     title: 'Buy Ganesh Murti Jaipur | Marble & Bronze Hindu Idols',
     description: 'Authentic handcrafted Ganesh, Lakshmi, Hanuman murtis from Jaipur. For home, mandir & office. Free shipping.',

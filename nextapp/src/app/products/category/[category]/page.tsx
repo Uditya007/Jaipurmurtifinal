@@ -8,14 +8,20 @@ import { ArrowLeft } from 'lucide-react';
 export async function generateMetadata({ params }: { params: { category: string } }): Promise<Metadata> {
   const category = params.category.charAt(0).toUpperCase() + params.category.slice(1);
   const title = `Premium ${category} Murtis & Idols — Handcrafted in Jaipur | Jaipur Murti`;
-  const description = `Shop our exclusive collection of museum-grade ${category} Hindu murtis. Hand-carved from authentic ${category === 'Marble' ? 'White Marble' : category} by master artisans. Worldwide shipping.`;
+  let description = '';
+  if (params.category.toLowerCase() === 'marble') {
+    description = 'Shop our exclusive collection of pristine White Marble murtis. Masterfully hand-carved in Jaipur for your home mandir.';
+  } else if (params.category.toLowerCase() === 'bronze') {
+    description = 'Discover traditional Panchaloha Bronze statues. Authentic, detailed deity sculptures crafted by master artisans.';
+  } else if (params.category.toLowerCase() === 'crystal') {
+    description = 'Explore our sacred Crystal and Sphatik idols. High-quality Narmada crystal murtis and Shivalingams for spiritual energy.';
+  } else {
+    description = `Shop our exclusive collection of museum-grade ${category} Hindu murtis. Hand-carved from authentic ${category === 'Marble' ? 'White Marble' : category} by master artisans. Worldwide shipping.`;
+  }
 
   return {
     title,
     description,
-    alternates: {
-      canonical: `https://jaipurmurti.me/products/category/${params.category}`,
-    },
     openGraph: {
       title,
       description,
