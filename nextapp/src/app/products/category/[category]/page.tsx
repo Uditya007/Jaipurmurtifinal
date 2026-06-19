@@ -7,7 +7,7 @@ import { ArrowLeft } from 'lucide-react';
 
 export async function generateMetadata({ params }: { params: { category: string } }): Promise<Metadata> {
   const category = params.category.charAt(0).toUpperCase() + params.category.slice(1);
-  const title = `Premium ${category} Murtis & Idols — Handcrafted in Jaipur | Jaipur Murti`;
+  const title = `${category} Murtis — Handcrafted in Jaipur`;
   let description = '';
   if (params.category.toLowerCase() === 'marble') {
     description = 'Shop pristine white marble murtis handcrafted in Jaipur. Elevate your mandir with premium, sacred artistry. Enjoy free worldwide shipping.';

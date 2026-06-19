@@ -13,7 +13,7 @@ export interface BlogPost {
 export const blogPosts: BlogPost[] = [
   {
     slug: "white-vs-vietnamese-marble-murti-comparison",
-    title: "White Marble vs Vietnamese Marble Murti — Which Is Right for Your Home Temple?",
+    title: "White vs Vietnamese Marble Murtis",
     date: "May 15, 2026",
     author: "Master Artisan",
     image: "/blog/white-vs-vietnamese.jpg",
@@ -39,7 +39,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "how-to-choose-perfect-marble-murti-vastu-guide",
-    title: "How to Choose the Perfect Marble Murti for Your Pooja Room (Size, Material & Vastu Guide)",
+    title: "Choose the Perfect Marble Murti",
     date: "May 14, 2026",
     author: "Vastu Expert",
     image: "/blog/vastu-size-guide.jpg",
@@ -69,7 +69,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "custom-marble-murti-carving-process-step-by-step",
-    title: "Custom Marble Murti from Jaipur: How the Carving Process Works (Step by Step)",
+    title: "Custom Marble Murti Carving Process",
     date: "May 13, 2026",
     author: "Master Artisan",
     image: "/blog/carving-process.jpg",
@@ -98,7 +98,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "which-ganesha-murti-best-for-home-mandir",
-    title: "Which Ganesha murti is best for home mandir — marble, brass or bronze?",
+    title: "Best Ganesha Murti for Home Mandir",
     date: "May 12, 2026",
     author: "Jaipur Murti Editorial",
     image: "/blog/ganesha-material-guide.jpg",
@@ -143,7 +143,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "vastu-guide-where-to-place-deities-home",
-    title: "Vastu guide: where to place each deity in your home",
+    title: "Vastu Guide: Deity Placement at Home",
     date: "May 11, 2026",
     author: "Vastu Expert",
     image: "/blog/vastu-placement-guide.jpg",
@@ -185,7 +185,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "what-is-white-marble-sacred-murtis",
-    title: "What is White marble and why it's used for sacred murtis",
+    title: "Why White Marble for Sacred Murtis?",
     date: "May 10, 2026",
     author: "Master Artisan",
     image: "/blog/white-marble-guide.jpg",

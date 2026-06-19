@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Divine Gallery',
+  title: 'Divine Gallery | Handcrafted Murti Photos',
   description: "View our divine photo gallery of premium marble murtis. Witness the intricate craftsmanship of Jaipur artisans. Find inspiration for your mandir.",
 };
 

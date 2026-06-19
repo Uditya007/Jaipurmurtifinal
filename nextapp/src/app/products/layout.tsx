@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Buy Ganesh Murti Jaipur | Marble Ganesh, Hanuman, Lakshmi Idols Online',
+  title: 'Shop Hindu Deity Murtis Online',
   description: "Explore our full catalog of authentic Hindu deity statues. Hand-carved by Jaipur artisans for your sacred space. Browse the collection today.",
   keywords: [
     'ganesh murti jaipur', 'marble ganesh murti jaipur', 'ganesh statue jaipur',

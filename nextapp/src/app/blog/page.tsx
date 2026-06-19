@@ -3,7 +3,7 @@ import { blogPosts } from '@/lib/blog';
 import BlogCard from '@/components/ui/BlogCard';
 
 export const metadata: Metadata = {
-  title: 'Sacred Art Blog | Vastu Guides & Murti Buying Tips | Jaipur Murti',
+  title: 'Sacred Art Blog | Vastu & Murti Guides',
   description: "Read the Jaipur Murti blog for expert guides on Vastu shastra, murti materials, and placement tips. Discover the sacred art of idol carving.",
 };
 

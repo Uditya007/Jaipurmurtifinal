@@ -16,8 +16,9 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
   const deityName = product.deity.split('—')[0].trim();
   const title = `${product.height} ${product.material} ${deityName} Murti | Jaipur Murti`;
   
-  // Create a unique meta description
-  const description = `Buy this museum-grade ${product.height} ${product.material} ${deityName} murti. Hand-chiseled by master artisans from ${product.origin.replace('MADE IN ', '')}. Authentic sacred art for your home mandir. Free shipping.`;
+  // Create a unique meta description (must stay under 150 chars)
+  const origin = product.origin.replace('MADE IN ', '');
+  const description = `${product.height} ${product.material} ${deityName} murti, handcrafted in ${origin}. Sacred art for your home mandir. Free shipping.`;
 
   return {
     title,

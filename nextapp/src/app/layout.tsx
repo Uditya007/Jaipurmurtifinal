@@ -38,7 +38,7 @@ const cinzel = Cinzel({
 
 export const metadata: Metadata = {
   title: {
-    default: "Jaipur Murti — Premium Handcrafted Marble Hindu Idols & Statues",
+    default: "Handcrafted Marble Hindu Idols & Murtis | Jaipur Murti",
     template: "%s | Jaipur Murti"
   },
   description: "Discover premium handcrafted marble, brass, and crystal Hindu murtis from Jaipur. Invite divine energy into your home. Shop with free shipping.",
